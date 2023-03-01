@@ -36,6 +36,8 @@ export const KYCform = (props) => {
     setIdProofApprovers,
     noteSignByHigherAuth,
     setNoteSignByHigherAuth,
+    approversDocument,
+    setApproversDocument,
 
   } = KycScript(props.setForm);
 
@@ -329,6 +331,13 @@ export const KYCform = (props) => {
                   ).value,
                   email: document.getElementById("add-approver-email").value,
 
+                },
+              ]);
+              setApproversDocument((prev) => [
+                ...prev,
+                {
+                  idProofApprovers: idProofApprovers,
+                  noteSignByHigherAuth: noteSignByHigherAuth,
                 },
               ]);
               setApproverDialog(false);

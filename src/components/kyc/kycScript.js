@@ -20,6 +20,7 @@ const KycScript = (setForm) => {
   const [issuerJobDesignation, setIssuerJobDesignation] = useState("");
   const [idProofApprovers, setIdProofApprovers] = useState("");
   const [noteSignByHigherAuth, setNoteSignByHigherAuth] = useState("");
+  const [approversDocument, setApproversDocument] = useState([]);
 
   const handleSubmit = () => {
     setStatus("");
@@ -52,15 +53,21 @@ const KycScript = (setForm) => {
       account: user.userAccount,
       name: name,
       description: description,
-      // country: country,
-      // issuerName: issuerName,
-      // issuerDesignation: issuerJobDesignation,
+      country: country,
+      issuerName: issuerName,
+      issuerDesignation: issuerJobDesignation,
       website: website,
       email: email,
       contact: contact,
       regId: regId,
       idProof: idProof,
       approvers: JSON.stringify(approvers),
+      idProofApprovers1: approversDocument[0]["idProofApprovers"],
+      idProofApprovers2: approversDocument[1]["idProofApprovers"],
+      idProofApprovers3: approversDocument[2]["idProofApprovers"],
+      noteSignByHigherAuth1:approversDocument[0]["noteSignByHigherAuth"] ,
+      noteSignByHigherAuth2: approversDocument[1]["noteSignByHigherAuth"],
+      noteSignByHigherAuth3: approversDocument[2]["noteSignByHigherAuth"],
     })
       .then(async (res) => {
         setisuploading(false);
@@ -73,6 +80,7 @@ const KycScript = (setForm) => {
         setStatus("Something went wrong. Please try again.");
       });
   };
+
 
   return {
     status,
@@ -104,6 +112,8 @@ const KycScript = (setForm) => {
     setIdProofApprovers,
     noteSignByHigherAuth,
     setNoteSignByHigherAuth,
+    approversDocument,
+    setApproversDocument,
     
   };
 };
