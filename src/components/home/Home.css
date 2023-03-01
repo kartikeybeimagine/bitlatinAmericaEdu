@@ -137,7 +137,7 @@
 }
 
 .descriptionsection {
-  width: 80%;
+  width: 85%;
   height: 100%;
   /* margin: 50px; */
   display: flex;
@@ -160,26 +160,22 @@
 
 .descriptionsection .writing .heading {
   color: var(--primary);
-  font-weight: 500;
+  /* font-weight: 500;
   font-size: 5em;
   font-family:coolvetica;
+  text-align: left; */
   /* margin: 40px 0px; */
   /* border-bottom: 1px solid var(--primary); */
   /* font-family: coolvetica; */
-}
-.descriptionsection .writing{
-  width: 100%;
+  color: var(--primary);
+  font-family: 'Coolvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54.4065px;
+  line-height: 53px;
+  text-align: left;
 }
 
-.descriptionsection .heading{
-  width: 100%;
-  height: 70px;
-}
-.descriptionsection #idheading{
-  width: 100%;
-  height: 70px;
-  border-bottom: 1px solid var(--primary);
-}
 
 
 
@@ -512,7 +508,7 @@ text-transform: capitalize;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
-  text-align: center;
+  /* text-align: center; */
   justify-content: center;
   align-items: center;
   height: 1200px;
@@ -752,9 +748,9 @@ text-transform: capitalize;
 .certificatesectioncontainer2 {
   /* background-color: var(--secondary); */
   /* background-image: url(./assets/certificatesectionbackground.png); */
-  background-size: cover;
+  /* background-size: cover;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left center; */
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -766,11 +762,11 @@ text-transform: capitalize;
   font-size: 1.3rem;
   color: var(--secondary);
   padding: 20px;
-  width: 50%;
+  width: 25%;
 }
 .howtouseimageleft {
-  width: 800px;
-  height: 500px;
+  width: 600px;
+  height: 400px;
   background-color: aliceblue;
   display: flex;
   justify-content: center;
@@ -819,6 +815,14 @@ text-transform: capitalize;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  padding: 100px 0px;
+}
+.stepscontainer2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 15vw;
   padding: 100px 0px;
 }
 .joinContainer {
@@ -888,7 +892,7 @@ text-transform: capitalize;
   align-items: center;
   flex-wrap: wrap; */
   /* padding: 100px 0px; */
-  margin-left: 200px;
+  margin-left: 5vw;
 }
 .certificatesectioncontainer2part2{
   display: flex;
@@ -896,14 +900,14 @@ text-transform: capitalize;
   align-items: center;
   flex-wrap: wrap; */
   /* padding: 100px 0px; */
-  margin-left: 500px;
+  margin-left: 15vw;
 }
 .whybitmemomaindiv{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding-left: 100px;
-  padding-right:100px ;
+  padding-left: 5vw;
+  padding-right:5vw ;
 }
 .whybitmemotext{
   /* font-size: 1.1rem;
@@ -911,7 +915,7 @@ text-transform: capitalize;
   font-weight: 100; */
   /* padding: 20px; */
   padding-top: 20px;
-  width: 50%;
+  width: 80%;
   font-family: 'Arial';
 font-style: normal;
 font-weight: 400;
@@ -924,8 +928,8 @@ color: #FFFFFF;
 }
 .whybitcontainer .heading{
 
-  color: var(--primary);
-  font-family: 'Coolvetica';
+color: var(--primary);
+font-family: 'Coolvetica';
 font-style: normal;
 font-weight: 400;
 font-size: 54.4065px;
@@ -934,15 +938,12 @@ line-height: 53px;
 
 letter-spacing: 0.03em;
 text-transform: capitalize;
-padding-right:1000px;
-border-bottom: 2px solid var(--primary);
-
+/* margin-right: 58vw; */
 
 }
 .whybitcontainer .heading-1{
-  margin-top: 80px;
-  color: var(--primary);
-  font-family: 'Coolvetica';
+color: var(--primary);
+font-family: 'Coolvetica';
 font-style: normal;
 font-weight: 400;
 font-size: 54.4065px;
@@ -951,7 +952,7 @@ line-height: 53px;
 
 letter-spacing: 0.03em;
 text-transform: capitalize;
-padding-right:1250px;
+/* margin-right: 75vw; */
 }
 .subjoinheading2{
   /* font-size: 1.5rem;
@@ -983,12 +984,12 @@ text-fill-color: transparent;
 .stepText{
   margin-top: 20px;
   color: var(--primary);
-  font-family: 'Be Vietnam';
+  /* font-family: 'Be Vietnam'; */
 font-style: normal;
 font-weight: 400;
 font-size: 23.9525px;
 line-height: 32px;
-padding-right: 290px;
+/* padding-right: 180px; */
 /* or 135% */
 
 letter-spacing: 0.03em;
@@ -1004,6 +1005,32 @@ text-transform: uppercase;
   font-size: 1rem;
   color: var(--secondary);
   margin: 10px;
+}
+.descriptionsection .writing{
+  width: 100%;
+}
+
+.descriptionsection .heading{
+  width: 100%;
+  height: 70px;
+  margin-right: 200px;
+  color: var(--primary);
+  font-family: 'Coolvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54.4065px;
+  line-height: 53px;
+  
+}
+.descriptionsection #idheading{
+  width: 100%;
+  height: 70px;
+}
+
+.stepsHeading{
+  text-align: left;
+  align-items:left ;
+ 
 }
 @media only screen and (max-width: 600px) {
   .certificatesissued2 {
@@ -1095,6 +1122,7 @@ text-transform: uppercase;
   .descriptionsectioncontainer{
     padding: 0px;
     padding-top: 50px;
+  
   }
   .descriptionsection{
     margin: 0px;
@@ -1103,6 +1131,7 @@ text-transform: uppercase;
   .descriptionsection .writing .heading{
     font-size: 2rem;
     margin-left: 30px;
+    text-align: center;
 
 
   }
@@ -1143,7 +1172,15 @@ text-transform: uppercase;
     margin-right: 10px;
   }
   .whybitcontainer .heading-1{
-    padding: 0px;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .whybitcontainer .stepText{
+    font-size: 1rem;
+    text-align: center;
+  }
+  .stepsHeading{
+    margin-top: 50px;
   }
   .whybitmemotext{
     /* font-size: 1.1rem;
@@ -1162,19 +1199,13 @@ text-transform: uppercase;
   color: #FFFFFF;
   
   }
-  .stepText{
-    margin-top: 20px;
-    color: var(--primary);
-    font-family: 'Be Vietnam';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 23.9525px;
-  line-height: 32px;
-  padding-right:0px;
-  /* or 135% */
-  
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  .stepscontainer2{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
   }
 
   

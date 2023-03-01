@@ -1,28 +1,13 @@
 import "./Home.css";
 import img1 from "./assets/img1.png";
 import arraow from "./assets/Line 2.png";
-import howtouseimage1 from "./assets/howtouseimage1.png";
-import howtouseimage2 from "./assets/howtouseimage2.png";
-import howtouseimage3 from "./assets/howtouseimage3.png";
-import solutionimg1 from "./assets/solutionimg1.png";
-import solutionimg2 from "./assets/solutionimg2.png";
-import solutionimg3 from "./assets/solutionimg3.png";
-import solutionimg4 from "./assets/solutionimg4.png";
-import solutionimg5 from "./assets/solutionimg5.png";
-import solutionimg6 from "./assets/solutionimg6.png";
-import digitalcertimage from "./assets/digitalcertimage.png";
-import bulk from "./assets/bulk.svg";
-import cerifycert from "./assets/cerifycert.svg";
-import dataprotection from "./assets/dataprotection.svg";
-import integration from "./assets/integration.svg";
-import robustinfra from "./assets/robustinfra.svg";
 import step1 from "./assets/step1.png";
-import step2 from "./assets/step2.jpg";
-import step3 from "./assets/step3.jpg";
-import step4 from "./assets/step4.jpg"; 
-import step5 from "./assets/step5.jpg";
-import step6 from "./assets/step6.jpg";
-import step7 from "./assets/step7.jpg";
+import step2 from "./assets/step2.png";
+import step3 from "./assets/step3.png";
+import step4 from "./assets/step4.png"; 
+import step5 from "./assets/step5.png";
+import step6 from "./assets/step6.png";
+import step7 from "./assets/step7.png";
 import React from "react";
 import UserContext from "../../context/userContext/UserContext";
 import { useContext, useState, useEffect } from "react";
@@ -100,32 +85,32 @@ const Home = () => {
       <div className="descriptionsectioncontainer" id="whatisbitmemoir">
         <div className="descriptionsection">
           <div className="writing">
-            <div className="heading">Blockchain For</div>
-            <div className="heading" >Colleges And Universities</div>
+              <div className="heading">Blockchain For</div>
+              <div className="heading" >Colleges And Universities</div>
             {/* <hr /> */}
             <div className="certificatesectioncontainer2">
             <div className="certificatesectioncontainer2part1">
               <div className="certificatesissued2">
                 <div className="heading1">1</div>
                 <div className="heading2">MICROCREDENTIALS </div>
-                <div className="heading3">They Are Intended to Certify Career Path Ans Skills For The Workplace. They Also Apply To Short Course And Professional Update Cycles.</div>
+                <div className="heading3">They Are Intended to Certify Career Paths And Skills For The Workplace. They Also Apply To Short Course And Professional Update Cycles.</div>
               </div>
               <div className="certificatesissued2">
                 <div className="heading1">2</div>
                 <div className="heading2">PROOF OF PARTICIPATIONS</div>
-                <div className="heading3">NFTs Intended To Accredit The Participation Of Member Of The Education Community In Acts And Events Of The Institution.</div>
+                <div className="heading3">NFTs Intended To Accredit The Participation Of Members Of The Education Community In Acts And Events Of The Institution.</div>
               </div>
             </div>
             <div className="certificatesectioncontainer2part2">
               <div className="certificatesissued2">
                 <div className="heading1">3</div>
                 <div className="heading2">DISTINCTIONS AND AWARDS</div>
-                <div className="heading3">Badges That Certify Distinctions And Recognitions Granted By The Institution To Its Teacher Or Students. Medals Of Honor, Best Average, Sports Achievement</div>
+                <div className="heading3">Badges That Certify Distinctions And Recognitions Granted By The Institution To Its Teachers Or Students. Medals Of Honor, Best Average, Sports Achievement</div>
               </div>
               <div className="certificatesissued2">
                 <div className="heading1">4</div>
                 <div className="heading2">UNDERGRADUATE AND GRADUATE DEGREES</div>
-                <div className="heading3">Qualification Granted By The Institution To Its Graduates Only (School,University And Postgraduate)</div>
+                <div className="heading3">Qualification Granted By The Institution To Its Students Only (School,University And Postgraduate)</div>
               </div>
             </div>
           </div>
@@ -137,7 +122,7 @@ const Home = () => {
         <div className="whybitmemomaindiv">
           <div className="whybitmemoheading">
             <div className="howtouseheading">Why <br/> BitMemoir?</div>
-            <div className="whybitmemotext">Transforming the eduDummy text A Private Ltd Company is a legal entity registered and formed under the 1956 Companies Act.</div>
+            <div className="whybitmemotext">Transforming the education ecosystem by issuing authentic and verified credentials and completely negating the possibility of duplicate, fake or fudged documents.</div>
             <div className="whybitmemoArrow"><img src={arraow} ></img></div>
           </div>
 
@@ -157,18 +142,19 @@ const Home = () => {
       <div className="joinContainer">
         <div className="stepsheadingbtndiv">
             <div className="benefit">
-              GENERATING DEGREE'S
+              GENERATE DEGREES
             </div>
             <div className="benefit2">
-              GENERATING CERTIFICATE
+              GENERATE CERTIFICATES
             </div>
         </div>
       </div>
       <div className="whybitcontainer">
-         <div className="heading-1">Steps For </div>
-        <div className="heading"> Issuing Certificates</div> 
-        <div className="stepText">tHE WAY FOR AN INSTITUTION TO GENERATE UNIVERSITY OR SCHOOL DEGREES IN BLOCKCHAIN</div>
-
+        <div className="stepsHeading">
+          <div className="heading-1">Steps For </div>
+          <div className="heading-1"> Issuing Certificates</div>
+          <div className="stepText">tHE WAY FOR AN INSTITUTION TO GENERATE UNIVERSITY OR SCHOOL DEGREES IN BLOCKCHAIN</div>
+        </div>
         
 
         <div className="stepscontainer">
@@ -213,13 +199,13 @@ const Home = () => {
               STEP 04
             </div>
             <div className="steptext">
-            he institution sends its models of university or school degrees
+            The institution sends its models of university or school degrees
             </div>
           </div>
           
    
         </div>
-        <div className="stepscontainer">
+        <div className="stepscontainer2">
           <div className="step">
             <div className="stepimg">
               <img src={step7} alt="" />
@@ -244,7 +230,7 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="stepimg">
-              <img src={step7} alt="" />
+              <img src={step5} alt="" />
             </div>
             <div className="stepheading">
               STEP 05
