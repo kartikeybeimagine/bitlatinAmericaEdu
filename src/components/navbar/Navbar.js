@@ -30,15 +30,6 @@ const Navbar = () => {
         >
           Home
         </div>
-        {/* <div
-          className="menuitem"
-          onClick={() => {
-            navigate("/individual");
-            setIsMenu(false);
-          }}
-        >
-          Individuals
-        </div> */}
         <div
           className="menuitem"
           onClick={() => {
@@ -57,24 +48,7 @@ const Navbar = () => {
         >
           Institutions
         </div>
-        <div
-          className="menuitem"
-          onClick={() => {
-            navigate("/souvenir");
-            setIsMenu(false);
-          }}
-        >
-          Souvenirs
-        </div>
-        <div
-          className="menuitem"
-          onClick={() => {
-            navigate("/verify");
-            setIsMenu(false);
-          }}
-        >
-          Verify
-        </div>
+
         <div
           className="menuitem"
           onClick={() => {
@@ -90,9 +64,6 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbuttoncontainer">
-        {/* <div className="navbutton" onClick={() => navigate("/individual")}>
-          Individuals
-        </div> */}
         <div className="navbutton" onClick={() => navigate("/home")}>
           Home
         </div>
@@ -102,12 +73,6 @@ const Navbar = () => {
         <div className="navbutton" onClick={() => navigate("/institution")}>
           Institutions
         </div>
-        {/* <div className="navbutton" onClick={() => navigate("/souvenir")}>
-          Souvenirs
-        </div>
-        <div className="navbutton" onClick={() => navigate("/verify")}>
-          Verify
-        </div> */}
       </div>
       <div className="menucontainer">
         <img
@@ -132,12 +97,6 @@ const Navbar = () => {
         </div>
         {user.iswalletAvailable ? (
           user.isConnected ? (
-            // <div >
-            //   <button className="greenbtn">
-            //     {/* <DashboardIcon sx={{ fontSize: 20, marginRight: "5px" }} /> */}
-            //     Connected
-            //   </button>
-            // </div>
             <div className="whitebutton">
               <button onClick={() => navigate("/dashboard")}>
                 <DashboardIcon sx={{ fontSize: 20, marginRight: "5px" }} />

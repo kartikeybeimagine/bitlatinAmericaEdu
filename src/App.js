@@ -3,7 +3,7 @@ import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import View from "./components/view/View";
-import Institution from "./components/institution/Institution";
+
 
 import NoWalletPage from "./components/connection/NoWalletPage";
 import Connect from "./components/connection/Connect";
@@ -11,7 +11,7 @@ import Contact from "./components/contact/Contact";
 import Admin from "./components/admin/admin";
 
 import Privacypolicy from "./components/privacyPolicy/privacypolicy";
-// import Verify from "./components/verify/verify";
+
 
 import Dashboard from "./components/dashboard/dashboard";
 import InstitutesLandingPage from "./components/institution/instititeAdvanced/landingPage/landing";
