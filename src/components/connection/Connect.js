@@ -3,7 +3,7 @@ import wallet from "./assets/wallet.svg";
 
 import React from "react";
 import UserContext from "../../context/userContext/UserContext";
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 
 const Connect = () => {
   const user = useContext(UserContext);

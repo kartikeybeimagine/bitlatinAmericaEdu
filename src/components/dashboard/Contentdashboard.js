@@ -1,15 +1,13 @@
 import React from 'react';
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import UserContext from "../../context/userContext/UserContext";
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { fileDownload } from "../Scripts/tools";
 import { IconButton } from "@mui/material";
-import { DashboardScript } from './dashboardScript';
 import Chart from "react-apexcharts";
 
 export const Contentdashboard = () => {
-    const {isPrimary,onClickPrimary} = DashboardScript();
+
     const user = useContext(UserContext);
     
     
@@ -214,8 +212,8 @@ const PrimaryDetails = () => {
   };
 
   const KPI = () => {
-    const user = useContext(UserContext);
-    const userData = user.userData;
+    
+  
   
     return (
       <div className="certificatesectioncontainer1">

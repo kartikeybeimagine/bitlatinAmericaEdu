@@ -9,28 +9,11 @@ import step5 from "./assets/step5.png";
 import step6 from "./assets/step6.png";
 import step7 from "./assets/step7.png";
 import React from "react";
-import UserContext from "../../context/userContext/UserContext";
-import { useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { kpiApi } from "../Scripts/apiCalls";
+
 
 const Home = () => {
-  const user = useContext(UserContext);
-  const navigate = useNavigate();
+  
 
-  const [certificates, setCertificates] = useState(0);
-  const [souvenirs, setSouvenirs] = useState(0);
-
-  useEffect(() => {
-    poppulateCertificates();
-  }, []);
-
-  const poppulateCertificates = async () => {
-    kpiApi().then((res) => {
-      setCertificates(res.certificates);
-      setSouvenirs(res.souvenirs);
-    });
-  };
   return (
     <>
       {/* About Section ------------------- */}
@@ -58,7 +41,7 @@ const Home = () => {
         </div>
         <div className="aboutsectionmobile">
           <div className="illustration">
-            <img src={img1} alt="" />
+            <img src={img1} alt="blockchainImage" />
           </div>
           <div className="writing">
             <div className="mainheading">BitMemoir</div>
@@ -123,7 +106,7 @@ const Home = () => {
           <div className="whybitmemoheading">
             <div className="howtouseheading">Why <br/> BitMemoir?</div>
             <div className="whybitmemotext">Transforming the education ecosystem by issuing authentic and verified credentials and completely negating the possibility of duplicate, fake or fudged documents.</div>
-            <div className="whybitmemoArrow"><img src={arraow} ></img></div>
+            <div className="whybitmemoArrow"><img src={arraow} alt="arrow" ></img></div>
           </div>
 
           
@@ -160,7 +143,7 @@ const Home = () => {
         <div className="stepscontainer">
           <div className="step">
             <div className="stepimg">
-              <img src={step1} alt="" />
+              <img src={step1} alt="step1" />
             </div>
             <div className="stepheading">
               STEP 01
@@ -171,7 +154,7 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="stepimg">
-              <img src={step2} alt="" />
+              <img src={step2} alt="step2" />
             </div>
             <div className="stepheading">
               STEP 02
@@ -182,7 +165,7 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="stepimg">
-              <img src={step3} alt="" />
+              <img src={step3} alt="step3" />
             </div>
             <div className="stepheading">
               STEP 03
@@ -193,7 +176,7 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="stepimg">
-              <img src={step4} alt="" />
+              <img src={step4} alt="step4" />
             </div>
             <div className="stepheading">
               STEP 04
@@ -208,7 +191,7 @@ const Home = () => {
         <div className="stepscontainer2">
           <div className="step">
             <div className="stepimg">
-              <img src={step7} alt="" />
+              <img src={step7} alt="step7" />
             </div>
             <div className="stepheading">
               STEP 07
@@ -219,7 +202,7 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="stepimg">
-              <img src={step6} alt="" />
+              <img src={step6} alt="step6" />
             </div>
             <div className="stepheading">
               STEP 06
@@ -230,7 +213,7 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="stepimg">
-              <img src={step5} alt="" />
+              <img src={step5} alt="step5" />
             </div>
             <div className="stepheading">
               STEP 05

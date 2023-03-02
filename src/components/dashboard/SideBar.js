@@ -1,13 +1,12 @@
 import React from 'react';
-import { DashboardScript } from './dashboardScript';
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import UserContext from "../../context/userContext/UserContext";
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
 
 
 export const SideBar = () => {
-    const {isPrimary,onClickPrimary} = DashboardScript();
+
     const user = useContext(UserContext);
   return (
     <div className='sidebar'>
