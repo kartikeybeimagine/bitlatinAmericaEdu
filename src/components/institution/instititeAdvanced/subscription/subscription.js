@@ -5,6 +5,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useState, useContext } from "react";
 import { paymentApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
+import { Button } from "@mui/material";
 
 const Subscription = ({ setView, back }) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,6 +37,85 @@ const Subscription = ({ setView, back }) => {
       });
   };
 
+  const PlanCard = ({ planName, noOfCerts, amount, isRecommended }) => {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          alignItems: "center",
+          justifyContent: "center",
+          border: "1px solid black",
+          borderRadius: "20px",
+          background: "var(--secondary)",
+          color: "var(--primary)",
+          width: "300px",
+          transform: isRecommended ? "scale(1.1)" : "none",
+          boxShadow: "10px 10px 10px 5px rgba(0, 0, 0, 0.5) ",
+        }}
+      >
+        <div
+          style={{
+            background: "var(--primary)",
+            color: "var(--secondary)",
+            width: "100%",
+            borderRadius: "20px 20px 0px 0px",
+          }}
+        >
+          <h1>{planName}</h1>
+        </div>
+        <div style={{ fontSize: "50px" }}>{noOfCerts}</div>
+        <div style={{ fontSize: "25px" }}>CERTIFICATES</div>
+        {/* <h2>CERTIFICATES</h2> */}
+
+        <div
+          style={{
+            background: "var(--primary)",
+            color: "var(--secondary)",
+            width: "100%",
+          }}
+        >
+          <h1>{amount} $</h1>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "10px",
+            margin: "20px 0px",
+          }}
+        >
+          <Button
+            sx={{
+              background: "var(--primary)",
+              color: "var(--secondary)",
+              display: "flex",
+              flexDirection: "column",
+            }}
+            onClick={() => handleUSDT(amount)}
+          >
+            Buy with USDT
+            <span style={{ fontSize: "10px" }}>(Network: Polygon)</span>
+          </Button>
+          <Button
+            sx={{
+              background: "var(--primary)",
+              color: "var(--secondary)",
+              display: "flex",
+              flexDirection: "column",
+            }}
+            onClick={() => handleUSDT(amount)}
+          >
+            Buy with BUSD
+            <span style={{ fontSize: "10px" }}>(Network: BNB)</span>
+          </Button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div
       style={{
@@ -47,58 +127,37 @@ const Subscription = ({ setView, back }) => {
       }}
     >
       <h1>Select a Subscription Plan</h1>
-      <div style={{ display: "flex", gap: "20px" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid white",
-            borderRadius: "20px",
-            padding: "20px",
-          }}
-        >
-          <h1>Silver Plan</h1>
-          <h3>1000 certificates</h3>
-          <h3>1000 $</h3>
-          <button onClick={() => handleUSDT(1000)}>Buy with USDT</button>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid white",
-            borderRadius: "20px",
-            padding: "20px",
-          }}
-        >
-          <h1>Gold Plan</h1>
-          <h3>5000 certificates</h3>
-          <h3>5000 $</h3>
-          <button onClick={() => setView(1)}>Select</button>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid white",
-            borderRadius: "20px",
-            padding: "20px",
-          }}
-        >
-          <h1>Platinum Plan</h1>
-          <h3>Unlimited certificates</h3>
-          <h3>10000 $</h3>
-          <button onClick={() => setView(1)}>Select</button>
-        </div>
+      <h3>
+        Current Plan: {parseInt(user.userData.nft_quota)} Certificates available
+      </h3>
+      <div
+        style={{
+          display: "flex",
+          gap: "50px",
+          flexWrap: "wrap",
+          alignItems: "center",
+          justifyContent: "center",
+          margin: "50px 0px",
+        }}
+      >
+        <PlanCard
+          planName="Silver Plan"
+          noOfCerts="1000"
+          amount={999}
+          isRecommended={false}
+        />
+        <PlanCard
+          planName="Gold Plan"
+          noOfCerts="10000"
+          amount={4999}
+          isRecommended={true}
+        />
+        <PlanCard
+          planName="Platinum Plan"
+          noOfCerts="1000000"
+          amount={9999}
+          isRecommended={false}
+        />
       </div>
       <div style={{ marginTop: "50px" }}>
         <button onClick={back}>{"<"} Back</button>

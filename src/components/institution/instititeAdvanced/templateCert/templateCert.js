@@ -99,7 +99,7 @@ const TemplateCert = (props) => {
       <button
         onClick={() => {
           setCertData(templateData);
-          setView(2);
+          setView("certIssue");
         }}
       >
         Next {">"}

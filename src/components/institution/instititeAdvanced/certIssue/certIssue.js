@@ -77,7 +77,7 @@ const CertIssue = ({ setView, certData }) => {
   const limitExceeded = certNumber > parseInt(user.userData.nft_quota);
 
   if (parseInt(user.userData.nft_quota) === 0)
-    return <Subscription back={() => setIsSubscription(false)} />;
+    return <Subscription back={() => setView("education")} />;
 
   if (isSubscription)
     return <Subscription back={() => setIsSubscription(false)} />;
