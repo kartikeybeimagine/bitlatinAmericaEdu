@@ -147,7 +147,7 @@ const InstitutesLandingPage = () => {
             <NoWalletPage />
           ) : !user.isConnected ? (
             <Connect />
-          ) : user.userData.status !== "in_progress" ? (
+          ) : user.userData.status !== "Approved" ? (
             <KYC />
           ) : (
             <div
