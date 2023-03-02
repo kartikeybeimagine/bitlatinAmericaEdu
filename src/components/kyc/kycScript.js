@@ -36,7 +36,9 @@ const KycScript = (setForm) => {
       website === "" ||
       email === "" ||
       contact === "" ||
-      idProof === ""
+      idProof === ""||
+      approvers===""||
+      approversDocument ===[]
     ) {
 
     
@@ -48,6 +50,25 @@ const KycScript = (setForm) => {
   };
 
   const uploadData = () => {
+    if (approversDocument.length===1){
+      approversDocument.push(
+          {
+            idProofApprovers: "",
+            noteSignByHigherAuth: "",
+          },
+          {
+            idProofApprovers: "",
+            noteSignByHigherAuth: "",
+          }
+      )
+    }else if(approversDocument.length===2){
+      approversDocument.push(
+        {
+          idProofApprovers: "",
+          noteSignByHigherAuth: "",
+        }
+    )
+  }
     setisuploading(true);
     userApi({
       account: user.userAccount,

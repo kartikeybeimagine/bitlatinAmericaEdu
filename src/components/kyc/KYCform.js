@@ -149,7 +149,7 @@ export const KYCform = (props) => {
             justifyContent: "center",
           }}
         >
-          Add approving authorities. (optional)
+          *Add approving authorities.
           <h5>
             Approving authorities have to approve any document issuance via
             email.

@@ -1,6 +1,6 @@
-const BASE_URL = "https://bitmemoir.org/";
+// const BASE_URL = "https://bitmemoir.org/";
 // const BASE_URL = "http://3.7.212.160:8000/";
-// const BASE_URL = "http://localhost:8000/";
+const BASE_URL = "http://localhost:8000/";
 
 export const userApi = async (data) => {
   const endpoint = "user";
