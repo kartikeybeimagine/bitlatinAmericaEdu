@@ -4,14 +4,14 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import View from "./components/view/View";
 
-
 import NoWalletPage from "./components/connection/NoWalletPage";
 import Connect from "./components/connection/Connect";
 import Contact from "./components/contact/Contact";
 import Admin from "./components/admin/admin";
 
-import Privacypolicy from "./components/privacyPolicy/privacypolicy";
+import Approval from "./components/institution/instititeAdvanced/approval/approval";
 
+import Privacypolicy from "./components/privacyPolicy/privacypolicy";
 
 import Dashboard from "./components/dashboard/dashboard";
 import InstitutesLandingPage from "./components/institution/instititeAdvanced/landingPage/landing";
@@ -40,6 +40,7 @@ function App() {
             <Route path="/:page" element={<Home />} />
             <Route path="/privacypolicy" element={<Privacypolicy />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/approval/:orderId/:otp" element={<Approval />} />
           </Routes>
           <Footer />
         </UserState>
