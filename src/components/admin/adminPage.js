@@ -49,6 +49,50 @@ export const AdminPage = () => {
           {users.length > 0 && (
             <UserDetailsContainer users={users} update={poppulateUserData} />
           )}
+          <div>
+            <h2>Change Certificate Limit</h2>
+            <div
+              style={{
+                width: "100%",
+                display: "grid",
+                gridTemplateColumns: "1fr 2fr",
+                margin: "20px 0px",
+              }}
+            >
+              <label htmlFor="limit-changer-account">Account: </label>
+              <input type="text" id="limit-changer-account" />
+            </div>
+            <div
+              style={{
+                width: "100%",
+                display: "grid",
+                gridTemplateColumns: "1fr 2fr",
+                margin: "20px 0px",
+              }}
+            >
+              <label htmlFor="limit-changer-limit">NFT Limit: </label>
+              <input type="number" id="limit-changer-limit" />
+            </div>
+            <button
+              onClick={() => {
+                userApi({
+                  account: document.getElementById("limit-changer-account")
+                    .value,
+                  admin: user.userAccount,
+                  nft_quota: document.getElementById("limit-changer-limit")
+                    .value,
+                })
+                  .then((res) => {
+                    console.log(res);
+                  })
+                  .then((err) => {
+                    console.log(err);
+                  });
+              }}
+            >
+              Change
+            </button>
+          </div>
         </div>
       )}
     </div>
