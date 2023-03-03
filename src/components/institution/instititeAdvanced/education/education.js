@@ -22,20 +22,18 @@ const Education = ({ setView, certData, setCertData }) => {
 
   const navbuttons = [
     {
-      text: "Certificates (Educational)",
+      text: "Certificates",
       logo: (
         <div>
-          <SchoolIcon />
           <WebIcon />
         </div>
       ),
       category: "educational certificates",
     },
     {
-      text: "Badges (Educational)",
+      text: "Badges",
       logo: (
         <div>
-          <SchoolIcon />
           <WorkspacePremiumIcon />
         </div>
       ),
@@ -69,8 +67,9 @@ const Education = ({ setView, certData, setCertData }) => {
   ];
 
   const Sidebar = () => {
+    const sidebarWidth = window.innerWidth > 800 ? "500px" : "250px";
     return (
-      <div style={{ display: "flex", position: "relative",height:"100%" }}>
+      <div style={{ display: "flex", position: "relative", height: "100%" }}>
         <div style={{ width: "50px", backgroundColor: "var(--darkshade2)" }}>
           {navbuttons.map((nav) => (
             <div
@@ -95,7 +94,7 @@ const Education = ({ setView, certData, setCertData }) => {
           style={{
             backgroundColor: "var(--darkshade1)",
             height: window.innerHeight - 50 + "px",
-            width: isSidebar ? "500px" : "0px",
+            width: isSidebar ? sidebarWidth : "0px",
             overflowY: "scroll",
           }}
         >

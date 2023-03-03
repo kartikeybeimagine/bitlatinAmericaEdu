@@ -388,11 +388,18 @@ const DragVariable = ({
                 const thisIndex = selectedVariables.indexOf(variable);
                 console.log(thisIndex);
                 let newVariables = [];
+                let newVariablesData = [];
                 selectedVariables.map((myVariable, index) => {
                   if (index !== thisIndex) {
                     newVariables.push(myVariable);
                   }
                   setSelectedVariables(newVariables);
+                });
+                selectedVariablesData.map((myVariable, index) => {
+                  if (index !== thisIndex) {
+                    newVariablesData.push(myVariable);
+                  }
+                  setSelectedVariablesData(newVariables);
                 });
               }}
             />
