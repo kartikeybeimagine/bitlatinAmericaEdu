@@ -35,10 +35,13 @@ const PrimaryDetails = () => {
   
     const details1 = {
       Name: userData.name,
-      Description: userData.description,
+      // Description: userData.description,
       Email: userData.email,
       Website: userData.website,
-      Account: userData.account,
+      // Account: userData.account,
+      "Issuer Name": userData.issuerName,
+      "issuer Designation": userData.issuerDesignation,
+      
     };
     const details2 = {
       Status:
@@ -47,15 +50,14 @@ const PrimaryDetails = () => {
           : userData.status === "in_progress"
           ? "Verification Pending"
           : "Unverified",
-      "Reg. Id": userData.regId,
       "Id Proof": (
         <IconButton onClick={() => fileDownload(userData.idProof, "idProof")}>
           <DownloadForOfflineIcon color="primary" />
         </IconButton>
       ),
-      "Personal storage":
-        userData["storage_used"] + " / " + userData["storage_limit"] + " MB",
       "Contract Address": userData["contract_address"],
+      "Account Address": userData["account"],
+      "Current Plan": userData["nft_quota"] +" Certificates",
     };
   
     return (
@@ -121,7 +123,7 @@ const PrimaryDetails = () => {
             
         </div>
   
-        <div className="certContainer" id="pie">
+        {/* <div className="certContainer" id="pie">
           <React.Fragment>
             <div className="container-fuild">
                 <Chart type="pie"
@@ -145,7 +147,7 @@ const PrimaryDetails = () => {
           <h5 >Empty Storage : { userData["storage_limit"]-userData["storage_used"]} MB</h5>
         </div>
             
-        </div>
+        </div> */}
       </div>
   
   {/*     
@@ -221,16 +223,15 @@ const PrimaryDetails = () => {
           <div className="heading3">{200}</div>
           <div className="heading2">Total General Certificate</div>
         </div>
-          +
         <div className="certificatesissued1">
           <div className="heading3">{100}</div>
           <div className="heading2">Total Degree  Certificate</div>
         </div>
-          =
+          {/* =
         <div className="certificatesissued1">
           <div className="heading3">{300}</div>
           <div className="heading2">Total Certificate </div>
-        </div>
+        </div> */}
       </div>
     );
   };

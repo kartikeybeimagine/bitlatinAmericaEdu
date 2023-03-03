@@ -81,7 +81,7 @@ export const KYCform = (props) => {
           placeholder="Official Website"
           onChange={(e) => setwebsite(e.target.value)}
         />
-        <label htmlFor="Official website">Name*</label>
+        <label htmlFor="Official website">Name of the representative*</label>
         <input
           type="text"
           id="phone_num"
@@ -90,7 +90,7 @@ export const KYCform = (props) => {
           placeholder="Name"
           onChange={(e) => setIssuerName(e.target.value)}
         />
-        <label htmlFor="Official website">Designation*</label>
+        <label htmlFor="Official website">Designation of the representative*</label>
         <input
           type="text"
           id="phone_num"
@@ -177,7 +177,7 @@ export const KYCform = (props) => {
                   }}
                 >
                   Name:
-                  <span>{person.designation}</span>
+                  <span>{person.name}</span>
                 </div>
                 <div
                   style={{
