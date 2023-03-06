@@ -6,30 +6,79 @@ import { useState, useContext } from "react";
 import { paymentApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
 import { Button } from "@mui/material";
+import Box from "@mui/material/Box";
 
 const Subscription = ({ setView, back }) => {
+  const [isBuying, setIsBuying] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState({
+    planName: "Silver Plan",
+    noOfCerts: "1000",
+    amount: 999,
+  });
   const user = useContext(UserContext);
 
-  const handleUSDT = async (amount) => {
+  const checkNetwork = async (network) => {
+    const myProvider = new ethers.providers.Web3Provider(window.ethereum);
+    const { chainId } = await myProvider.getNetwork();
+
+    if (parseInt(chainId) !== parseInt(1)) {
+      await promptForNetworkChange();
+    }
+  };
+
+  const promptForNetworkChange = async () => {
+    let ethereum = window.ethereum;
+    try {
+      await ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x1" }],
+      });
+    } catch (switchError) {
+      // This error code indicates that the chain has not been added to MetaMask.
+      if (switchError.code === 4902) {
+        try {
+          await ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x1",
+                chainName: "Ethereum Mainnet",
+                rpcUrls: ["https://mainnet.infura.io/v3/"],
+              },
+            ],
+          });
+        } catch (addError) {
+          alert("Could not add network.");
+        }
+      }
+      //   alert("Could not switch network");
+    }
+  };
+
+  const handleUSDT = async (amount, network) => {
+    await checkNetwork(network);
+
     amount = amount.toString() + "000000000000000000";
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
 
     const tokenContract = new ethers.Contract(
-      "0x75e8Dd78D660C611157a79bF518F04f37Cc7493C",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
       abi,
       signer
     );
 
     tokenContract
-      .transfer("0xE858f0370b101cD3F58E03F18BFA1240a591b5Fa", amount)
+      .transfer("0x5ebeea97fDF46cD56B5D65ea635Eb78213C522b5", amount)
       .then((res) => {
-        setIsLoading(false);
+        setIsBuying(false);
         console.log(res);
-        paymentApi({ tx_hash: res.hash }).then((res) =>
-          user.poppulateUserData()
-        );
+        paymentApi({ tx_hash: res.hash }).then(async (res) => {
+          setIsLoading(true);
+          await user.poppulateUserData();
+          setIsLoading(false);
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -67,7 +116,6 @@ const Subscription = ({ setView, back }) => {
         </div>
         <div style={{ fontSize: "50px" }}>{noOfCerts}</div>
         <div style={{ fontSize: "25px" }}>CERTIFICATES</div>
-        {/* <h2>CERTIFICATES</h2> */}
 
         <div
           style={{
@@ -81,9 +129,7 @@ const Subscription = ({ setView, back }) => {
 
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "10px",
+            display: "flex",
             margin: "20px 0px",
           }}
         >
@@ -92,27 +138,134 @@ const Subscription = ({ setView, back }) => {
               background: "var(--primary)",
               color: "var(--secondary)",
               display: "flex",
-              flexDirection: "column",
+              width: "200px",
+              borderRadius: "40px",
+              fontSize: "20px",
             }}
-            onClick={() => handleUSDT(amount)}
-          >
-            Buy with USDT
-            <span style={{ fontSize: "10px" }}>(Network: Polygon)</span>
-          </Button>
-          <Button
-            sx={{
-              background: "var(--primary)",
-              color: "var(--secondary)",
-              display: "flex",
-              flexDirection: "column",
+            onClick={() => {
+              setIsBuying(true);
+              setSelectedPlan({
+                planName: planName,
+                noOfCerts: noOfCerts,
+                amount: amount,
+              });
             }}
-            onClick={() => handleUSDT(amount)}
           >
-            Buy with BUSD
-            <span style={{ fontSize: "10px" }}>(Network: BNB)</span>
+            Buy now
           </Button>
         </div>
       </div>
+    );
+  };
+
+  const checkbalance = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+
+    const tokenContract = new ethers.Contract(
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      abi,
+      signer
+    );
+
+    let balance = await tokenContract
+      .balanceOf(window.ethereum.selectedAddress)
+      .then((res) => {
+        return res;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    return ethers.utils.formatEther(balance);
+  };
+
+  const BuyPage = () => {
+    const [status, setStatus] = useState("");
+    return (
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={isBuying}
+      >
+        <Box
+          sx={{
+            background: "var(--secondary)",
+            color: "var(--primary)",
+            padding: "20px",
+            borderRadius: "20px",
+            minWidth: "350px",
+          }}
+        >
+          <div
+            style={{
+              border: "1px solid red",
+              color: "red",
+              padding: "10px",
+              fontSize: "20px",
+              borderRadius: "20px",
+              width: "20px",
+              textAlign: "center",
+            }}
+            onClick={() => setIsBuying(false)}
+          >
+            X
+          </div>
+          <h1>{selectedPlan.planName}</h1>
+          <h2>{selectedPlan.noOfCerts} CERTIFICATES</h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateRows: "1fr 1fr",
+              gap: "20px",
+              margin: "50px 0px",
+            }}
+          >
+            <Button
+              sx={{
+                background: "var(--primary)",
+                color: "var(--secondary)",
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "20px",
+                padding: "20px",
+              }}
+              onClick={async () => {
+                let balance = await checkbalance();
+
+                if (balance < selectedPlan.amount) {
+                  setStatus(
+                    "Insufficient balance. Available balance: " + balance
+                  );
+                } else handleUSDT(selectedPlan.amount);
+              }}
+            >
+              Buy with USDT
+              <span style={{ fontSize: "20px" }}>
+                {selectedPlan.amount} USDT
+              </span>
+              <span style={{ fontSize: "10px" }}>(Network: Polygon)</span>
+            </Button>
+            <Button
+              sx={{
+                background: "var(--primary)",
+                color: "var(--secondary)",
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "20px",
+                padding: "20px",
+              }}
+              onClick={() => handleUSDT(selectedPlan.amount)}
+            >
+              Buy with BUSD
+              <span style={{ fontSize: "20px" }}>
+                {selectedPlan.amount} BUSD
+              </span>
+              <span style={{ fontSize: "10px" }}>(Network: BNB)</span>
+            </Button>
+          </div>
+          <div className="status">{status}</div>
+        </Box>
+      </Backdrop>
     );
   };
 
@@ -162,6 +315,8 @@ const Subscription = ({ setView, back }) => {
       <div style={{ marginTop: "50px" }}>
         <button onClick={back}>{"<"} Back</button>
       </div>
+      {isBuying && <BuyPage />}
+      {isLoading && <LoadingPage />}
     </div>
   );
 };
@@ -174,7 +329,7 @@ const LoadingPage = () => {
       sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
       open={true}
     >
-      <CircularProgress color="inherit" />
+      <CircularProgress />
     </Backdrop>
   );
 };
