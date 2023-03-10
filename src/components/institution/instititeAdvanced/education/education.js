@@ -12,17 +12,18 @@ import Tooltip from "@mui/material/Tooltip";
 import { useEffect } from "react";
 import { templateApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
+import { useTranslation } from 'react-i18next'
 
-const Education = ({ setView, certData, setCertData }) => {
+const Education = ({ setView, certData, setCertData,category, setCategory }) => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(true);
   const [isTemplateCreator, setIsTemplateCreator] = useState(false);
   const [selectedTemplate, setSelectedTemplate] = useState(certData);
-  const [category, setCategory] = useState("educational certificates");
+  const { t } = useTranslation();
 
   const navbuttons = [
     {
-      text: "Certificates",
+      text: "Degree Certificates",
       logo: (
         <div>
           <WebIcon />
@@ -31,13 +32,13 @@ const Education = ({ setView, certData, setCertData }) => {
       category: "educational certificates",
     },
     {
-      text: "Badges",
+      text: "Diploma Certificates",
       logo: (
         <div>
           <WorkspacePremiumIcon />
         </div>
       ),
-      category: "educational badges",
+      category: "non educational certificates",
     },
     // {
     //   text: "Certificates (Non Educational)",
@@ -113,7 +114,7 @@ const Education = ({ setView, certData, setCertData }) => {
                 setIsSidebar(false);
               }}
             >
-              Create Custom Template
+              {t('Institutions.education.createCustomTemplate')}
             </button>
           </div>
 
@@ -168,10 +169,10 @@ const Education = ({ setView, certData, setCertData }) => {
 
     const heading =
       subscription === "user"
-        ? "Recently Used"
+        ? t('Institutions.education.headingRecentlyUsed')
         : subscription === "free"
-        ? "Free Templates"
-        : "Premium Templates";
+        ? t('Institutions.education.headingFreeTemplates')
+        : t('Institutions.education.headingPremiumTemplates');
 
     useEffect(() => {
       templateApi({
@@ -257,7 +258,7 @@ const Education = ({ setView, certData, setCertData }) => {
             style={{ padding: "5px" }}
             onClick={() => setStartIndex((prev) => prev + 6)}
           >
-            More...
+            {t('Institutions.education.more')}...
           </button>
         </div>
       </>
@@ -297,19 +298,19 @@ const Education = ({ setView, certData, setCertData }) => {
                   textAlign: "center",
                 }}
               >
-                <h2>Select Template</h2>
+                <h2>{t('Institutions.education.selectTemplate')}</h2>
                 <h3>
                   {" "}
-                  {"<< "}Select a ready made template from the templates section{" "}
+                  {"<< "}{t('Institutions.education.selectTemplatePlaceholder')}{" "}
                 </h3>
-                <h3>OR</h3>
+                <h3>{t('Institutions.education.or')}</h3>
                 <button
                   onClick={() => {
                     setIsTemplateCreator(true);
                     setIsSidebar(false);
                   }}
                 >
-                  Create Custom Template
+                  {t('Institutions.education.createCustomTemplate')}
                 </button>
               </div>
             ) : (

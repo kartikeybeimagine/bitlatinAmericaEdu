@@ -5,9 +5,10 @@ import Connect from "../connection/Connect";
 import ViewScript from "./ViewScript";
 import { NFTCard } from "./NFTCard";
 import NoWalletPage from "../connection/NoWalletPage";
-
+import { useTranslation } from "react-i18next";
 const View = () => {
   const { status, certificateData, user, navigate } = ViewScript();
+  const {t} = useTranslation();
 
   if (!user.iswalletAvailable) {
     return <NoWalletPage />;
@@ -21,7 +22,7 @@ const View = () => {
     if (Object.keys(certificateData).length === 0) {
       return (
         <>
-          <h2>No NFTs found.</h2>
+          <h2>{t('view.view.heading')}.</h2>
         </>
       );
     }
@@ -42,7 +43,7 @@ const View = () => {
   return (
     <div className="viewpage">
       <div className="viewcontainer">
-        <div className="heading">My Digital Collection</div>
+        <div className="heading">{t('view.view.mydigitalCollection')}</div>
         <div className="status">{status}</div>
         <NFTData />
       </div>

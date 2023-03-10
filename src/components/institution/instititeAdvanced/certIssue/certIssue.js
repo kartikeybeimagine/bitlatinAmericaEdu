@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
-import { issueApi } from "../../../Scripts/apiCalls";
+import { issueApi ,nonEssenCertissueApi} from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Subscription from "../subscription/subscription";
-
-const CertIssue = ({ setView, certData }) => {
+import { useTranslation } from 'react-i18next'
+const CertIssue = ({ setView, certData,category }) => {
   const user = useContext(UserContext);
   const [certNumber, setCertNumber] = useState(0);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -13,6 +13,7 @@ const CertIssue = ({ setView, certData }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubscription, setIsSubscription] = useState(false);
   const [status, setStatus] = useState("");
+  const { t } = useTranslation();
 
   const download = function (data) {
     const blob = new Blob([data], { type: "text/csv" });
@@ -51,28 +52,54 @@ const CertIssue = ({ setView, certData }) => {
   };
 
   const uploadFile = () => {
-    setIsLoading(true);
-    setStatus("Issuing certificates...");
-    issueApi({
-      template_id: certData.id,
-      file: uploadedFile,
-      account: user.userAccount,
-    })
-      .then((res) => {
-        if (res === "issued") {
-          setStatus("Certificates issued successfully.");
-        } else if (res === "pending approval") {
-          setStatus("Certificate order sent for approval.");
-        }
-        user.poppulateUserData();
-        console.log(res);
+    if (category === "non educational certificates") {
+      setIsLoading(true);
+      setStatus("Issuing certificates...");
+      nonEssenCertissueApi({
+        template_id: certData.id,
+        file: uploadedFile,
+        account: user.userAccount,
       })
-      .catch((err) => {
-        console.log(err);
-        setIsLoading(false);
-        alert("Something went wrong. Please check the data.");
-      });
+        .then((res) => {
+          if (res === "issued") {
+            setStatus("Certificates issued successfully.");
+          } else if (res === "pending approval") {
+            setStatus("Certificate order sent for approval.");
+          }
+          user.poppulateUserData();
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+          alert("Something went wrong. Please check the data.");
+        });
+    }else{
+      setIsLoading(true);
+      setStatus("Issuing certificates...");
+      issueApi({
+        template_id: certData.id,
+        file: uploadedFile,
+        account: user.userAccount,
+      })
+        .then((res) => {
+          if (res === "issued") {
+            setStatus("Certificates issued successfully.");
+          } else if (res === "pending approval") {
+            setStatus("Certificate order sent for approval.");
+          }
+          user.poppulateUserData();
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+          alert("Something went wrong. Please check the data.");
+        });
+    }
   };
+
+  console.log(category);
 
   const limitExceeded = certNumber > parseInt(user.userData.nft_quota);
 
@@ -93,10 +120,10 @@ const CertIssue = ({ setView, certData }) => {
         justifyContent: "center",
       }}
     >
-      <h1>Issue Certificates</h1>
+      <h1>{t('Institutions.certIssue.heading')}</h1>
 
       <div style={{ width: "500px" }}>
-        <label htmlFor="cert-number-input-for-issue">No. of certificates</label>
+        <label htmlFor="cert-number-input-for-issue">{t('Institutions.certIssue.NoOfCert')}</label>
         <input
           type="number"
           id="cert-number-input-for-issue"
@@ -105,15 +132,15 @@ const CertIssue = ({ setView, certData }) => {
         />
         {limitExceeded && (
           <div className="error">
-            Certificate limit exceeded. Current limit ={" "}
+            {t('Institutions.certIssue.certlmitexceed')} ={" "}
             {user.userData.nft_quota}
             <button onClick={() => setIsSubscription(true)}>
-              Increase limit
+            {t('Institutions.certIssue.increaselmtBtn')}
             </button>
           </div>
         )}
 
-        <h3>Upload CSV file</h3>
+        <h3>{t('Institutions.certIssue.uploadCSV')}</h3>
         <input
           type="file"
           onChange={(e) => {
@@ -122,7 +149,7 @@ const CertIssue = ({ setView, certData }) => {
             setUploadedFileName(e.target.files[0]["name"]);
           }}
         />
-        <h3>File: {uploadedFileName}</h3>
+        <h3>{t("Institutions.certIssue.file")}: {uploadedFileName}</h3>
         <a
           style={{
             color: "white",
@@ -130,7 +157,7 @@ const CertIssue = ({ setView, certData }) => {
           }}
           onClick={() => getCSV()}
         >
-          Download CSV template
+          {t('Institutions.certIssue.downloadsCSV')}
         </a>
       </div>
 
@@ -153,7 +180,7 @@ const CertIssue = ({ setView, certData }) => {
             uploadFile();
           }}
         >
-          Next {" >"}
+          {t('Institutions.certIssue.nextbtn')} {" >"}
         </button>
       </div>
     </div>
@@ -163,6 +190,7 @@ const CertIssue = ({ setView, certData }) => {
 export default CertIssue;
 
 const LoadingPage = ({ status, setView }) => {
+  const { t } = useTranslation();
   return (
     <div
       style={{
@@ -184,7 +212,7 @@ const LoadingPage = ({ status, setView }) => {
       )}
       <h3>{status}</h3>
       {status === "Issuing certificates..." && (
-        <h4>You can close the window.</h4>
+        <h4>{t('Institutions.certIssue.headingCloseWindow')}</h4>
       )}
       {status !== "Issuing certificates..." && (
         <button onClick={() => setView(0)}>OK</button>

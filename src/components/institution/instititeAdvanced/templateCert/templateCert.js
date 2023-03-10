@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-
+import { useTranslation } from 'react-i18next'
 const TemplateCert = (props) => {
   const { templateData, setView, setCertData } = props;
   const [templateValues, setTemplateValues] = useState({});
+  const { t } = useTranslation();
 
   useEffect(() => {
     let myTemplateValues = {};
@@ -66,7 +67,7 @@ const TemplateCert = (props) => {
           </div>
         ))}
       </div>
-      Enter Preview Values
+      {t('Institutions.templateCert.enterPreviewValue')}
       {templateData.variables.length > 0 &&
         templateData.variables.map((variable, index) => (
           <div
@@ -102,7 +103,7 @@ const TemplateCert = (props) => {
           setView("certIssue");
         }}
       >
-        Next {">"}
+        {t('Institutions.templateCert.next')} {">"}
       </button>
     </div>
   );

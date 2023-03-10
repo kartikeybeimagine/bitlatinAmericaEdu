@@ -5,10 +5,12 @@ import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 import { fileDownload } from "../Scripts/tools";
 import { IconButton } from "@mui/material";
 import Chart from "react-apexcharts";
+import {useTranslation} from 'react-i18next'
 
 export const Contentdashboard = () => {
 
     const user = useContext(UserContext);
+    
     
     
     
@@ -32,38 +34,40 @@ export const Contentdashboard = () => {
 const PrimaryDetails = () => {
     const user = useContext(UserContext);
     const userData = user.userData;
-  
+    const {t} = useTranslation();
+
+    var Name=t('Dashboard.contentDashboard.name')
     const details1 = {
-      Name: userData.name,
+      [Name]: userData.name,
       // Description: userData.description,
-      Email: userData.email,
-      Website: userData.website,
+      [t('Dashboard.contentDashboard.email')]: userData.email,
+      [t('Dashboard.contentDashboard.Website')]: userData.website,
       // Account: userData.account,
-      "Issuer Name": userData.issuerName,
-      "issuer Designation": userData.issuerDesignation,
+      [t('Dashboard.contentDashboard.Issuer_Name')]: userData.issuerName,
+      [t('Dashboard.contentDashboard.Issuer_Designation')]: userData.issuerDesignation,
       
     };
     const details2 = {
-      Status:
+      [t('Dashboard.contentDashboard.Status')]:
         userData.status === "Approved"
           ? "Verified"
           : userData.status === "in_progress"
           ? "Verification Pending"
           : "Unverified",
-      "Id Proof": (
+      [t('Dashboard.contentDashboard.IdProof')]: (
         <IconButton onClick={() => fileDownload(userData.idProof, "idProof")}>
           <DownloadForOfflineIcon color="primary" />
         </IconButton>
       ),
-      "Contract Address": userData["contract_address"],
-      "Account Address": userData["account"],
-      "Current Plan": userData["nft_quota"] +" Certificates",
+      [t('Dashboard.contentDashboard.contractAddress')]: userData["contract_address"],
+      [t('Dashboard.contentDashboard.accountAddress')]: userData["account"],
+      [t('Dashboard.contentDashboard.CurrentPlan')]: userData["nft_quota"] +" Certificates",
     };
   
     return (
       <>
         <div className='heading-primarydetails'>
-          <h2>Primary Details</h2>
+          <h2>{t('Dashboard.sidebar.PrimaryDetails')}</h2>
         </div>
         <div className="primarydatacontainer">
           <div className="userdetail">

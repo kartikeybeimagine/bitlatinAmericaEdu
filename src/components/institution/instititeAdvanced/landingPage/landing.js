@@ -15,12 +15,15 @@ import Connect from "../../../connection/Connect";
 import KYC from "../../../kyc/kyc";
 import Subscription from "../subscription/subscription";
 import CertIssue from "../certIssue/certIssue";
+import { useTranslation } from "react-i18next";
 
 const InstitutesLandingPage = () => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(false);
   const [view, setView] = useState("education");
   const [certData, setCertData] = useState(null);
+  const [category, setCategory] = useState("educational certificates");
+  const { t } = useTranslation();
 
   const [sector, setSector] = useState({
     text: "Education",
@@ -129,7 +132,7 @@ const InstitutesLandingPage = () => {
           onClick={() => setIsSidebar(!isSidebar)}
         /> */}
         {sector["logo"]}
-        Institution
+        {t("Navbar.Institutions")}
       </div>
     );
   };
@@ -163,10 +166,12 @@ const InstitutesLandingPage = () => {
                   setView={setView}
                   setCertData={setCertData}
                   certData={certData}
+                  category={category}
+                  setCategory={setCategory}
                 />
               )}
               {view === "certIssue" && (
-                <CertIssue setView={setView} certData={certData} />
+                <CertIssue setView={setView} certData={certData} category={category}/>
               )}
             </div>
           )}

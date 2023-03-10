@@ -9,21 +9,23 @@ import step5 from "./assets/step5.png";
 import step6 from "./assets/step6.png";
 import step7 from "./assets/step7.png";
 import React from "react";
-
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
+import cookies from 'js-cookie'
 
 const Home = () => {
-  
 
+  const { t } = useTranslation()
   return (
     <>
       {/* About Section ------------------- */}
       <div className="aboutSectionContainer">
         <div className="aboutsection">
           <div className="writing">
-            <div className="mainheading">BitMemoir</div>
-            <div> <span className="submainheading">For</span><span style={{marginLeft:"20px"}} className="mainheading">Education</span></div>
+            <div className="mainheading">{t('Home.heading')}</div>
+            <div> <span className="submainheading">{t('Home.for')}</span><span style={{marginLeft:"20px"}} className="mainheading">{t("Home.heading2")}</span></div>
             <div className="secondheading">
-              Transforming the education system
+            {t('Home.subheading')}
             </div>
             <button
               onClick={() => {
@@ -32,7 +34,7 @@ const Home = () => {
                 toScrollElement.scrollIntoView();
               }}
             >
-              Learn More
+              {t('Home.button')}
             </button>
           </div>
           <div className="illustration">
@@ -68,32 +70,32 @@ const Home = () => {
       <div className="descriptionsectioncontainer" id="whatisbitmemoir">
         <div className="descriptionsection">
           <div className="writing">
-              <div className="heading">Blockchain For</div>
-              <div className="heading" >Colleges And Universities</div>
+              <div className="heading">{t("Home.container2.heading-1")}</div>
+              <div className="heading" >{t("Home.container2.heading-2")}</div>
             {/* <hr /> */}
             <div className="certificatesectioncontainer2">
             <div className="certificatesectioncontainer2part1">
               <div className="certificatesissued2">
                 <div className="heading1">1</div>
-                <div className="heading2">MICROCREDENTIALS </div>
-                <div className="heading3">They Are Intended to Certify Career Paths And Skills For The Workplace. They Also Apply To Short Course And Professional Update Cycles.</div>
+                <div className="heading2">{t("Home.container2.box1.heading")}</div>
+                <div className="heading3">{t("Home.container2.box1.text")}</div>
               </div>
               <div className="certificatesissued2">
                 <div className="heading1">2</div>
-                <div className="heading2">PROOF OF PARTICIPATIONS</div>
-                <div className="heading3">NFTs Intended To Accredit The Participation Of Members Of The Education Community In Acts And Events Of The Institution.</div>
+                <div className="heading2">{t("Home.container2.box2.heading")}</div>
+                <div className="heading3">{t("Home.container2.box2.text")}</div>
               </div>
             </div>
             <div className="certificatesectioncontainer2part2">
               <div className="certificatesissued2">
                 <div className="heading1">3</div>
-                <div className="heading2">DISTINCTIONS AND AWARDS</div>
-                <div className="heading3">Badges That Certify Distinctions And Recognitions Granted By The Institution To Its Teachers Or Students. Medals Of Honor, Best Average, Sports Achievement</div>
+                <div className="heading2">{t("Home.container2.box3.heading")}</div>
+                <div className="heading3">{t("Home.container2.box3.text")}</div>
               </div>
               <div className="certificatesissued2">
                 <div className="heading1">4</div>
-                <div className="heading2">UNDERGRADUATE AND GRADUATE DEGREES</div>
-                <div className="heading3">Qualification Granted By The Institution To Its Students Only (School,University And Postgraduate)</div>
+                <div className="heading2">{t("Home.container2.box4.heading")}</div>
+                <div className="heading3">{t("Home.container2.box4.text")}</div>
               </div>
             </div>
           </div>
@@ -104,8 +106,8 @@ const Home = () => {
       <div className="howtousecontainer">
         <div className="whybitmemomaindiv">
           <div className="whybitmemoheading">
-            <div className="howtouseheading">Why <br/> BitMemoir?</div>
-            <div className="whybitmemotext">Transforming the education ecosystem by issuing authentic and verified credentials and completely negating the possibility of duplicate, fake or fudged documents.</div>
+            <div className="howtouseheading">{t("Home.container3.heading1")} <br/> {t("Home.container3.heading2")}</div>
+            <div className="whybitmemotext">{t("Home.container3.text")}</div>
             <div className="whybitmemoArrow"><img src={arraow} alt="arrow" ></img></div>
           </div>
 
@@ -125,18 +127,18 @@ const Home = () => {
       <div className="joinContainer">
         <div className="stepsheadingbtndiv">
             <div className="benefit">
-              GENERATE DEGREES
+             {t("Home.generate_degree_btn")}
             </div>
             <div className="benefit2">
-              GENERATE CERTIFICATES
+            {t("Home.generate_certificate_btn")}
             </div>
         </div>
       </div>
       <div className="whybitcontainer">
         <div className="stepsHeading">
-          <div className="heading-1">Steps For </div>
-          <div className="heading-1"> Issuing Certificates</div>
-          <div className="stepText">tHE WAY FOR AN INSTITUTION TO GENERATE UNIVERSITY OR SCHOOL DEGREES IN BLOCKCHAIN</div>
+          <div className="heading-1">{t("Home.container4.heading1")} </div>
+          <div className="heading-1"> {t("Home.container4.heading2")}</div>
+          <div className="stepText">{t("Home.container4.text")}</div>
         </div>
         
 
@@ -146,10 +148,10 @@ const Home = () => {
               <img src={step1} alt="step1" />
             </div>
             <div className="stepheading">
-              STEP 01
+              {t("Home.container4.step1.heading")}
             </div>
             <div className="steptext">
-              The institution buys a plan according to their needs
+            {t("Home.container4.step1.text")}
             </div>
           </div>
           <div className="step">
@@ -157,10 +159,10 @@ const Home = () => {
               <img src={step2} alt="step2" />
             </div>
             <div className="stepheading">
-              STEP 02
+            {t("Home.container4.step2.heading")}
             </div>
             <div className="steptext">
-            We request the legal information and a note with the legal signature of the highest authority
+            {t("Home.container4.step2.text")}
             </div>
           </div>
           <div className="step">
@@ -168,10 +170,10 @@ const Home = () => {
               <img src={step3} alt="step3" />
             </div>
             <div className="stepheading">
-              STEP 03
+            {t("Home.container4.step3.heading")}
             </div>
             <div className="steptext">
-              Our company validates the institution as a secure account
+            {t("Home.container4.step3.text")}
             </div>
           </div>
           <div className="step">
@@ -179,10 +181,10 @@ const Home = () => {
               <img src={step4} alt="step4" />
             </div>
             <div className="stepheading">
-              STEP 04
+            {t("Home.container4.step4.heading")}
             </div>
             <div className="steptext">
-            The institution sends its models of university or school degrees
+            {t("Home.container4.step4.text")}
             </div>
           </div>
           
@@ -194,10 +196,10 @@ const Home = () => {
               <img src={step7} alt="step7" />
             </div>
             <div className="stepheading">
-              STEP 07
+            {t("Home.container4.step7.heading")}
             </div>
             <div className="steptext">
-            We enable the form so that the institution can complete it individually and issue the certificates
+            {t("Home.container4.step7.text")}
             </div>
           </div>
           <div className="step">
@@ -205,10 +207,10 @@ const Home = () => {
               <img src={step6} alt="step6" />
             </div>
             <div className="stepheading">
-              STEP 06
+            {t("Home.container4.step6.heading")}
             </div>
             <div className="steptext">
-            We make a new final validation query to the person in charge designated by the institution
+            {t("Home.container4.step6.text")}
             </div>
           </div>
           <div className="step">
@@ -216,10 +218,10 @@ const Home = () => {
               <img src={step5} alt="step5" />
             </div>
             <div className="stepheading">
-              STEP 05
+            {t("Home.container4.step5.heading")}
             </div>
             <div className="steptext">
-            We integrate the models in the platform enabled only for that institution
+            {t("Home.container4.step5.text")}
             </div>
           </div>
           
@@ -236,46 +238,46 @@ const Home = () => {
       {/* Join  */}
       <div className="joinContainer">
         <div className="joinContainerHeading">
-            Join Now!
+        {t("Home.container5.heading")}
         </div>
         <div className="joinMainDiv">
           <div className="join">
             <div className="joinheading">
             <div className="joiningfee"> <sup className="dollar">$</sup>1.00
-              <p className="permonth">Per Month</p>
+              <p className="permonth">{t("Home.container5.box.per_month")}</p>
             </div>
             </div>
             <div className="joinheading2">
               <div className="subjoinheading2">
-                LESS THAN 1000 <br/> CERTIFICATE
+              {t("Home.container5.box.heading")} <br/> {t("Home.container5.box.heading2")}
               </div>
-              <button className="joinbtn">BUY NOW</button>
+              <button className="joinbtn">{t("Home.container5.box.buy-btn")}</button>
             </div>
           </div>
           <div className="join">
             <div className="joinheading">
             <div className="joiningfee"> <sup className="dollar">$</sup>1.00
-              <p className="permonth">Per Month</p>
+              <p className="permonth">{t("Home.container5.box.per_month")}</p>
             </div>
             </div>
             <div className="joinheading2">
               <div className="subjoinheading2">
-                  LESS THAN 1000 <br/> CERTIFICATE
+              {t("Home.container5.box.heading")}<br/> {t("Home.container5.box.heading2")}
                 </div>
-                <button className="joinbtn">BUY NOW</button>
+                <button className="joinbtn">{t("Home.container5.box.buy-btn")}</button>
               </div>
           </div>
           <div className="join">
             <div className="joinheading">
             <div className="joiningfee"> <sup className="dollar">$</sup>1.00
-              <p className="permonth">Per Month</p>
+              <p className="permonth">{t("Home.container5.box.per_month")}</p>
             </div>
             </div>
             <div className="joinheading2">
               <div className="subjoinheading2">
-                  LESS THAN 1000 <br/> CERTIFICATE
+              {t("Home.container5.box.heading")} <br/> {t("Home.container5.box.heading2")}
                 </div>
-                <button className="joinbtn">BUY NOW</button>
+                <button className="joinbtn">{t("Home.container5.box.buy-btn")}</button>
               </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ import { templateApi } from "../../../Scripts/apiCalls";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import UserContext from "../../../../context/userContext/UserContext";
-
+import { useTranslation } from 'react-i18next'
 const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
   const [selectedImage, setSelectedImage] = useState(uploadIcon);
   const [uploadedImage, setUploadedImage] = useState(null);
@@ -59,7 +59,10 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
     "Signatory Name",
     "Signatory Designation",
   ];
-
+  const {t} = useTranslation()
+  const variableOptions2 =t('Institutions.certCreator.variableOptions',{returnObjects: true})
+  // const myArray = JSON.parse(variableOptions2)
+  console.log(JSON.stringify(variableOptions2))
   const handleNext = async () => {
     setIsLoading(true);
     await templateApi({
@@ -105,7 +108,7 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
       }}
       id="tempate-creater-container"
     >
-      <h2>Template Creator</h2>
+      <h2>{t('Institutions.certCreator.heading')}</h2>
       <input
         type="file"
         id="image-selector"
@@ -149,8 +152,8 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
         }}
       >
         <select id="draggable-variable-selector">
-          Select Variables
-          {variableOptions.map((option) => (
+         {t('Institutions.certCreator.selectVariable')}
+          {variableOptions2.map((option) => (
             <option>{option}</option>
           ))}
         </select>
@@ -183,10 +186,10 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
             ]);
           }}
         >
-          Add Variable +
+          {t('Institutions.certCreator.addVariable')} +
         </button>
 
-        <label htmlFor="template-creater-template-name">Template Name</label>
+        <label htmlFor="template-creater-template-name">{t('Institutions.certCreator.templateName')}</label>
         <input
           type="text"
           id="template-creater-template-name"
@@ -200,7 +203,7 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
             handleNext();
           }}
         >
-          Next {">"}
+          {t('Institutions.certCreator.next')}{">"}
         </button>
       </div>
       {isLoading && <LoadingPage />}

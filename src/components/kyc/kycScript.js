@@ -16,6 +16,7 @@ const KycScript = (setForm) => {
   const [idProof, setidProof] = useState("");
   const [approvers, setApprovers] = useState(user.userData.approvers);
   const [issuerName, setIssuerName] = useState("");
+  const [issuerLastName, setIssuerLastName] = useState("");
   const [country, setcountry] = useState("");
   const [issuerJobDesignation, setIssuerJobDesignation] = useState("");
   const [idProofApprovers, setIdProofApprovers] = useState("");
@@ -54,18 +55,15 @@ const KycScript = (setForm) => {
       approversDocument.push(
           {
             idProofApprovers: "",
-            noteSignByHigherAuth: "",
           },
           {
             idProofApprovers: "",
-            noteSignByHigherAuth: "",
           }
       )
     }else if(approversDocument.length===2){
       approversDocument.push(
         {
           idProofApprovers: "",
-          noteSignByHigherAuth: "",
         }
     )
   }
@@ -76,6 +74,7 @@ const KycScript = (setForm) => {
       description: description,
       country: country,
       issuerName: issuerName,
+      issuerLastName: issuerLastName,
       issuerDesignation: issuerJobDesignation,
       website: website,
       email: email,
@@ -86,9 +85,7 @@ const KycScript = (setForm) => {
       idProofApprovers1: approversDocument[0]["idProofApprovers"],
       idProofApprovers2: approversDocument[1]["idProofApprovers"],
       idProofApprovers3: approversDocument[2]["idProofApprovers"],
-      noteSignByHigherAuth1:approversDocument[0]["noteSignByHigherAuth"] ,
-      noteSignByHigherAuth2: approversDocument[1]["noteSignByHigherAuth"],
-      noteSignByHigherAuth3: approversDocument[2]["noteSignByHigherAuth"],
+      noteSignByHigherAuth: noteSignByHigherAuth,
     })
       .then(async (res) => {
         setisuploading(false);
@@ -135,6 +132,8 @@ const KycScript = (setForm) => {
     setNoteSignByHigherAuth,
     approversDocument,
     setApproversDocument,
+    issuerLastName,
+    setIssuerLastName,
     
   };
 };

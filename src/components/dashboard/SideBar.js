@@ -3,11 +3,13 @@ import { useContext } from "react";
 import UserContext from "../../context/userContext/UserContext";
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import { useTranslation } from 'react-i18next'
 
 
 export const SideBar = () => {
 
     const user = useContext(UserContext);
+    const { t } = useTranslation();
   return (
     <div className='sidebar'>
         <div className='sidebaritems'>
@@ -17,7 +19,7 @@ export const SideBar = () => {
                 </div>
                 <div>
                     <p className='sidebaritemtext'>
-                       Primary Details
+                       {t('Dashboard.sidebar.PrimaryDetails')}
                     </p>
                 </div>
             </div>
@@ -27,7 +29,7 @@ export const SideBar = () => {
                 </div>
                 <div>
                     <p className='sidebaritemtext'>
-                       Analytics
+                        {t('Dashboard.sidebar.Analytics')}
                     </p>
                 </div>
             </div>

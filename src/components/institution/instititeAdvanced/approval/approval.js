@@ -4,12 +4,14 @@ import { useState, useEffect } from "react";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { approvalApi } from "../../../Scripts/apiCalls";
+import { useTranslation } from "react-i18next";
 
 const Approval = () => {
   const { orderId, otp } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [status, setStatus] = useState("Approving...");
   const [approvers, setApprovers] = useState([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     approvalApi({ order_id: orderId, otp: otp })
@@ -64,7 +66,7 @@ const Approval = () => {
               justifyContent: "center",
             }}
           >
-            Certificate is pending approval from the following approvers:
+            {t("Institutions.approval.heading")}
             {approvers?.map((person, index) => (
               <div
                 key={"approver-" + person.email}

@@ -1,0 +1,265 @@
+{   
+  "Navbar":{
+    "Home":"Hogar",
+    "View":"Vista",
+    "Institutions":"Instituciones",
+    "Contact_Us":"Contáctenos",
+    "Dashboard":"Panel"
+  },
+  "Home":{
+    "heading":"BitMemoir",
+    "for":"Para",
+    "heading2":"Educación",
+    "subheading":"Transformando el sistema educativo",
+    "button":"Aprende más",
+    "container2":{
+      "heading-1":"Blockchain para",
+      "heading-2":"Colegios y universidades",
+      "box1":{
+        "heading":"Microcredencial",
+        "text":"Están destinados a certificar carreras profesionales y habilidades para el lugar de trabajo.También se aplican a los ciclos de actualización de curso corto y profesional"
+      },
+      "box2":{
+        "heading":"Prueba de participación",
+        "text":"NFTS tenía la intención de acreditar la participación de miembros de la comunidad educativa en actos y eventos de la institución."
+      },
+      "box3":{
+        "heading":"Distinciones y premios",
+        "text":"Insignias que certifican distinciones y reconocimientos otorgados por la institución a sus maestros o estudiantes.Medallas de honor, mejor promedio, logro deportivo"
+      },
+      "box4":{
+        "heading":"Títulos de pregrado y posgrado",
+        "text":"Calificación otorgada por la institución solo a sus estudiantes (escolar, universidad y posgrado)"
+      }
+    },
+    "container3":{
+      "heading1":"Por qué",
+      "heading2":"Bitmemoir?",
+      "text":"Transformando el ecosistema educativo emitiendo credenciales auténticas y verificadas y negando por completo la posibilidad de documentos duplicados, falsos o falsos."
+    },
+    "generate_degree_btn":"Generar grados",
+    "generate_certificate_btn":"Generar certificados",
+    "container4":{
+      "heading1":"Pasos para",
+      "heading2":"Emisión de certificados",
+      "text":"La forma para que una institución genere títulos universitarios o escolares en blockchain",
+      "step1":{
+        "heading":"Paso 01",
+        "text":"La institución compra un plan de acuerdo con sus necesidades"
+      },
+      "step2":{
+        "heading":"Paso 02",
+        "text":"Solicitamos la información legal y una nota con la firma legal de la más alta autoridad"
+      },
+      "step3":{
+        "heading":"Paso 03",
+        "text":"Nuestra empresa valida la institución como una cuenta segura"
+      },
+      "step4":{
+        "heading":"Paso 04",
+        "text":"La institución envía sus modelos de títulos universitarios o escolares"
+      },
+      "step5":{
+        "heading":"Paso 05",
+        "text":"Integramos los modelos en la plataforma habilitados solo para esa institución."
+      },
+      "step6":{
+        "heading":"Paso 06",
+        "text":"Hacemos una nueva consulta de validación final a la persona a cargo designada por la institución"
+      },
+      "step7":{
+        "heading":"Paso 07",
+        "text":"Habilitamos el formulario para que la institución pueda completarlo individualmente y emitir los certificados"
+      }
+    },
+    "container5":{
+      "heading":"Únete ahora !",
+      "box":{
+        "per_month":"Por mes",
+        "heading":"Menos de 1000",
+        "heading2":"CERTIFICADO",
+        "buy-btn":"COMPRAR AHORA"
+      }
+
+    }
+  },
+  "kycPage":{
+    "kycStatus":{
+      "notCompleted":"No has completado tu kyc",
+      "startkyc":"Iniciar kyc",
+      "in_progress":{
+        "heading":"Tu aprobación de KYC está pendiente",
+        "heading1":"Para más apoyo:",
+        "heading2":"Envíenos un correo electrónico a hello@beimagine.tech"
+      },
+      "approved":{
+        "heading":"KYC aprobado"
+      },
+      "rejected":{
+        "heading":"Tu KYC fue rechazado.",
+        "heading1":"Razón:",
+        "heading2":"Para más apoyo:",
+        "heading3":"Envíenos un correo electrónico a hello@beimagine.tech",
+        "restartkyc":"Reiniciar kyc"
+      },
+      "revoked":{
+        "heading":"Su aprobación de KYC ha sido revocada.",
+        "heading1":"Razón:",
+        "heading2":"Para más apoyo:",
+        "heading3":"Envíenos un correo electrónico a hello@beimagine.tech",
+        "restartkyc":"Reiniciar kyc"
+      }
+      
+    },
+    "kycForm":{
+      "heading":"Ingrese sus detalles de KYC",
+      "nameLabel":"Nombre de la compania*",
+      "namePlaceholder":"Nombre de la organización",
+      "desciptionLabel":"Descripción*",
+      "desciptionPlaceholder":"Descripción de la organización",
+      "countryLabel":"País*",
+      "countryPlaceholder":"País",
+      "officialWebsiteLabel":"Página web oficial*",
+      "officialWebsitePlaceholder":"Página web oficial",
+      "subheading":"Información sobre el representante/responsable de emitir documentos ",
+      "nameOfissuerLabel":"Nombre *",
+      "nameOfissuerPlaceholder":"Nombre ",
+      "lastnameOfissuerLabel":"Surname*",
+      "lastnameOfissuerPlaceholder":"Surname",
+      "designationOfissuerLabel":"Designación del emisor*",
+      "designationOfissuerPlaceholder":"Designación del emisor",
+      "officialEmailLabel":"ID de correo electrónico oficial**",
+      "officialEmailPlaceholder":"ID de correo electrónico oficial",
+      "officialPhoneLabel":"Número de teléfono oficial*",
+      "officialPhonePlaceholder":"Número de teléfono oficial",
+      "idProofOfRepresentativeLabel":"Prueba de identificación del representante*",
+      "Upload_the_Note":"Cargue la nota (firmada por las más altas autoridades)*",
+      "Sample_Form":"Forma de muestra",
+      "download":"Descargar la muestra de formulario",
+      "add_approving_authority":"Agregar autoridad de aprobación",
+      "add_approving_authority_heading":"La aprobación de las autoridades debe aprobar cualquier emisión de documentos por correo electrónico.",
+      "approve_authority_name":"Nombre",
+      "approve_authority_lastname":"Apellido",
+      "approve_authority_email":"Correo electrónico",
+      "approve_authority_Designation":"Designación",
+      "remove":"Eliminar",
+      "uploading":"Carga...",
+      "add_approver":"Agregar aprobador",
+      "add":"Agregar",
+      "submit":"Enviar kyc",
+      "id_proof_of_authority":"Prueba de identificación de la autoridad de aprobación*"
+
+    }
+  },
+  "Institutions":{
+    "LandingPage":{
+      "Navbar":{
+        "Heading":"Instituciones"
+      }
+    },
+    "certCreator":{
+      "variableOptions":[
+"Nombre del estudiante",
+    "Nombre de la madre",
+    "Inscripción no",
+    "Marcas obtenidas",
+    "Grados obtenidos",
+    "Notas totales",
+    "CGPA",
+    "Porcentaje",
+    "Evaluado por",
+    "Aprobado por",
+    "Nombre del programa",
+    "Duracion del programa",
+    "Nombre del curso",
+    "Nombre por lotes",
+    "Código de lote",
+    "Fecha de inicio por lotes",
+    "Fecha de finalización de lotes",
+    "Duración por lotes",
+    "Módulo",
+    "Número de admitir el salón",
+    "División",
+    "Nombre de Departamento",
+    "Nombre de escuela",
+    "Nombre organizacional",
+    "Fecha emitida",
+    "Nombre firmante",
+    "Designación significativa"
+      ],
+      "heading":"Creador de plantillas",
+      "selectVariable":"Seleccionar variable",
+      "addVariable":"Agregar variable",
+      "templateName":"Nombre de la plantilla",
+      "next":"Próxima"
+    },
+    "education":{
+      "headingRecentlyUsed":"Recientemente usado",
+      "headingFreeTemplates":"Plantillas gratis",
+      "headingPremiumTemplates":"Plantillas premium",
+      "createCustomTemplate":"Crear plantilla personalizada",
+      "more":"Más",
+      "selectTemplate":"Seleccionar plantilla",
+      "selectTemplatePlaceholder":"Seleccione una plantilla preparada en la sección Plantillas",
+      "or":"o"
+      
+    },
+    "templateCert":{
+      "enterPreviewValue":"Ingrese los valores de la vista previa",
+      "next":"Próxima"
+    },
+    "certIssue":{
+      "heading":"Emitir certificados",
+      "NoOfCert":"Número de certificados",
+      "file":"Archivo",
+      "certlmitexceed":" Límite de certificado excedido.Límite actual",
+      "increaselmtBtn":"Límite de aumento",
+      "uploadCSV":"Cargar el archivo de datos del estudiante (formato CSV)",
+      "downloadsCSV":"Descargar plantilla CSV",
+      "nextbtn":"Próxima",
+      "headingCloseWindow":"Puedes cerrar la ventana."
+    },
+    "approval":{
+      "heading":"El certificado está pendiente de aprobación de los siguientes aprobadores:"
+    }
+
+  },
+  "view":{
+    "view":{
+      "heading":"No se encontraron NFTS.",
+      "mydigitalCollection":"Mi colección digital"
+    }
+  },
+  "Dashboard":{
+    "contentDashboard":{
+      "name":"Nombre",
+      "email":"Correo electrónico",
+      "Website":"Sitio web",
+      "Issuer_Name":"Nombre del emisor",
+      "Issuer_Designation":"Designación del emisor",
+      "Status":"Estado",
+      "IdProof":"Prueba de Identificación",
+      "contractAddress":"Dirección de contrato",
+      "accountAddress":"Dirección de cuenta",
+      "CurrentPlan":"Current Plan"
+    },
+    "sidebar":{
+      "dashboard":"Panel",
+      "PrimaryDetails":"Detalle principal",
+      "Analytics":"Analítica"
+    }
+  },
+  "connection":{
+    "connection":{
+      "heading":"Conecte su billetera",
+      "subheading":"Esto no le costará ningún gas.",
+      "connect-btn":"Conectar billetera"
+    },
+    "noWallet":{
+      "heading":"Parece que no tienes una billetera blockchain instalada.",
+      "download-btn":" Descargar metamask",
+      "subheading":"Una billetera blockchain es su entrada al mundo Web3.0.",
+      "learnmore-btn":"Obtenga más información sobre Metamask:"
+    }
+  }
+}

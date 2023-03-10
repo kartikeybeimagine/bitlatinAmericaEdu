@@ -2,9 +2,11 @@ import KycScript from "./kycScript";
 import Dialog from "@mui/material/Dialog";
 import { useState } from "react";
 import { Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export const KYCform = (props) => {
   const [approverDialog, setApproverDialog] = useState(false);
+  const {t} = useTranslation();
 
   const {
     status,
@@ -38,83 +40,95 @@ export const KYCform = (props) => {
     setNoteSignByHigherAuth,
     approversDocument,
     setApproversDocument,
+    issuerLastName,
+    setIssuerLastName,
 
   } = KycScript(props.setForm);
 
   return (
     <div className="individualpage">
       <div className="individualformcontainer">
-        <h1>Enter Your KYC Details</h1>
-        <label htmlFor="name">Name of the Company*</label>
+        <h1>{t("kycPage.kycForm.heading")}</h1>
+        <label htmlFor="name">{t("kycPage.kycForm.nameLabel")}</label>
         <input
           type="text"
           id="name"
           value={name}
           name="name"
           onChange={(e) => setName(e.target.value)}
-          placeholder="Name of the Organization"
+          placeholder={t("kycPage.kycForm.namePlaceholder")}
         />
-        <label htmlFor="name">Description</label>
+        <label htmlFor="name">{t("kycPage.kycForm.desciptionLabel")}</label>
         <input
           type="text"
           id="name"
           value={description}
           name="description"
           onChange={(e) => setdescription(e.target.value)}
-          placeholder="Description of the Organization"
+          placeholder={t("kycPage.kycForm.desciptionPlaceholder")}
         />
-        <label htmlFor="email">Country*</label>
+        <label htmlFor="email">{t("kycPage.kycForm.countryLabel")}</label>
         <input 
           type="text"
           id="email"
           value={country}
           name="country"
-          placeholder="Country"
+          placeholder={t("kycPage.kycForm.countryPlaceholder")}
           onChange={(e) => setcountry(e.target.value)}
         />
-        <label htmlFor="email">Official Website*</label>
+        <label htmlFor="email">{t("kycPage.kycForm.officialWebsiteLabel")}</label>
         <input
           type="email"
           id="email"
           value={website}
           name="website"
-          placeholder="Official Website"
+          placeholder={t("kycPage.kycForm.officialWebsitePlaceholder")}
           onChange={(e) => setwebsite(e.target.value)}
         />
-        <label htmlFor="Official website">Name of the representative*</label>
+        <h3>{t("kycPage.kycForm.subheading")}</h3>
+        <label htmlFor="Official website">{t("kycPage.kycForm.nameOfissuerLabel")}</label>
         <input
           type="text"
           id="phone_num"
           value={issuerName}
           name="name"
-          placeholder="Name"
+          placeholder={t("kycPage.kycForm.nameOfissuerPlaceholder")}
           onChange={(e) => setIssuerName(e.target.value)}
         />
-        <label htmlFor="Official website">Designation of the representative*</label>
+        <label htmlFor="Official website">{t("kycPage.kycForm.lastnameOfissuerLabel")}</label>
+        <input
+          type="text"
+          id="phone_num"
+          value={issuerLastName}
+          name="name"
+          placeholder={t("kycPage.kycForm.lastnameOfissuerPlaceholder")}
+          onChange={(e) => setIssuerLastName(e.target.value)}
+        />
+        <label htmlFor="Official website">{t("kycPage.kycForm.designationOfissuerLabel")}</label>
         <input
           type="text"
           id="phone_num"
           value={issuerJobDesignation}
           name="name"
-          placeholder="Designation"
+          placeholder={t("kycPage.kycForm.designationOfissuerPlaceholder")}
           onChange={(e) => setIssuerJobDesignation(e.target.value)}
         />
-        <label htmlFor="Official website">Official email ID*</label>
+        <label htmlFor="Official website">{t("kycPage.kycForm.officialEmailLabel")}</label>
         <input
           type="text"
           id="phone_num"
           value={email}
           name="email"
-          placeholder="Official email ID"
+          placeholder={t("kycPage.kycForm.officialEmailPlaceholder")}
           onChange={(e) => setemail(e.target.value)}
         />
-        <label htmlFor="website">Phone number*</label>
+        <label htmlFor="website">{t("kycPage.kycForm.officialPhoneLabel")}</label>
         <input
           type="number"
           id="website"
           name="phone"
           value={contact}
-          placeholder="Phone number"
+          placeholder={t("kycPage.kycForm.officialPhonePlaceholder")}
           onChange={(e) => setcontact(e.target.value)}
         />
         {/* <label htmlFor="website">CIN*</label>
@@ -127,7 +141,7 @@ export const KYCform = (props) => {
           onChange={(e) => setregId(e.target.value)}
         /> */}
         <label htmlFor="fileselectorinput">
-          ID proof of the representative*
+          {t("kycPage.kycForm.idProofOfRepresentativeLabel")}
         </label>
         {idProof.name}
         <input
@@ -137,6 +151,33 @@ export const KYCform = (props) => {
             setidProof(e.target.files[0]);
           }}
         />
+
+        <label htmlFor="fileselectorinput">
+            {t("kycPage.kycForm.Upload_the_Note")}
+            </label>
+            {noteSignByHigherAuth.name}
+        <input
+            type="file"
+            id="fileselectorinput"
+            onChange={(e) => {
+              setNoteSignByHigherAuth(e.target.files[0]);
+             }}
+          />
+        <p>{t("kycPage.kycForm.Sample_Form")} </p>
+        <a
+          // href="https://docs.google.com/document/d/1G1HBTYJRi643Kf2c2BfqRzS0Kc-AW7pJ/edit?usp=sharing&ouid=115709414771697699891&rtpof=true&sd=true"
+          href="./sample Note.docx"
+          style={{
+            color: "white",
+            cursor: "context-menu",
+          }}
+          // onClick={() => getCSV()}
+          download
+        >
+          {t("kycPage.kycForm.download")} 
+        </a>
+
+        
 
         <div
           style={{
@@ -149,10 +190,9 @@ export const KYCform = (props) => {
             justifyContent: "center",
           }}
         >
-          *Add approving authorities.
+          {t("kycPage.kycForm.add_approving_authority")}
           <h5>
-            Approving authorities have to approve any document issuance via
-            email.
+            {t("kycPage.kycForm.add_approving_authority_heading")}
           </h5>
           {approvers?.map((person, index) => (
             <div
@@ -176,7 +216,7 @@ export const KYCform = (props) => {
                     gridTemplateColumns: "1fr 2fr",
                   }}
                 >
-                  Name:
+                  {t("kycPage.kycForm.approve_authority_name")}
                   <span>{person.name}</span>
                 </div>
                 <div
@@ -186,7 +226,7 @@ export const KYCform = (props) => {
                     gridTemplateColumns: "1fr 2fr",
                   }}
                 >
-                  Designation:
+                  {t("kycPage.kycForm.approve_authority_Designation")}
                   <span>{person.designation}</span>
                 </div>
                 <div
@@ -196,7 +236,7 @@ export const KYCform = (props) => {
                     gridTemplateColumns: "1fr 2fr",
                   }}
                 >
-                  Email:
+                 {t("kycPage.kycForm.approve_authority_email")}
                   <span>{person.email}</span>
                 </div>
               </div>
@@ -213,7 +253,7 @@ export const KYCform = (props) => {
                   })
                 }
               >
-                Remove
+                {t("kycPage.kycForm.remove")}
               </button>
             </div>
           ))}
@@ -222,7 +262,7 @@ export const KYCform = (props) => {
 
         <div className="status">{status}</div>
         {isuploading ? (
-          <button>Uploading...</button>
+          <button>{t("kycPage.kycForm.uploading")}</button>
         ) : (
           <button
             onClick={handleSubmit}
@@ -231,7 +271,7 @@ export const KYCform = (props) => {
               color: "var(--primary)",
             }}
           >
-            Submit KYC
+            {t("kycPage.kycForm.submit")}
           </button>
         )}
       </div>
@@ -248,7 +288,7 @@ export const KYCform = (props) => {
             gap: "20px",
           }}
         >
-          <h2>Add Approver</h2>
+          <h2>{t("kycPage.kycForm.add_approver")}</h2>
           <div
             style={{
               width: "100%",
@@ -256,7 +296,7 @@ export const KYCform = (props) => {
               gridTemplateColumns: "1fr 2fr",
             }}
           >
-            <label htmlFor="add-approver-name">Name: </label>
+            <label htmlFor="add-approver-name">{t("kycPage.kycForm.approve_authority_name")} : </label>
             <input type="text" id="add-approver-name" />
           </div>
           <div
@@ -266,7 +306,17 @@ export const KYCform = (props) => {
               gridTemplateColumns: "1fr 2fr",
             }}
           >
-            <label htmlFor="add-approver-designation">Designation: </label>
+            <label htmlFor="add-approver-last-name">{t("kycPage.kycForm.approve_authority_lastname")}: </label>
+            <input type="text" id="add-approver-last-name" />
+          </div>
+          <div
+            style={{
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "1fr 2fr",
+            }}
+          >
+            <label htmlFor="add-approver-designation">{t("kycPage.kycForm.approve_authority_Designation")} </label>
             <input type="text" id="add-approver-designation" />
           </div>
           <div
@@ -276,7 +326,7 @@ export const KYCform = (props) => {
               gridTemplateColumns: "1fr 2fr",
             }}
           >
-            <label htmlFor="add-approver-email">Email: </label>
+            <label htmlFor="add-approver-email">{t("kycPage.kycForm.approve_authority_email")} </label>
             <input type="text" id="add-approver-email" />
             
           </div>
@@ -288,7 +338,7 @@ export const KYCform = (props) => {
             }}
           >
             <label htmlFor="fileselectorinput">
-            ID proof of the representative*
+            {t("kycPage.kycForm.id_proof_of_authority")}
             </label>
             {idProofApprovers.name}
             <input
@@ -307,17 +357,6 @@ export const KYCform = (props) => {
               gridTemplateColumns: "1fr 2fr",
             }}
           >
-            <label htmlFor="fileselectorinput">
-            Upload the Note(signed by highest authorities)*
-            </label>
-            {noteSignByHigherAuth.name}
-            <input
-            type="file"
-            id="fileselectorinput"
-            onChange={(e) => {
-              setNoteSignByHigherAuth(e.target.files[0]);
-             }}
-            />
             
           </div>
           <button
@@ -326,6 +365,9 @@ export const KYCform = (props) => {
                 ...prev,
                 {
                   name: document.getElementById("add-approver-name").value,
+                  lastName: document.getElementById(
+                    "add-approver-last-name"
+                  ).value,
                   designation: document.getElementById(
                     "add-approver-designation"
                   ).value,
@@ -337,13 +379,12 @@ export const KYCform = (props) => {
                 ...prev,
                 {
                   idProofApprovers: idProofApprovers,
-                  noteSignByHigherAuth: noteSignByHigherAuth,
                 },
               ]);
               setApproverDialog(false);
             }}
           >
-            Add
+            {t("kycPage.kycForm.add")}
           </button>
         </div>
       </Dialog>

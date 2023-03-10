@@ -1,14 +1,16 @@
 import "./Connection.css";
 import metamaskimage from "./assets/metamask.png";
+import { useTranslation } from 'react-i18next'
 
 import React from "react";
 
 const NoWalletPage = () => {
+  const { t } = useTranslation();
   return (
     <div className="nowalletpage">
       <img src={metamaskimage} height={200} alt="" />
       <h2 style={{ fontSize: "20px", marginBottom: "40px" }}>
-        Seems like you don't have a blockchain wallet installed.
+        {t('connection.noWallet.heading')}
       </h2>
 
       <button
@@ -16,12 +18,12 @@ const NoWalletPage = () => {
           window.open("https://metamask.io");
         }}
       >
-        Download Metamask
+        {t('connection.noWallet.download-btn')}
       </button>
       <h1 style={{ fontSize: "18px", marginTop: "30px" }}>
-        A blockchain wallet is your entry to the WEB3.0 world
+      {t('connection.noWallet.subheading')}
       </h1>
-      <h2>Learn more about metamask:</h2>
+      <h2>{t('connection.noWallet.learnmore-btn')}</h2>
       <div>
         <iframe
           src="https://www.youtube.com/embed/YVgfHZMFFFQ"
