@@ -2,11 +2,25 @@ import KycScript from "./kycScript";
 import Dialog from "@mui/material/Dialog";
 import { useState } from "react";
 import { Button } from "@mui/material";
+import {fileDownload} from "../Scripts/tools";
 import { useTranslation } from "react-i18next";
+import EnglishSampleForm from "./assets/englishnote.docx";
+import SpanishSampleForm from "./assets/spanishnote.docx";
+import PortugueseSampleForm from "./assets/portuguesenote.docx";
+import i18next from 'i18next'
 
 export const KYCform = (props) => {
   const [approverDialog, setApproverDialog] = useState(false);
   const {t} = useTranslation();
+
+  let downloadNote;
+  if(i18next.language === "en"){
+    downloadNote = EnglishSampleForm;
+  }else if(i18next.language === "es"){
+    downloadNote = SpanishSampleForm;
+  }else if(i18next.language === "pt"){
+    downloadNote = PortugueseSampleForm;
+  }
 
   const {
     status,
@@ -85,7 +99,15 @@ export const KYCform = (props) => {
           placeholder={t("kycPage.kycForm.officialWebsitePlaceholder")}
           onChange={(e) => setwebsite(e.target.value)}
         />
-        <h3>{t("kycPage.kycForm.subheading")}</h3>
+        <h4 
+        style={{
+          color: "#fff",
+          fontSize: "1.2rem",
+          fontWeight: "500",
+          marginTop: "2rem",
+          textDecoration: "underline",
+        }}
+        >{t("kycPage.kycForm.subheading")}</h4>
         <label htmlFor="Official website">{t("kycPage.kycForm.nameOfissuerLabel")}</label>
         <input
           type="text"
@@ -151,7 +173,16 @@ export const KYCform = (props) => {
             setidProof(e.target.files[0]);
           }}
         />
-
+        <h4 
+        style={{
+          color: "#fff",
+          fontSize: "1.2rem",
+          fontWeight: "500",
+          marginTop: "2rem",
+          //underLine
+          textDecoration: "underline",
+        }}
+        >{t("kycPage.kycForm.subheadingnote")}</h4>
         <label htmlFor="fileselectorinput">
             {t("kycPage.kycForm.Upload_the_Note")}
             </label>
@@ -164,9 +195,10 @@ export const KYCform = (props) => {
              }}
           />
         <p>{t("kycPage.kycForm.Sample_Form")} </p>
+        { i18next.language === 'en' &&
         <a
           // href="https://docs.google.com/document/d/1G1HBTYJRi643Kf2c2BfqRzS0Kc-AW7pJ/edit?usp=sharing&ouid=115709414771697699891&rtpof=true&sd=true"
-          href="./sample_Note.docx"
+          href={EnglishSampleForm}
           style={{
             color: "white",
             cursor: "context-menu",
@@ -175,7 +207,33 @@ export const KYCform = (props) => {
           download
         >
           {t("kycPage.kycForm.download")} 
-        </a>
+        </a>}
+        { i18next.language === 'sp' &&
+        <a
+          // href="https://docs.google.com/document/d/1G1HBTYJRi643Kf2c2BfqRzS0Kc-AW7pJ/edit?usp=sharing&ouid=115709414771697699891&rtpof=true&sd=true"
+          href={SpanishSampleForm}
+          style={{
+            color: "white",
+            cursor: "context-menu",
+          }}
+          // onClick={() => getCSV()}
+          download
+        >
+          {t("kycPage.kycForm.download")} 
+        </a>}
+        { i18next.language === 'pt' &&
+        <a
+          // href="https://docs.google.com/document/d/1G1HBTYJRi643Kf2c2BfqRzS0Kc-AW7pJ/edit?usp=sharing&ouid=115709414771697699891&rtpof=true&sd=true"
+          href={PortugueseSampleForm}
+          style={{
+            color: "white",
+            cursor: "context-menu",
+          }}
+          // onClick={() => getCSV()}
+          download
+        >
+          {t("kycPage.kycForm.download")} 
+        </a>}
 
         
 

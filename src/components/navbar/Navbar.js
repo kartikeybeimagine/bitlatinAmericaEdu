@@ -166,7 +166,7 @@ const Navbar = () => {
           defaultValue={i18next.language}
         >
           <MenuItem value={'en'}>English</MenuItem>
-          <MenuItem value={'sp'}>Spanish</MenuItem>
+          <MenuItem value={'sp'}>Española</MenuItem>
           <MenuItem value={'pt'}>Português</MenuItem>
         </Select>
       </FormControl>}
