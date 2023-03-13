@@ -99,8 +99,6 @@ const CertIssue = ({ setView, certData,category }) => {
     }
   };
 
-  console.log(category);
-
   const limitExceeded = certNumber > parseInt(user.userData.nft_quota);
 
   if (parseInt(user.userData.nft_quota) === 0)
@@ -159,7 +157,14 @@ const CertIssue = ({ setView, certData,category }) => {
         >
           {t('Institutions.certIssue.downloadsCSV')}
         </a>
+        {category ==="educational certificates" && (
+          <h4 >
+            {t('Institutions.certIssue.note')}
+          </h4>
+        )}
       </div>
+      
+
 
       <div
         style={{
@@ -170,7 +175,7 @@ const CertIssue = ({ setView, certData,category }) => {
           justifyContent: "space-around",
         }}
       >
-        <button onClick={() => setView(1)}>{"< "} Back</button>
+        <button onClick={() => setView("education")}>{"< "} Back</button>
         <button
           onClick={() => {
             if (limitExceeded) {
@@ -215,7 +220,7 @@ const LoadingPage = ({ status, setView }) => {
         <h4>{t('Institutions.certIssue.headingCloseWindow')}</h4>
       )}
       {status !== "Issuing certificates..." && (
-        <button onClick={() => setView(0)}>OK</button>
+        <button onClick={() => setView("education")}>OK</button>
       )}
     </div>
   );

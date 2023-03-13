@@ -39,11 +39,21 @@ const KycScript = (setForm) => {
       contact === "" ||
       idProof === ""||
       approvers===""||
-      approversDocument ===[]
-    ) {
+      approversDocument ===[]||
+      issuerName === "" ||
+      issuerLastName === "" ||
+      country === "" ||
+      issuerJobDesignation === "" ||
+      idProofApprovers === "" ||
+      noteSignByHigherAuth === ""
+      
+    ){
 
     
       setStatus("* marked fields are required.");
+      return false;
+    }else if(approversDocument.length>3) {
+      setStatus("Maximum 3 approvers are allowed.");
       return false;
     } else {
       return true;

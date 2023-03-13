@@ -75,7 +75,7 @@ const Subscription = ({ setView, back }) => {
       .then((res) => {
         setIsBuying(false);
         console.log(res);
-        paymentApi({ tx_hash: res.hash,plan:planName,duration_days:duration }).then(async (res) => {
+        paymentApi({ tx_hash: res.hash,plan:planName,duration_days:60 }).then(async (res) => {
           setIsLoading(true);
           await user.poppulateUserData();
           setIsLoading(false);

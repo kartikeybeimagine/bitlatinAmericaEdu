@@ -315,7 +315,7 @@ export const KYCform = (props) => {
               </button>
             </div>
           ))}
-          <button onClick={() => setApproverDialog(true)}>Add approvers</button>
+          <button onClick={() => setApproverDialog(true)}>{t("kycPage.kycForm.add_approver")}</button>
         </div>
 
         <div className="status">{status}</div>
