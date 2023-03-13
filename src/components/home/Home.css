@@ -693,7 +693,8 @@ letter-spacing: -0.05em;
   /* border-radius: 20px; */
   background: #FFFFFF;
   box-shadow: 0px 0px 20.0364px rgba(88, 1, 155, 0.5);
-  border-radius: 22.1455px;
+  border-radius: 22.1455px; 
+  min-width: 350px;
   /* box-shadow: 0px 0px 20px 1px var(--primary); */
 }
 .certificatesissued2 .heading1 {
@@ -1037,7 +1038,8 @@ text-transform: uppercase;
     width: 300px;
     height: 150px;
     margin: 20px;
-    padding: 20px;
+    padding: 20px; 
+    min-width: 300px;
   }
   .certificatesissued2 .heading1 {
     font-size: 40px;

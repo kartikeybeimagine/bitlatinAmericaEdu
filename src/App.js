@@ -15,7 +15,7 @@ import Privacypolicy from "./components/privacyPolicy/privacypolicy";
 
 import Dashboard from "./components/dashboard/dashboard";
 import InstitutesLandingPage from "./components/institution/instititeAdvanced/landingPage/landing";
-
+import BitWallet from "./components/BitWallet/Pages/BitWallet"
 // context
 import UserState from "./context/userContext/userState";
 
@@ -40,6 +40,7 @@ function App() {
             <Route path="/:page" element={<Home />} />
             <Route path="/privacypolicy" element={<Privacypolicy />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/bitwalletpage" element={<BitWallet/>} />
             <Route path="/approval/:orderId/:otp" element={<Approval />} />
           </Routes>
           <Footer />

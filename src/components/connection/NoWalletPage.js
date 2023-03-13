@@ -1,10 +1,11 @@
 import "./Connection.css";
-import metamaskimage from "./assets/metamask.png";
+import metamaskimage from "./assets/bitwallet.jpg";
 import { useTranslation } from 'react-i18next'
-
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 const NoWalletPage = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   return (
     <div className="nowalletpage">
@@ -15,18 +16,18 @@ const NoWalletPage = () => {
 
       <button
         onClick={() => {
-          window.open("https://metamask.io");
+          navigate("/bitwalletpage");
         }}
       >
-        {t('connection.noWallet.download-btn')}
+        {t('Download BitWallet')}
       </button>
       <h1 style={{ fontSize: "18px", marginTop: "30px" }}>
-      {t('connection.noWallet.subheading')}
+        {t('connection.noWallet.subheading')}
       </h1>
-      <h2>{t('connection.noWallet.learnmore-btn')}</h2>
+      <h2>{t('Learn More About BitMemoir')}</h2>
       <div>
         <iframe
-          src="https://www.youtube.com/embed/YVgfHZMFFFQ"
+          src="https://www.youtube.com/embed/YDsqedqmF84"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
