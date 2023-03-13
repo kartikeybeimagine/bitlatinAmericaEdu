@@ -189,6 +189,7 @@
         "Nome signatário",
         "Designação signatária"
     ],
+    "CustomVariable":"Outro especificar)",
     "heading":"Criador de modelos",
     "selectVariable":"Selecione variável",
     "addVariable":"Adicione variável",

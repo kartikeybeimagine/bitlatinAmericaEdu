@@ -186,9 +186,9 @@
     "Organizational Name",
     "Issued Date",
     "Signatory Name",
-    "Signatory Designation",
-    "specifyother"
+    "Signatory Designation"
       ],
+      "CustomVariable":"Other (specify)",
       "heading":"Template Creator",
       "selectVariable":"Select Variable",
       "addVariable":"Add Variable",

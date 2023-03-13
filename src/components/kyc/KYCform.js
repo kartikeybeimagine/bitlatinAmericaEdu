@@ -166,7 +166,7 @@ export const KYCform = (props) => {
         <p>{t("kycPage.kycForm.Sample_Form")} </p>
         <a
           // href="https://docs.google.com/document/d/1G1HBTYJRi643Kf2c2BfqRzS0Kc-AW7pJ/edit?usp=sharing&ouid=115709414771697699891&rtpof=true&sd=true"
-          href="./sample Note.docx"
+          href="./sample_Note.docx"
           style={{
             color: "white",
             cursor: "context-menu",

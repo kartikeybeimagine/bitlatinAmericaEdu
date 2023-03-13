@@ -187,6 +187,7 @@
     "Nombre firmante",
     "Designación significativa"
       ],
+      "CustomVariable":"Otra (especificar)",
       "heading":"Creador de plantillas",
       "selectVariable":"Seleccionar variable",
       "addVariable":"Agregar variable",
