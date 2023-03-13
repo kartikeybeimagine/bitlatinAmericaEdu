@@ -54,7 +54,7 @@ const Navbar = () => {
     setOpen(true);
   };
   const { t } = useTranslation(i18next.language)
-  
+
 
   const Menubar = () => {
     return (
@@ -96,6 +96,16 @@ const Navbar = () => {
         <div
           className="menuitem"
           onClick={() => {
+            navigate("/bitwalletpage");
+            setIsMenu(false);
+          }}
+        >
+          BitWallet
+        </div>
+
+        <div
+          className="menuitem"
+          onClick={() => {
             navigate("/contact");
             setIsMenu(false);
           }}
@@ -115,7 +125,10 @@ const Navbar = () => {
           {t("Navbar.View")}
         </div>
         <div className="navbutton" onClick={() => navigate("/institution")}>
-        {t("Navbar.Institutions")}
+          {t("Navbar.Institutions")}
+        </div>
+        <div className="navbutton" onClick={() => navigate("/bitwalletpage")}>
+          {t("BitWallet")}
         </div>
       </div>
       <div className="menucontainer">
@@ -144,34 +157,34 @@ const Navbar = () => {
         >
           <GlobeIcon />
         </div> */}
-      <div>
-      {!open && <Typography sx={{ display: 'block', mb: 2 }} onClick={handleOpen}>
-        {lang==="en" && "EN"}
-        {lang==="sp" && "SP"}
-        {lang==="pt" && "PT"}
-        <img src={downicon} height={"20"} width={'20'}></img>
-      </Typography>}
-      {open && <FormControl sx={{ m: 1, minWidth: 120 }}>
-        {/* <InputLabel id="demo-controlled-open-select-label">Language</InputLabel> */}
-        <Select
-          labelId="demo-controlled-open-select-label"
-          id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
-          value={lang}
-          // label="Language"
-          onChange={handleChange}
-          style={{color: 'white'}}
-          defaultValue={i18next.language}
-        >
-          <MenuItem value={'en'}>English</MenuItem>
-          <MenuItem value={'sp'}>Española</MenuItem>
-          <MenuItem value={'pt'}>Português</MenuItem>
-        </Select>
-      </FormControl>}
-    </div>
-        
+        <div>
+          {!open && <Typography sx={{ display: 'block', mb: 2 }} onClick={handleOpen}>
+            {lang === "en" && "EN"}
+            {lang === "sp" && "SP"}
+            {lang === "pt" && "PT"}
+            <img src={downicon} height={"20"} width={'20'}></img>
+          </Typography>}
+          {open && <FormControl sx={{ m: 1, minWidth: 120 }}>
+            {/* <InputLabel id="demo-controlled-open-select-label">Language</InputLabel> */}
+            <Select
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              open={open}
+              onClose={handleClose}
+              onOpen={handleOpen}
+              value={lang}
+              // label="Language"
+              onChange={handleChange}
+              style={{ color: 'white' }}
+              defaultValue={i18next.language}
+            >
+              <MenuItem value={'en'}>English</MenuItem>
+              <MenuItem value={'sp'}>Española</MenuItem>
+              <MenuItem value={'pt'}>Português</MenuItem>
+            </Select>
+          </FormControl>}
+        </div>
+
         {/* {
           ((i18next.language === 'en') &&(!isLang)) && (
             <div className="langbutton" >EN </div> )
@@ -205,8 +218,8 @@ const Navbar = () => {
             <option value="fr" >Española</option>
             <option value="pt">Português</option>
           </select>} */}
-          
-      
+
+
 
         <div className="contactusbutton">
           <button onClick={() => navigate("/contact")}>{t("Navbar.Contact_Us")}</button>
@@ -234,7 +247,7 @@ const Navbar = () => {
           <div className="whitebutton">
             <button
               onClick={() => {
-                window.open("https://metamask.io");
+                navigate("/bitwalletpage")
               }}
             >
               Get Wallet
