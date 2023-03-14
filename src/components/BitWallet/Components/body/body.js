@@ -203,17 +203,17 @@ const body = () => {
                     </motion.div>
                 </div>
             </div>
-            <div id='main_content2' className="sm:w-[80vw] main_content2 mt-28 border shadow-2xl border-purple-900 rounded-xl bg-gray-700">
+            <div id='main_content2'  className="sm:w-[80vw] main_content2 mt-28 border shadow-2xl border-purple-900 rounded-xl bg-gray-700">
                 <h1 className="text-center text-white text-4xl font-bold py-3">Download BitWallet</h1>
                 <div
-                    className='px-4 py-10 flex md:flex-row flex-col  md:justify-between items-center md:w-[80vw] mx-auto mt-16'>
+                    className='py-10 flex md:flex-row flex-col  md:justify-between items-center md:w-[80vw] qrcodewidth mx-auto mt-16'>
                     <motion.div
                         whileHover={{
                             scale: 1.08
                         }}
                         className="md:max-w-[18rem] mt-8 md:mt-0 max-w-sm bg-white  border-gray-200 rounded-lg shadow-2xl shadow-gray-900 dark:bg-gray-800 dark:border-gray-700">
                         <p>
-                            <img   className="rounded-t-lg px-4 py-4 w-fit" src={qrcode} alt="img" />
+                            <img   className="rounded-t-lg  py-4 qrcode" src={qrcode} alt="img" />
                         </p>
                         <div className="p-5">
                             <div>
@@ -236,7 +236,7 @@ const body = () => {
                         }}
                         className="md:max-w-[18rem] mt-8 sm:mt-0 max-w-sm bg-white border border-gray-200 rounded-lg shadow-2xl shadow-gray-900 dark:bg-gray-800 dark:border-gray-700">
                         <p>
-                            <img className="rounded-t-lg px-4 py-4 w-fit" src={qrcode3} alt="img" />
+                            <img className="rounded-t-lg  py-4 w-fit" src={qrcode3} alt="img" />
                         </p>
                         <div className="p-5">
                             <div>
@@ -258,7 +258,7 @@ const body = () => {
                         }}
                         className="md:max-w-[18rem] mt-8 sm:mt-0 max-w-sm bg-white border border-gray-200 rounded-lg shadow-2xl shadow-gray-900 dark:bg-gray-800 dark:border-gray-700">
                         <p>
-                            <img className="rounded-t-lg px-4 py-4 w-fit" src={qrcode2} alt="img" />
+                            <img className="rounded-t-lg py-4" src={qrcode2} alt="img" />
                         </p>
                         <div className="p-5">
                             <div>
