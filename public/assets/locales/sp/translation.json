@@ -3,6 +3,7 @@
     "Home":"Hogar",
     "View":"Vista",
     "Institutions":"Instituciones",
+    "Verify":"Verificar",
     "Contact_Us":"Contáctenos",
     "Dashboard":"Panel"
   },
@@ -263,5 +264,25 @@
       "subheading":"Una billetera blockchain es su entrada al mundo Web3.0.",
       "learnmore-btn":"Obtenga más información sobre Metamask:"
     }
+  },
+  "Verify":{
+    "heading":"Verificar certificados",
+    "subheading":"Ingrese los detalles del certificado a continuación.",
+    "subheadingtext":"(Los detalles del certificado se pueden encontrar en el archivo de certificado junto con el código QR).",
+    "Contract_Address":"Dirección de contrato:",
+    "Verify":"Verificar",
+    "tokenId":"ID de token"
+
+  },
+  "VerifyDetails":{
+    "Verified":"Verificada",
+    "Contract_Address":"Dirección del contrato:",
+    "Token_Id":"ID de token :",
+    "Download":"Descargar",
+    "IssuedBy":"Expedido por:",
+    "Recipient":"Recipiente :",
+    "Verifying":"Verificación...",
+    "Could_not_Verify":"No pudo verificar."
+
   }
 }

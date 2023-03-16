@@ -3,6 +3,7 @@
   "Home":"Lar",
   "View":"Visualizar",
   "Institutions":"Instituições",
+  "Verify":"Verificar",
   "Contact_Us":"Contate-nos",
   "Dashboard":"Painel"
 },
@@ -263,5 +264,25 @@
       "subheading":"Uma carteira de blockchain é sua entrada no mundo Web3.0.",
       "learnmore-btn":"Saiba mais sobre Metamask:"
     }
+  },
+  "Verify":{
+    "heading":"Verifique os certificados",
+    "subheading":"Digite os detalhes do certificado abaixo.",
+    "subheadingtext":"(Os detalhes do certificado podem ser encontrados no arquivo de certificado ao lado do código QR.)",
+    "Contract_Address":"Endereço do contrato:",
+    "Verify":"Verificar",
+    "tokenId":"Id token"
+
+  },
+  "VerifyDetails":{
+    "Verified":"Verificada",
+    "Contract_Address":"Endereço do contrato :",
+    "Token_Id":"Id token :",
+    "Download":"download",
+    "IssuedBy":"Emitida pela:",
+    "Recipient":"Recebedora :",
+    "Verifying":"Verificando...",
+    "Could_not_Verify":"Não foi possível verificar."
+
   }
 }

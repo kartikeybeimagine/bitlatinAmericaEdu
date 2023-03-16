@@ -45,7 +45,8 @@ const KycScript = (setForm) => {
       country === "" ||
       issuerJobDesignation === "" ||
       idProofApprovers === "" ||
-      noteSignByHigherAuth === ""
+      noteSignByHigherAuth === ""||
+      contact===""
       
     ){
 

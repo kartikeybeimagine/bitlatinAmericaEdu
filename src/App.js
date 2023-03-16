@@ -3,19 +3,18 @@ import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import View from "./components/view/View";
-
 import NoWalletPage from "./components/connection/NoWalletPage";
 import Connect from "./components/connection/Connect";
 import Contact from "./components/contact/Contact";
 import Admin from "./components/admin/admin";
-
 import Approval from "./components/institution/instititeAdvanced/approval/approval";
-
 import Privacypolicy from "./components/privacyPolicy/privacypolicy";
-
 import Dashboard from "./components/dashboard/dashboard";
 import InstitutesLandingPage from "./components/institution/instititeAdvanced/landingPage/landing";
-import BitWallet from "./components/BitWallet/Pages/BitWallet"
+import Body from "./components/BitWallet/Components/body/body";
+// import BitWallet from "./components/BitWallet/Pages/BitWallet"
+import Verify from "./components/verify/verify";
+import VerifyWithDetails from "./components/verify/verifyWithDetails";
 // context
 import UserState from "./context/userContext/userState";
 
@@ -40,8 +39,13 @@ function App() {
             <Route path="/:page" element={<Home />} />
             <Route path="/privacypolicy" element={<Privacypolicy />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/bitwalletpage" element={<BitWallet/>} />
+            <Route path="/bitwalletpage" element={<Body/>} />
             <Route path="/approval/:orderId/:otp" element={<Approval />} />
+            <Route path="/verify" element={<Verify />} />
+            <Route
+              path="/verify/:contractAddress/:tokenId"
+              element={<VerifyWithDetails />}
+            />
           </Routes>
           <Footer />
         </UserState>

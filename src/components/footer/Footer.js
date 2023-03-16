@@ -29,7 +29,7 @@ const Footer = () => {
               alt=""
               onClick={() => {
                 window.open(
-                  "https://www.linkedin.com/company/beyond-imagination-technlogies-pvt-ltd/?viewAsMember=true"
+                  "https://www.linkedin.com/company/bitmemoir-latam/"
                 );
               }}
             />
@@ -37,7 +37,7 @@ const Footer = () => {
               src={instagramlogo}
               alt=""
               onClick={() => {
-                window.open("https://www.instagram.com/bitindiaofficial/");
+                window.open("https://instagram.com/bitmemoir_latam?igshid=YmMyMTA2M2Y=");
               }}
             />
           </div>

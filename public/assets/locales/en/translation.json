@@ -2,6 +2,7 @@
       "Home":"Home",
       "View":"View",
       "Institutions":"Institutions",
+      "Verify":"Verify",
       "Contact_Us":"Contact Us",
       "Dashboard":"Dashboard"
     },
@@ -266,6 +267,54 @@
       "subheading":"A blockchain wallet is your entry to the WEB3.0 world.",
       "learnmore-btn":"Learn more about metamask:"
     }
+  },
+  "Verify":{
+    "heading":"Verify Certificates",
+    "subheading":"Enter certificate details below.",
+    "subheadingtext":"(Certificate details can be found on the certificate file along side the QR code.)",
+    "Contract_Address":"Contract Address:",
+    "Verify":"Verify",
+    "tokenId":"Token Id"
+
+  },
+  "VerifyDetails":{
+    "Verified":"Verified",
+    "Contract_Address":"Contract Address :",
+    "Token_Id":"Token Id :",
+    "Download":"Download",
+    "IssuedBy":"Issued by:",
+    "Recipient":"Recipient :",
+    "Verifying":"Verifying...",
+    "Could_not_Verify":"Could not Verify."
+  },
+  "Bitwallet":{
+    "heading":"A crypto wallet & gateway to blockchain World",
+    "subheading":"Enhance your user experience with BitWallet, the key to blockchain world",
+    "download":"Download Now",
+    "heading2":"Use as a browser extension or mobile app",
+    "subheading2":"Available as a browser extension and as a mobile app, BitWallet equips you with a key vault, secure login, simple NFT and Crypto storage and transfer.",
+    "heading3":"Security for your digital assets",
+    "subheading3":"BitWallet generates passwords and keys on your device, so only you have access to your accounts and data. Assistance navigating through various decentralised websites and blockchain apps.",
+    "heading4":"Zero downtime",
+    "subheading4":"Protection of your keys through encryption",
+    "bitwalletDwnld":"BitWallet Download",
+    "downloadChromeheading":"Download Chrome extension for Desktop",
+    "downloadIoSheading":"Download Ios application",
+    "downloadAndroidheading":"Download Android application",
+    "downloadFor":"Download for",
+    "whatIsBitwallet":"What is BitWallet?",
+    "whyChooseBitwallet":{
+      "heading":"Why choose BitWallet?",
+      "subheading":"A more secure and transparent wallet",
+      "Dataprotection":"Data protection",
+      "RobustInfrastructure":"Robust Infrastructure",
+      "Decentralized":"Decentralized",
+      "Verifiedandsecuretouse":"Verified and secure to use",
+      "EasytoUse":"Easy to Use",
+      "SupportAssets":"Support Assets"
+    }
+
   }
+  
 
 }

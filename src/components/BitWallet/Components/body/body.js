@@ -15,11 +15,15 @@ import { FaUnlockAlt, FaHandHoldingUsd } from "react-icons/fa";
 import { RiNodeTree } from "react-icons/ri";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import { SiHiveBlockchain } from "react-icons/si";
-import { HiClipboardDocumentCheck } from "react-icons/hi2"
+import { HiClipboardDocumentCheck } from "react-icons/hi2";
+import { useTranslation } from 'react-i18next'
+import "../../Css/main.d4f40551.css"
 
-const body = () => {
+const Body = () => {
 
-
+    
+   
+ 
     const handleClickScroll = () => {
         const element = document.getElementById('main_content2');
         if (element) {
@@ -65,7 +69,9 @@ const body = () => {
 
         }
     }; 
+    
     return (
+        <div style={{backgroundColor:"#59069a"}} className="main_body">
         <motion.div
             initial={"offscreen"}
             whileInView={"onscreen"}
@@ -405,7 +411,8 @@ const body = () => {
                 </section>
             </div>
         </motion.div>
+        </div>
     )
 }
 
-export default body;
+export default Body;
