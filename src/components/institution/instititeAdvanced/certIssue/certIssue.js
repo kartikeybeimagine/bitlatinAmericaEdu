@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
-import { issueApi ,nonEssenCertissueApi} from "../../../Scripts/apiCalls";
+import { issueApi, nonEssenCertissueApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import Subscription from "../subscription/subscription";
-import { useTranslation } from 'react-i18next'
-const CertIssue = ({ setView, certData,category }) => {
+import { useTranslation } from "react-i18next";
+const CertIssue = ({ setView, certData, category }) => {
   const user = useContext(UserContext);
   const [certNumber, setCertNumber] = useState(0);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -41,7 +41,9 @@ const CertIssue = ({ setView, certData,category }) => {
   const getCSV = async function () {
     const data = ["S.No."];
     certData.variables.map((variable) => {
-      data.push(variable.name);
+      if (variable.type !== "qr") {
+        data.push(variable.name);
+      }
     });
 
     data.push("Recipient Address");
@@ -74,7 +76,7 @@ const CertIssue = ({ setView, certData,category }) => {
           setIsLoading(false);
           alert("Something went wrong. Please check the data.");
         });
-    }else{
+    } else {
       setIsLoading(true);
       setStatus("Issuing certificates...");
       issueApi({
@@ -118,10 +120,12 @@ const CertIssue = ({ setView, certData,category }) => {
         justifyContent: "center",
       }}
     >
-      <h1>{t('Institutions.certIssue.heading')}</h1>
+      <h1>{t("Institutions.certIssue.heading")}</h1>
 
       <div style={{ width: "500px" }}>
-        <label htmlFor="cert-number-input-for-issue">{t('Institutions.certIssue.NoOfCert')}</label>
+        <label htmlFor="cert-number-input-for-issue">
+          {t("Institutions.certIssue.NoOfCert")}
+        </label>
         <input
           type="number"
           id="cert-number-input-for-issue"
@@ -130,15 +134,15 @@ const CertIssue = ({ setView, certData,category }) => {
         />
         {limitExceeded && (
           <div className="error">
-            {t('Institutions.certIssue.certlmitexceed')} ={" "}
+            {t("Institutions.certIssue.certlmitexceed")} ={" "}
             {user.userData.nft_quota}
             <button onClick={() => setIsSubscription(true)}>
-            {t('Institutions.certIssue.increaselmtBtn')}
+              {t("Institutions.certIssue.increaselmtBtn")}
             </button>
           </div>
         )}
 
-        <h3>{t('Institutions.certIssue.uploadCSV')}</h3>
+        <h3>{t("Institutions.certIssue.uploadCSV")}</h3>
         <input
           type="file"
           onChange={(e) => {
@@ -147,7 +151,9 @@ const CertIssue = ({ setView, certData,category }) => {
             setUploadedFileName(e.target.files[0]["name"]);
           }}
         />
-        <h3>{t("Institutions.certIssue.file")}: {uploadedFileName}</h3>
+        <h3>
+          {t("Institutions.certIssue.file")}: {uploadedFileName}
+        </h3>
         <a
           style={{
             color: "white",
@@ -155,16 +161,12 @@ const CertIssue = ({ setView, certData,category }) => {
           }}
           onClick={() => getCSV()}
         >
-          {t('Institutions.certIssue.downloadsCSV')}
+          {t("Institutions.certIssue.downloadsCSV")}
         </a>
-        {category ==="educational certificates" && (
-          <h4 >
-            {t('Institutions.certIssue.note')}
-          </h4>
+        {category === "educational certificates" && (
+          <h4>{t("Institutions.certIssue.note")}</h4>
         )}
       </div>
-      
-
 
       <div
         style={{
@@ -185,7 +187,7 @@ const CertIssue = ({ setView, certData,category }) => {
             uploadFile();
           }}
         >
-          {t('Institutions.certIssue.nextbtn')} {" >"}
+          {t("Institutions.certIssue.nextbtn")} {" >"}
         </button>
       </div>
     </div>
@@ -217,7 +219,7 @@ const LoadingPage = ({ status, setView }) => {
       )}
       <h3>{status}</h3>
       {status === "Issuing certificates..." && (
-        <h4>{t('Institutions.certIssue.headingCloseWindow')}</h4>
+        <h4>{t("Institutions.certIssue.headingCloseWindow")}</h4>
       )}
       {status !== "Issuing certificates..." && (
         <button onClick={() => setView("education")}>OK</button>

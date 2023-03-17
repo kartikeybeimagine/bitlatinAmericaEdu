@@ -15,63 +15,66 @@ import { templateApi } from "../../../Scripts/apiCalls";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import UserContext from "../../../../context/userContext/UserContext";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 import QRCode from "react-qr-code";
 
 const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState(uploadIcon);
   const [uploadedImage, setUploadedImage] = useState(null);
-  const [selectedVariables, setSelectedVariables] = useState([{
-    height:80,
-    width:80,
-    x_pos:"",
-    y_pos:"",
-    color:"#000000",
-    type:"qr",
-  }]);
-  const [selectedVariablesData, setSelectedVariablesData] = useState([{
-    height:80,
-    width:80,
-    x_pos:"",
-    y_pos:"",
-    color:"#000000",
-    type:"qr",
-  }]);
+  const [selectedVariables, setSelectedVariables] = useState([
+    {
+      name: "qrcode",
+      height: "5",
+      width: "30",
+      x_pos: "0",
+      y_pos: "0",
+      color: "#000000",
+      type: "qr",
+    },
+  ]);
+  const [selectedVariablesData, setSelectedVariablesData] = useState([
+    {
+      name: "qrcode",
+      height: "5",
+      width: "30",
+      x_pos: "50",
+      y_pos: "50",
+      color: "#000000",
+      type: "qr",
+    },
+  ]);
   const [isLoading, setIsLoading] = useState(false);
   const user = useContext(UserContext);
   const [imageWidth, setImageWidth] = useState(100);
   const [templateName, setTemplateName] = useState("");
-  const [variableName, setvariableName] = useState(t('Institutions.certCreator.CustomVariable'));
+  const [variableName, setvariableName] = useState(
+    t("Institutions.certCreator.CustomVariable")
+  );
   const [isOtherselect, setisOtherselect] = useState(false);
-  const [specifyother, setspecifyother] = useState(t('Institutions.certCreator.CustomVariable'));
-  const [isQr, setisQr] = useState(false);
+  const [specifyother, setspecifyother] = useState(
+    t("Institutions.certCreator.CustomVariable")
+  );
   const [imageHeight, setimageHeight] = useState(100);
-  // const [qrCodeAttributes, setqrCodeAttributes] = useState({
-  //   height:80,
-  //   width:80,
-  //   x_pos:"",
-  //   y_pos:"",
-  //   color:"#000000",
-  // });
+
+  // const imageHeight = document.getElementById(
+  //   "cert-creator-preview"
+  // ).offsetHeight;
 
   useEffect(() => {
     setImageWidth(Math.min(window.innerWidth - 100, 700));
     if (String(variableName).length === 0) {
       setspecifyother("Other (specify)");
-    } 
+    }
 
     try {
-      setimageHeight(document.getElementById("cert-creator-preview").offsetHeight);
-    }catch(err){
-      console.log(err)
+      setimageHeight(
+        document.getElementById("cert-creator-preview").offsetHeight
+      );
+    } catch (err) {
+      console.log(err);
     }
-  //   const imageHeight = document.getElementById(
-  //   "cert-creator-preview"
-  // ).offsetHeight;
-
-  }, [window, variableName]);
-  
+  });
 
   const variableOptions = [
     "Student Name",
@@ -103,11 +106,13 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
     "Signatory Designation",
     specifyother,
   ];
-  
-  const variableOptions2 =t('Institutions.certCreator.variableOptions',{returnObjects: true})
-  variableOptions2.push(specifyother)
+
+  const variableOptions2 = t("Institutions.certCreator.variableOptions", {
+    returnObjects: true,
+  });
+  variableOptions2.push(specifyother);
   // const myArray = JSON.parse(variableOptions2)
- 
+
   const handleNext = async () => {
     setIsLoading(true);
     await templateApi({
@@ -153,7 +158,7 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
       }}
       id="tempate-creater-container"
     >
-      <h2>{t('Institutions.certCreator.heading')}</h2>
+      <h2>{t("Institutions.certCreator.heading")}</h2>
       <input
         type="file"
         id="image-selector"
@@ -174,11 +179,7 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
           id="cert-creator-preview"
           onClick={() => document.getElementById("image-selector").click()}
         />
-        {/* <DraggableImage 
-        imageWidth={imageWidth}
-        qrCodeAttributes={qrCodeAttributes}
-        setqrCodeAttributes={setqrCodeAttributes}
-        /> */}
+
         {selectedVariables.length > 0 &&
           selectedVariables.map((variable) => (
             <DragVariable
@@ -194,7 +195,6 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
           ))}
       </div>
 
-
       <div
         style={{
           display: "grid",
@@ -203,20 +203,19 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
           marginTop: "20px",
         }}
       >
-        <select id="draggable-variable-selector" 
-        onChange={(e) => {
-          let selectvalue = e.target.value;
-          if (selectvalue === variableName) {
-            setisOtherselect(true);
-          } 
-          else{
-            setisOtherselect(false);
-          } 
-          console.log(isOtherselect);
-        }
-        }
+        <select
+          id="draggable-variable-selector"
+          onChange={(e) => {
+            let selectvalue = e.target.value;
+            if (selectvalue === variableName) {
+              setisOtherselect(true);
+            } else {
+              setisOtherselect(false);
+            }
+            console.log(isOtherselect);
+          }}
         >
-         {t('Institutions.certCreator.selectVariable')}
+          {t("Institutions.certCreator.selectVariable")}
           {variableOptions2.map((option) => (
             // <option>{option}</option>
             <option value={option}>{option}</option>
@@ -251,25 +250,32 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
                 type: "text",
               },
             ]);
-            setvariableName("Other (specify)");   
+            setvariableName("Other (specify)");
             setspecifyother("Other (specify)");
           }}
         >
-          {t('Institutions.certCreator.addVariable')} +
+          {t("Institutions.certCreator.addVariable")} +
         </button>
-        <label style={{ display: `${isOtherselect ? "" : "none"}` }} htmlFor="template-creater-variable-name">Variable Name <span style={{ fontSize: "11px" }}>(Specify name)</span></label>
+        <label
+          style={{ display: `${isOtherselect ? "" : "none"}` }}
+          htmlFor="template-creater-variable-name"
+        >
+          Variable Name <span style={{ fontSize: "11px" }}>(Specify name)</span>
+        </label>
         <input
           style={{ display: `${isOtherselect ? "" : "none"}` }}
           type="text"
           id="template-creater-variable-name"
           value={variableName}
-          onChange={(e)=>{ 
-              setvariableName(e.target.value);
-              setspecifyother(e.target.value);   
+          onChange={(e) => {
+            setvariableName(e.target.value);
+            setspecifyother(e.target.value);
           }}
         />
 
-        <label htmlFor="template-creater-template-name">{t('Institutions.certCreator.templateName')}</label>
+        <label htmlFor="template-creater-template-name">
+          {t("Institutions.certCreator.templateName")}
+        </label>
         <input
           type="text"
           id="template-creater-template-name"
@@ -283,7 +289,8 @@ const CertCreator = ({ setIsTemplateCreator, setSelectedTemplate, sector }) => {
             handleNext();
           }}
         >
-          {t('Institutions.certCreator.next')}{">"}
+          {t("Institutions.certCreator.next")}
+          {">"}
         </button>
       </div>
       {isLoading && <LoadingPage />}
@@ -300,16 +307,33 @@ const DragVariable = ({
   setSelectedVariables,
   setSelectedVariablesData,
   imageWidth,
-  imageHeight
 }) => {
   const [isColorPicker, setIsColorPicker] = useState(false);
+  const [imageHeight, setimageHeight] = useState(100);
 
   const startingPositionX = 50 - parseFloat(variable.width) / 2 + "%";
   const startingPositionY = 50 - parseFloat(variable.height) + "%";
-  // const imageHeight = document.getElementById(
-  //   "cert-creator-preview"
-  // ).offsetHeight;
-  
+
+  useEffect(() => {
+    console.log(imageHeight);
+    console.log(
+      -imageHeight / 2 + (parseFloat(variable.height) * imageHeight) / 200
+    );
+    console.log(
+      imageHeight / 2 - (parseFloat(variable.height) * imageHeight) / 200
+    );
+    try {
+      setimageHeight(
+        document.getElementById("cert-creator-preview").offsetHeight
+      );
+      console.log(
+        "Image height---",
+        document.getElementById("cert-creator-preview").offsetHeight
+      );
+    } catch (err) {
+      console.log("could not set height");
+    }
+  });
 
   const getTextHeight = (variableHeight) => {
     let fullheight = 200;
@@ -417,28 +441,27 @@ const DragVariable = ({
               width: "100%",
               textAlign: "center",
               fontSize: getTextHeight(variable.height),
+              display: "flex",
+              padding: "0px",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-           { variable.type ==='text' && variable.name}
-           { variable.type ==='qr' && 
-           <QRCode
-           size={256}
-           bgColor={"#FFFFFF"}
-           fgColor={variable.color}
-           style={{
-             position: "absolute",
-             left: "88%",
-             // top: 0 + "px",
-             // left: "50%",
-             transform: "translateX(-100%)",
-             width: variable.width + "px",
-             height: variable.height + "px",
-             backgroundColor: "white",
-             border: "1px solid red",
-           }}
-           value={"https://bitmemoir.com/verify"}
-         />
-           }
+            {variable.type === "text" && variable.name}
+            {variable.type === "qr" && (
+              <QRCode
+                size={256}
+                bgColor={"rgba(0, 0, 0, 0)"}
+                fgColor={variable.color}
+                style={{
+                  width:
+                    (parseFloat(variable.height) * imageHeight) / 100 + "px",
+                  height:
+                    (parseFloat(variable.height) * imageHeight) / 100 + "px",
+                }}
+                value={"https://bitmemoir.com/verify"}
+              />
+            )}
           </div>
           <div id="handle">
             <PanToolIcon
@@ -521,167 +544,6 @@ const DragVariable = ({
     </Draggable>
   );
 };
-
-const DraggableImage = ({ image, imageWidth,qrCodeAttributes,setqrCodeAttributes }) => {
-  const [qrWidth, setQrWidth] = useState(80);
-  const [qrHeight, setQrHeight] = useState(80);
-  const [isColorPicker, setIsColorPicker] = useState(false);
-  const [qrForgroundColor, setQrForgroundColor] = useState("#000000");
-  const startingPositionX = 50 - parseFloat(qrCodeAttributes.width) / 2 + "%";
-  const startingPositionY = 50 - parseFloat(qrCodeAttributes.height) + "%";
-
-
-  const imageHeight = document.getElementById(
-    "cert-creator-preview"
-  ).offsetHeight;
-
-  const changeQrPosition = (data) => {
-    let x_pos =
-    Math.round(
-      (50 + (parseFloat(data.x) / parseFloat(imageWidth)) * 100) * 100
-    ) / 100;
-  let y_pos =
-    Math.round(
-      (50 + (parseFloat(data.y) / parseFloat(imageHeight)) * 100) * 100
-    ) / 100;
-    setqrCodeAttributes({
-      ...qrCodeAttributes,
-      x_pos: x_pos,
-      y_pos: y_pos,
-    });
-  };
-
-
-
-  return (
-    <Draggable
-      handle="#handle"
-      bounds={{
-        // left: -imageWidth / 2 + (parseFloat(qrWidth) * imageWidth) / 200,
-        left:-imageWidth/2,
-        // top: -imageHeight / 2 + (parseFloat(qrHeight) * imageHeight) / 200,
-        top: -imageHeight/2,
-        // right: imageWidth / 2 - (parseFloat(qrWidth) * imageWidth) / 200,
-        right: (imageWidth-qrCodeAttributes.width)/2,
-        // bottom: imageHeight / 2 - (parseFloat(qrHeight) * imageHeight) / 200,
-        bottom: (imageHeight-qrCodeAttributes.height)/2 ,
-        
-      }}
-      onDrag={(e, data) => {
-        changeQrPosition(data);
-      }}
-    >
-    <div
-      style={{
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        width: qrCodeAttributes.width + "px",
-        height: qrCodeAttributes.height + "px",
-      }}
-    >
-
-    <Box
-          sx={{
-            backgroundColor: "transparent",
-            color: "transparent",
-            width: qrCodeAttributes.width + "px",
-            height: qrCodeAttributes.height + "px",
-            padding: "10px",
-            position: "relative",
-
-            "&:hover": {
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              border: "1px solid black",
-              borderRadius: "10px",
-              color: "black",
-            },
-          }}
-        >
-          <div
-            style={{
-              width: "100%",
-            }}
-          >
-              <QRCode
-              size={256}
-              bgColor={"#FFFFFF"}
-              fgColor={qrCodeAttributes.color}
-              style={{
-                position: "absolute",
-                left: "88%",
-                // top: 0 + "px",
-                // left: "50%",
-                transform: "translateX(-100%)",
-                width: qrCodeAttributes.width + "px",
-                height: qrCodeAttributes.height + "px",
-                backgroundColor: "white",
-              }}
-              value={"https://bitmemoir.com/verify"}
-            />
-          </div>
-         <div id="handle">
-            <PanToolIcon
-              sx={{ position: "absolute", bottom: "-5px", right: "-5px" }}
-            />
-        </div>
-        <div style={{ position: "absolute", top: "-20px", left: "0px" }}>
-            <AddCircleOutlineIcon
-              fontSize="small"
-              onClick={() => {
-                // setQrHeight(qrHeight + 1);
-                // setQrWidth(qrWidth + 1);
-                setqrCodeAttributes({
-                  ...qrCodeAttributes,
-                  width: qrCodeAttributes.width + 1,
-                  height: qrCodeAttributes.height + 1,
-                });
-              }
-              }
-            />
-            <RemoveCircleOutlineIcon
-              fontSize="small"
-              onClick={() => {
-                // setQrWidth(qrWidth - 1)
-                // setQrHeight(qrHeight - 1);
-                setqrCodeAttributes({
-                  ...qrCodeAttributes,
-                  width: qrCodeAttributes.width - 1,
-                  height: qrCodeAttributes.height - 1,
-                });
-              }}
-            />
-            <FormatColorFillIcon
-              fontSize="small"
-              onClick={() => setIsColorPicker(!isColorPicker)}
-            />
-        </div>
-    </Box>
-    {isColorPicker && (
-          <SketchPicker
-            color={qrForgroundColor}
-            onChangeComplete={(color) => {
-              setQrForgroundColor(color["hex"]);
-              setqrCodeAttributes({
-                ...qrCodeAttributes,
-                color: color["hex"],
-              });
-            }}
-          />
-        )}
-    </div>
-    </Draggable>
-  );
-};
-
-
-
-
-
-
-
-
-
 
 const LoadingPage = () => {
   return (

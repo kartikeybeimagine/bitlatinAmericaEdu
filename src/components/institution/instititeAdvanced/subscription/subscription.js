@@ -14,7 +14,7 @@ const Subscription = ({ setView, back }) => {
   const [selectedPlan, setSelectedPlan] = useState({
     planName: "Silver Plan",
     noOfCerts: "1000",
-    duration:'1 month',
+    duration: "1 month",
     amount: 999,
   });
   const user = useContext(UserContext);
@@ -57,7 +57,20 @@ const Subscription = ({ setView, back }) => {
     }
   };
 
-  const handleUSDT = async (amount, network,planName,duration) => {
+  const handleUSDT = async (amount, network, planName, duration) => {
+    paymentApi({
+      tx_hash: "",
+      plan: planName,
+      duration_days: 60,
+      user_address: user.userAccount,
+    }).then(async (res) => {
+      setIsLoading(true);
+      await user.poppulateUserData();
+      setIsLoading(false);
+    });
+
+    return;
+
     await checkNetwork(network);
 
     amount = amount.toString() + "000000000000000000";
@@ -75,7 +88,11 @@ const Subscription = ({ setView, back }) => {
       .then((res) => {
         setIsBuying(false);
         console.log(res);
-        paymentApi({ tx_hash: res.hash,plan:planName,duration_days:60 }).then(async (res) => {
+        paymentApi({
+          tx_hash: res.hash,
+          plan: planName,
+          duration_days: 60,
+        }).then(async (res) => {
           setIsLoading(true);
           await user.poppulateUserData();
           setIsLoading(false);
@@ -87,7 +104,13 @@ const Subscription = ({ setView, back }) => {
       });
   };
 
-  const PlanCard = ({ planName, noOfCerts, amount, isRecommended,duration}) => {
+  const PlanCard = ({
+    planName,
+    noOfCerts,
+    amount,
+    isRecommended,
+    duration,
+  }) => {
     return (
       <div
         style={{
@@ -150,7 +173,7 @@ const Subscription = ({ setView, back }) => {
                 planName: planName,
                 noOfCerts: noOfCerts,
                 amount: amount,
-                duration:duration
+                duration: duration,
               });
             }}
           >
@@ -240,7 +263,12 @@ const Subscription = ({ setView, back }) => {
                   setStatus(
                     "Insufficient balance. Available balance: " + balance
                   );
-                } else handleUSDT(selectedPlan.amount,selectedPlan.duration,selectedPlan.planName );
+                } else
+                  handleUSDT(
+                    selectedPlan.amount,
+                    selectedPlan.duration,
+                    selectedPlan.planName
+                  );
               }}
             >
               Buy with USDT
@@ -258,7 +286,13 @@ const Subscription = ({ setView, back }) => {
                 borderRadius: "20px",
                 padding: "20px",
               }}
-              onClick={() => handleUSDT(selectedPlan.amount,selectedPlan.duration,selectedPlan.planName)}
+              onClick={() =>
+                handleUSDT(
+                  selectedPlan.amount,
+                  selectedPlan.duration,
+                  selectedPlan.planName
+                )
+              }
             >
               Buy with BUSD
               <span style={{ fontSize: "20px" }}>
