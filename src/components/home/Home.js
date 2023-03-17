@@ -46,10 +46,10 @@ const Home = () => {
             <img src={img1} alt="blockchainImage" />
           </div>
           <div className="writing">
-            <div className="mainheading">BitMemoir</div>
-            <div> <span className="submainheading">For</span><span style={{marginLeft:"20px"}} className="mainheading">Education</span></div>
+            <div className="mainheading">{t('Home.heading')}</div>
+            <div> <span className="submainheading">{t('Home.for')}</span><span style={{marginLeft:"20px"}} className="mainheading">{t("Home.heading2")}</span></div>
             <div className="secondheading">
-            Transforming the education system
+            {t('Home.subheading')}
             </div>
             <button
               onClick={() => {
@@ -58,7 +58,7 @@ const Home = () => {
                 toScrollElement.scrollIntoView();
               }}
             >
-              Learn More
+              {t('Home.button')}
             </button>
           </div>
         </div>
@@ -115,7 +115,9 @@ const Home = () => {
           <div className="howtouseimageleft">
             <div>
               {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1Q8fG0TtVAY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/pojWsn2KotU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              {
+                i18next.language === "en" ? <iframe width="560" height="315" src="https://www.youtube.com/embed/YDsqedqmF84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> : <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FIx3HdzXCDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              }
             </div>
           </div>
         </div>

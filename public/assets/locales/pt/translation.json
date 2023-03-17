@@ -284,5 +284,45 @@
     "Verifying":"Verificando...",
     "Could_not_Verify":"Não foi possível verificar."
 
+  },
+  "VerifyDetails":{
+    "Verified":"Verified",
+    "Contract_Address":"Contract Address :",
+    "Token_Id":"Token Id :",
+    "Download":"Download",
+    "IssuedBy":"Issued by:",
+    "Recipient":"Recipient :",
+    "Verifying":"Verifying...",
+    "Could_not_Verify":"Could not Verify."
+  },
+  "Bitwallet":{
+    "heading1":"Uma carteira criptográfica e",
+    "heading2":"porta de entrada para",
+    "heading3":"mundo da blockchain",
+    "subheading":"Aprimore sua experiência do usuário com o BitWallet, a chave para o mundo do blockchain",
+    "download":"Baixe Agora",
+    "heading4":"Use como uma extensão do navegador ou aplicativo móvel",
+    "subheading4":"Disponível como uma extensão do navegador e como um aplicativo móvel, o BitWallet o equipa com um cofre -chave, login seguro, NFT simples e armazenamento e transferência de criptografia.",
+    "heading5":"Segurança para seus ativos digitais",
+    "subheading5":"O BitWallet gera senhas e chaves no seu dispositivo; portanto, você tem acesso às suas contas e dados.Assistência Navegando por vários sites descentralizados e aplicativos blockchain.",
+    "heading6":"Zero tempo de inatividade",
+    "subheading6":"Proteção de suas chaves através da criptografia",
+    "bitwalletDwnld":"Download do BitWallet",
+    "downloadChromeheading":"Baixe a extensão Chrome para desktop",
+    "downloadIoSheading":"Baixe o aplicativo iOS",
+    "downloadAndroidheading":"Baixe o aplicativo Android",
+    "downloadFor":"Baixar para",
+    "whatIsBitwallet":"O que é BitWallet?",
+    "whyChooseBitwallet":{
+      "heading":"Por que escolher BitWallet?",
+      "subheading":"Uma carteira mais segura e transparente",
+      "Dataprotection":"Proteção de dados",
+      "RobustInfrastructure":"Infraestrutura robusta",
+      "Decentralized":"Descentralizada",
+      "Verifiedandsecuretouse":"Verificado e seguro para usar",
+      "EasytoUse":"Fácil de usar",
+      "SupportAssets":"Ativos de suporte"
+    }
+
   }
 }

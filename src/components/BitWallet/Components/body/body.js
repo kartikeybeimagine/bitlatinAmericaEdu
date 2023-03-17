@@ -18,11 +18,12 @@ import { SiHiveBlockchain } from "react-icons/si";
 import { HiClipboardDocumentCheck } from "react-icons/hi2";
 import { useTranslation } from 'react-i18next'
 import "../../Css/main.d4f40551.css"
+import i18next from 'i18next'
 
 const Body = () => {
 
     
-   
+   const { t } = useTranslation();
  
     const handleClickScroll = () => {
         const element = document.getElementById('main_content2');
@@ -95,10 +96,10 @@ const Body = () => {
                         className="md:w-[40vw] order-2 md:order-1 main_content_child_1_child">
                         <div className="content">
                             <h1 className="text-white text-2xl font-bold text-center md:text-left  md:tracking-[3px] md:text-[2.5rem] md:leading-[3.4rem] md:font-[1000] content_heading">
-                                A crypto wallet & <br /> gateway to <br /> blockchain World
+                                {t("Bitwallet.heading1")} <br /> {t("Bitwallet.heading2")} <br /> {t("Bitwallet.heading3")}
                             </h1>
                             <p className="text-white mt-3 md:text-lg text-sm text-center md:text-left content_info">
-                                Enhance your user experience with BitWallet, the key to blockchain world
+                            {t("Bitwallet.subheading")}
                             </p>
                         </div>
                         <div
@@ -106,7 +107,7 @@ const Body = () => {
                             <button
                                 type="button"
                                 onClick={handleClickScroll}
-                                className="text-white w-full md:w-auto bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-semibold rounded-2xl text-xl px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 mt-4">Download Now</button>
+                                className="text-white w-full md:w-auto bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-semibold rounded-2xl text-xl px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 mt-4">{t("Bitwallet.download")}</button>
                         </div>
                     </motion.div>
                     <motion.div
@@ -131,10 +132,10 @@ const Body = () => {
                         className="md:w-[40vw] order-2 md:order-1">
                         <div className="content">
                             <h1 className="text-white text-2xl font-bold text-center md:text-left  md:tracking-[3px] md:text-[2.5rem] md:leading-[3.4rem] md:font-[1000]">
-                                Use as a browser extension or mobile app
+                                {t("Bitwallet.heading4")}
                             </h1>
                             <p className="text-white mt-3 md:text-lg text-sm text-center md:text-left">
-                                Available as a browser extension and as a mobile app, BitWallet equips you with a key vault, secure login, simple NFT and  <br /> Crypto storage and transfer.
+                                {t("Bitwallet.subheading4")}
                             </p>
                         </div>
                     </motion.div>
@@ -160,10 +161,10 @@ const Body = () => {
                         className="md:w-[50%] order-2 md:order-2">
                         <div className="content">
                             <h1 className="text-white text-2xl font-bold text-center md:text-left  md:tracking-[3px] md:text-[2.5rem] md:leading-[3.4rem] md:font-[1000]">
-                                Security  for your digital assets
+                                {t("Bitwallet.heading5")}
                             </h1>
                             <p className="text-white mt-3 md:text-lg text-sm text-center md:text-left">
-                                BitWallet generates passwords and keys on your device, so only you have access to your accounts and data. Assistance navigating through various decentralised websites and blockchain apps.
+                                {t("Bitwallet.subheading5")}
                             </p>
                         </div>
                     </motion.div>
@@ -189,10 +190,10 @@ const Body = () => {
                         className="md:w-[50%] order-2 md:order-2">
                         <div className="content">
                             <h1 className="text-white text-2xl font-bold text-center md:text-left  md:tracking-[3px] md:text-[2.5rem] md:leading-[3.4rem] md:font-[1000]">
-                                Zero downtime
+                                {t("Bitwallet.heading6")}
                             </h1>
                             <p className="text-white mt-3 md:text-lg text-sm text-center md:text-left">
-                                Protection of your keys through encryption
+                                {t("Bitwallet.subheading6")}
                             </p>
                         </div>
                     </motion.div>
@@ -210,7 +211,7 @@ const Body = () => {
                 </div>
             </div>
             <div id='main_content2'  className="sm:w-[80vw] main_content2 mt-28 border shadow-2xl border-purple-900 rounded-xl bg-gray-700">
-                <h1 className="text-center text-white text-4xl font-bold py-3">Download BitWallet</h1>
+                <h1 className="text-center text-white text-4xl font-bold py-3">{t('Bitwallet.bitwalletDwnld')}</h1>
                 <div
                     className='py-10 flex md:flex-row flex-col  md:justify-between items-center md:w-[80vw] qrcodewidth mx-auto mt-16'>
                     <motion.div
@@ -223,14 +224,14 @@ const Body = () => {
                         </p>
                         <div className="p-5">
                             <div>
-                                <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Download Chrome extension for Desktop</p>
+                                <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{t('Bitwallet.downloadChromeheading')}</p>
                             </div>
                             <div  
                             onClick={()=>{
                                 window.open("https://chrome.google.com/webstore/detail/bit-wallet/ddphokhghjkekfdoddpeffdpojdofcan");
                             }} 
                             className="linkstyle inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Download For
+                                {t('Bitwallet.downloadFor')}
                                 <img src={chrome} alt="" className="w-8 h-8 ml-2 -mr-1" />
                             </div>
                         </div>
@@ -246,14 +247,14 @@ const Body = () => {
                         </p>
                         <div className="p-5">
                             <div>
-                                <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Download Ios application</p>
+                                <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{t("Bitwallet.downloadIoSheading")}</p>
                             </div>
                             <div  
                             onClick={()=>{
                                 window.open("https://apps.apple.com/us/app/be-imagine-technology-wallet/id6443855034");
                             }}
                              className="linkstyle inline-flex items-center px-3 py-2  text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Download For
+                                {t('Bitwallet.downloadFor')}
                                 <img src={apple} className="w-8 h-8 ml-2 -mr-1" />
                             </div>
                         </div>
@@ -268,14 +269,14 @@ const Body = () => {
                         </p>
                         <div className="p-5">
                             <div>
-                                <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Download Android Application</p>
+                                <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{t("Bitwallet.downloadAndroidheading")}</p>
                             </div>
                             <div  
                             onClick={()=>{
                                 window.open("https://play.google.com/store/apps/details?id=beimagine.tech");
                             }}
                              className="linkstyle inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Download For
+                                {t('Bitwallet.downloadFor')}
                                 <img src={android} className="w-8 h-8 ml-2 -mr-1" />
                             </div>
                         </div>
@@ -288,13 +289,16 @@ const Body = () => {
                     <div className="order-1">
                         <div className="content">
                             <h1 className="text-white text-2xl font-bold text-center">
-                                What is BITWALLET ?
+                                {t('Bitwallet.whatIsBitwallet')}
                             </h1>
                         </div>
                     </div>
                     <div className="order-2">
                         <div className="video md:mt-24 mt-10">
-                            <iframe className='w-[100vw] h-[30vh] md:w-[80vw] md:h-[80vh]' src="https://www.youtube.com/embed/YDsqedqmF84" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                        {
+                            i18next.language === "en" ? <iframe width="560" height="315" src="https://www.youtube.com/embed/YDsqedqmF84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> : <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FIx3HdzXCDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        }
+                            {/* <iframe className='w-[100vw] h-[30vh] md:w-[80vw] md:h-[80vh]' src="https://www.youtube.com/embed/YDsqedqmF84" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
                         </div>
                     </div>
                 </div>
@@ -305,10 +309,10 @@ const Body = () => {
                     <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                         <div className="mb-8 lg:mb-16">
                             <h2 className="mb-4 text-center text-2xl tracking-tight font-bold text-gray-900 dark:text-white">
-                                Why Choose BitWallet?
+                                {t("Bitwallet.whyChooseBitwallet.heading")}
                             </h2>
                             <p className="text-gray-500 sm:text-xl dark:text-gray-400 text-center">
-                                A more secure and transparent wallet
+                            {t("Bitwallet.whyChooseBitwallet.subheading")}
                             </p>
                         </div>
                         <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
@@ -322,7 +326,7 @@ const Body = () => {
                                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                                     <FaUnlockAlt className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 text-black" />
                                 </div>
-                                <h3 className="mb-2 text-xl font-bold text-black">Data protection</h3>
+                                <h3 className="mb-2 text-xl font-bold text-black">{t("Bitwallet.whyChooseBitwallet.Dataprotection")}</h3>
                                 <p className="text-gray-500 dark:text-gray-400">
 
                                 </p>
@@ -337,7 +341,7 @@ const Body = () => {
                                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                                     <RiNodeTree className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 text-black" />
                                 </div>
-                                <h3 className="mb-2 text-xl font-bold text-black">Robust Infrastructure</h3>
+                                <h3 className="mb-2 text-xl font-bold text-black">{t("Bitwallet.whyChooseBitwallet.RobustInfrastructure")}</h3>
                                 <p className="text-gray-500 dark:text-gray-400">
 
                                 </p>
@@ -353,7 +357,7 @@ const Body = () => {
                                     <SiHiveBlockchain className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 text-black" />
                                 </div>
                                 <h3 className="mb-2 text-xl font-bold text-black">
-                                    Decentralized
+                                {t("Bitwallet.whyChooseBitwallet.Decentralized")}
                                 </h3>
                                 <p className="text-gray-500 dark:text-gray-400">
 
@@ -369,7 +373,7 @@ const Body = () => {
                                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                                     <AiOutlineSafetyCertificate className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 text-black" />
                                 </div>
-                                <h3 className="mb-2 text-xl font-bold text-black">Verified and secure to use</h3>
+                                <h3 className="mb-2 text-xl font-bold text-black">{t("Bitwallet.whyChooseBitwallet.Verifiedandsecuretouse")}</h3>
                                 <p className="text-gray-500 dark:text-gray-400">
 
                                 </p>
@@ -385,7 +389,7 @@ const Body = () => {
                                     <FaHandHoldingUsd className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 text-black" />
                                 </div>
                                 <h3 className="mb-2 text-xl font-bold text-black">
-                                    Easy to Use
+                                {t("Bitwallet.whyChooseBitwallet.EasytoUse")}
                                 </h3>
                                 <p className="text-gray-500 dark:text-gray-400">
 
@@ -401,7 +405,7 @@ const Body = () => {
                                 <div className="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
                                     <HiClipboardDocumentCheck className="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 text-black" />
                                 </div>
-                                <h3 className="mb-2 text-xl font-bold text-black">Support Assets</h3>
+                                <h3 className="mb-2 text-xl font-bold text-black">{t("Bitwallet.whyChooseBitwallet.SupportAssets")}</h3>
                                 <p className="text-gray-500 dark:text-gray-400">
 
                                 </p>

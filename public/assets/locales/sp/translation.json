@@ -284,5 +284,45 @@
     "Verifying":"Verificación...",
     "Could_not_Verify":"No pudo verificar."
 
+  },
+  "VerifyDetails":{
+    "Verified":"Verified",
+    "Contract_Address":"Contract Address :",
+    "Token_Id":"Token Id :",
+    "Download":"Download",
+    "IssuedBy":"Issued by:",
+    "Recipient":"Recipient :",
+    "Verifying":"Verifying...",
+    "Could_not_Verify":"Could not Verify."
+  },
+  "Bitwallet":{
+    "heading1":"Una billetera criptográfica y",
+    "heading2":"puerta de entrada a",
+    "heading3":"mundo de blockchain",
+    "subheading":"Mejore su experiencia de usuario con BitWallet, la clave para blockchain world",
+    "download":"Descargar ahora",
+    "heading4":"Usar como extensión de navegador o aplicación móvil",
+    "subheading4":"Disponible como una extensión del navegador y como una aplicación móvil, Bitwallet lo equipa con una bóveda clave, inicio de sesión seguro, sencillo almacenamiento y transferencia NFT y criptografía.",
+    "heading5":"Seguridad para sus activos digitales",
+    "subheading5":"BitWallet genera contraseñas y claves en su dispositivo, por lo que solo usted tiene acceso a sus cuentas y datos.Asistencia navegando a través de varios sitios web descentralizados y aplicaciones de blockchain.",
+    "heading6":"Tiempo de inactividad cero",
+    "subheading6":"Protección de sus claves a través del cifrado",
+    "bitwalletDwnld":"Descargar bitwallet",
+    "downloadChromeheading":"Descargar la extensión de Chrome para el escritorio",
+    "downloadIoSheading":"Descargar la aplicación iOS",
+    "downloadAndroidheading":"Descargar la aplicación Android",
+    "downloadFor":"Descargar para",
+    "whatIsBitwallet":"¿Qué es Bitwallet?",
+    "whyChooseBitwallet":{
+      "heading":"¿Por qué elegir BitWallet?",
+      "subheading":"Una billetera más segura y transparente",
+      "Dataprotection":"Protección de Datos",
+      "RobustInfrastructure":"Infraestructura robusta",
+      "Decentralized":"Descentralizada",
+      "Verifiedandsecuretouse":"Verificado y seguro para usar",
+      "EasytoUse":"Fácil de usar",
+      "SupportAssets":"Asistencia de apoyo"
+    }
+
   }
 }
