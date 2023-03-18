@@ -13,22 +13,22 @@ const Contact = () => {
       <div className="contactsocialcontainer">
         <img
           src={linkedinlogo}
-          alt=""
+          alt="BitMemoir Linkedin"
           height="100"
           width="100"
           onClick={() => {
-            window.open(
-              "https://www.linkedin.com/company/beyond-imagination-technlogies-pvt-ltd/?viewAsMember=true"
-            );
+            window.open("https://www.linkedin.com/company/bitmemoir-latam/");
           }}
         />
         <img
           src={instagramlogo}
-          alt=""
-          height="130"
-          width="130"
+          alt="BitMemoir Instagram"
+          height="200"
+          width="200"
           onClick={() => {
-            window.open("https://www.instagram.com/bitindiaofficial/");
+            window.open(
+              "https://instagram.com/bitmemoir_latam?igshid=YmMyMTA2M2Y="
+            );
           }}
         />
       </div>

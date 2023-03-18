@@ -7,7 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { fileDownload } from "../Scripts/tools";
 import DownloadIcon from "@mui/icons-material/Download";
 import DangerousIcon from "@mui/icons-material/Dangerous";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 const VerifyWithDetails = () => {
   const { contractAddress, tokenId } = useParams();
@@ -15,7 +15,7 @@ const VerifyWithDetails = () => {
   const [userData, setUserData] = useState(null);
   const [nftData, setNftData] = useState(null);
   const [hasData, setHasData] = useState(false);
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   useEffect(() => {
     verify();
   }, [tokenId, contractAddress]);
@@ -64,7 +64,9 @@ const VerifyWithDetails = () => {
           </>
         ) : (
           <>
-            <h1 style={{ color: "red" }}>{t("VerifyDetails.Could_not_Verify")}</h1>
+            <h1 style={{ color: "red" }}>
+              {t("VerifyDetails.Could_not_Verify")}
+            </h1>
             <DangerousIcon color="error" style={{ fontSize: 200 }} />
           </>
         )}
@@ -78,7 +80,7 @@ export default VerifyWithDetails;
 const VerifiedDetails = (props) => {
   const { userData, nftData, contractAddress, tokenId } = props;
   const [hasAnimated, setHasAnimated] = useState(false);
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   useEffect(() => {
     setTimeout(() => setHasAnimated(true), 3500);
   });
@@ -92,19 +94,23 @@ const VerifiedDetails = (props) => {
             <Verified color="success" style={{ fontSize: 25 }} />
           </h1>
           <h4 style={{ width: "100%", textAlign: "center", margin: "2.5px" }}>
-          {t("VerifyDetails.Contract_Address")} {contractAddress}
+            {t("VerifyDetails.Contract_Address")} {contractAddress}
           </h4>
           <h4 style={{ width: "100%", textAlign: "center", margin: "2.5px" }}>
-          {t("VerifyDetails.Token_Id")} {tokenId}
+            {t("VerifyDetails.Token_Id")} {tokenId}
           </h4>
           <h4 style={{ width: "100%", textAlign: "center", margin: "2.5px" }}>
             20 Jan., 2023 | 16:45
           </h4>
-          <h2 style={{ textDecoration: "underline" }}>{t("VerifyDetails.IssuedBy")}</h2>
+          <h2 style={{ textDecoration: "underline" }}>
+            {t("VerifyDetails.IssuedBy")}
+          </h2>
           {userData["name"]}
           <span>{userData["description"]}</span>
           {userData["account"]}
-          <h2 style={{ textDecoration: "underline" }}>{t("VerifyDetails.Recipient")}</h2>
+          <h2 style={{ textDecoration: "underline" }}>
+            {t("VerifyDetails.Recipient")}
+          </h2>
           {nftData["owner"]}
           {Object.keys(nftData).map((item) => {
             if (
@@ -119,7 +125,7 @@ const VerifiedDetails = (props) => {
               );
             } else return null;
           })}
-          <img src={nftData["image"]} alt="" />
+          <img src={nftData["image"]} alt="" style={{ maxWidth: "80vw" }} />
           <button
             onClick={() => {
               fileDownload(nftData["image"], "Certificate");
