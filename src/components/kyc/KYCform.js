@@ -4,9 +4,9 @@ import { useState } from "react";
 import { Button } from "@mui/material";
 import {fileDownload} from "../Scripts/tools";
 import { useTranslation } from "react-i18next";
-import EnglishSampleForm from "./assets/englishnote.docx";
-import SpanishSampleForm from "./assets/spanishnote.docx";
-import PortugueseSampleForm from "./assets/portuguesenote.docx";
+import EnglishSampleForm from "./assets/BitSampleNote.docx";
+import SpanishSampleForm from "./assets/BitSampleNota.docx";
+import PortugueseSampleForm from "./assets/BitSampleNote.docx";
 import i18next from 'i18next'
 
 export const KYCform = (props) => {

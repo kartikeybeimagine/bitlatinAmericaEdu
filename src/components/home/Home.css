@@ -608,11 +608,13 @@ text-transform: uppercase;
 @media only screen and (max-width: 600px) {
   .benefit {
     width: 300px;
+    /* margin-left: 50px; */
   }
   .benefitdivider {
     width: 300px;
   }
   .whybitcontainer{
+    margin-top: 150px;
     background-image: none;
   }
 }
@@ -669,7 +671,7 @@ letter-spacing: -0.05em;
 
 }
 .aboutsectionmobile .submainheading{
-  font-size: 4rem;
+  font-size: 2rem;
   color: var(--secondary);
   /* font-family: coolvetica; */
   /* font-family: for thin font; */
@@ -742,7 +744,6 @@ line-height: 19px;
 /* or 146% */
 
 letter-spacing: 0.03em;
-text-transform: capitalize;
   color: black;
 }
 .certificatesectioncontainer2 {
@@ -827,6 +828,16 @@ text-transform: capitalize;
   padding: 100px 0px;
 }
 .joinContainer {
+  background-color: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 100px 0px;
+  max-width: 1950px;
+}
+.joinContainer2 {
   background-color: var(--secondary);
   color: var(--primary);
   display: flex;
@@ -1033,13 +1044,13 @@ text-transform: uppercase;
   align-items:left ;
  
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .certificatesissued2 {
-    width: 300px;
-    height: 150px;
+    width: 280px;
+    height: 180px;
     margin: 20px;
     padding: 20px; 
-    min-width: 300px;
+    min-width: 250px;
   }
   .certificatesissued2 .heading1 {
     font-size: 40px;
@@ -1060,7 +1071,7 @@ text-transform: uppercase;
     font-size: 1.3rem;
     color: var(--secondary);
     padding: 20px;
-    width: 50%;
+    width: 70%;
     margin-left: 50px;
   }
   .howtouseimageleft {
@@ -1089,6 +1100,7 @@ text-transform: uppercase;
     /* align-items: center; */
     width: 300px;
     height: 150px;
+    margin: 30px;
     background-color: var(--secondary);
 
   }
@@ -1107,7 +1119,7 @@ text-transform: uppercase;
     font-weight: 400;
   }
   .stepscontainer{
-    margin: 0px;
+    margin-top:0px;
     padding: 0px;
     display: flex;
     justify-content: space-around;
@@ -1196,19 +1208,38 @@ text-transform: uppercase;
   font-weight: 400;
   font-size: 19.0762px;
   line-height: 22px;
-  text-align: justify;
+  /* text-align: justify; */
   letter-spacing: 0.03em;
   color: #FFFFFF;
   
   }
   .stepscontainer2{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0px;
     padding: 0px;
   }
+  .aboutsection .mainheading {
+    font-family: coolvetica;
+    font-size: 6.5rem;
+  }
+  .joinContainer{
+    margin-top: 200px;
 
-  
+  }
+  .joinContainer2{
+    margin-top: 30px;
+    /* padding-left: 10px; */
+    padding: 100px 10px;
+  }
+  .join{
+    width: 300px;
+    height: 300px;
+    background-color: var(--secondary);
+    box-shadow: 0px 0px 10px 0px var(--primary);
+    border-radius: 10px;
+    margin: 10px;
+  }
 }

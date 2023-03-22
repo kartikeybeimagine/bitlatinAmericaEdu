@@ -306,6 +306,9 @@ const Subscription = ({ setView, back }) => {
       </Backdrop>
     );
   };
+  const d = new Date(user.userData.subscription.end_Date);
+  const end_date=d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear();
+  console.log(end_date);
 
   return (
     <div
@@ -320,6 +323,9 @@ const Subscription = ({ setView, back }) => {
       <h1>Select a Subscription Plan</h1>
       <h3>
         Current Plan: {parseInt(user.userData.nft_quota)} Certificates available
+      </h3>
+      <h3>
+        Expiry Date: {end_date}
       </h3>
       <div
         style={{

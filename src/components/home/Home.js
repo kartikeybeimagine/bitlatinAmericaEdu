@@ -72,7 +72,6 @@ const Home = () => {
           <div className="writing">
               <div className="heading">{t("Home.container2.heading-1")}</div>
               <div className="heading" >{t("Home.container2.heading-2")}</div>
-            {/* <hr /> */}
             <div className="certificatesectioncontainer2">
             <div className="certificatesectioncontainer2part1">
               <div className="certificatesissued2">
@@ -114,7 +113,6 @@ const Home = () => {
           
           <div className="howtouseimageleft">
             <div>
-              {/* <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1Q8fG0TtVAY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> */}
               {
                 i18next.language === "en" ? <iframe width="560" height="315" src="https://www.youtube.com/embed/YDsqedqmF84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> : <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FIx3HdzXCDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               }
@@ -126,7 +124,7 @@ const Home = () => {
       {/* Solution Sections ---------------------------------------- */}
 
       {/* Why Bit Section ---------------------------------------- */}
-      <div className="joinContainer">
+      <div className="joinContainer2">
         <div className="stepsheadingbtndiv">
             <div className="benefit">
              {t("Home.generate_degree_btn")}
@@ -195,13 +193,13 @@ const Home = () => {
         <div className="stepscontainer2">
           <div className="step">
             <div className="stepimg">
-              <img src={step7} alt="step7" />
+              <img src={step5} alt="step5" />
             </div>
             <div className="stepheading">
-            {t("Home.container4.step7.heading")}
+            {t("Home.container4.step5.heading")}
             </div>
             <div className="steptext">
-            {t("Home.container4.step7.text")}
+            {t("Home.container4.step5.text")}
             </div>
           </div>
           <div className="step">
@@ -217,13 +215,13 @@ const Home = () => {
           </div>
           <div className="step">
             <div className="stepimg">
-              <img src={step5} alt="step5" />
+              <img src={step7} alt="step7" />
             </div>
             <div className="stepheading">
-            {t("Home.container4.step5.heading")}
+            {t("Home.container4.step7.heading")}
             </div>
             <div className="steptext">
-            {t("Home.container4.step5.text")}
+            {t("Home.container4.step7.text")}
             </div>
           </div>
           

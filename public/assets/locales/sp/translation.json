@@ -12,65 +12,65 @@
     "for":"Para",
     "heading2":"Educación",
     "subheading":"Transformando el sistema educativo",
-    "button":"Aprende más",
+    "button":"Conoce más",
     "container2":{
       "heading-1":"Blockchain para",
-      "heading-2":"Colegios y universidades",
+      "heading-2":"instituciones educativas",
       "box1":{
-        "heading":"Microcredencial",
+        "heading":"Microcredenciales",
         "text":"Están destinados a certificar carreras profesionales y habilidades para el lugar de trabajo.También se aplican a los ciclos de actualización de curso corto y profesional"
       },
       "box2":{
-        "heading":"Prueba de participación",
-        "text":"NFTS tenía la intención de acreditar la participación de miembros de la comunidad educativa en actos y eventos de la institución."
+        "heading":"Prueba De Participación",
+        "text":"Estas Certificaciones son NFTs que tienen la intención de acreditar la participación de miembros de la comunidad educativa en actos, eventos y conferencias de la institución."
       },
       "box3":{
         "heading":"Distinciones y premios",
-        "text":"Insignias que certifican distinciones y reconocimientos otorgados por la institución a sus maestros o estudiantes.Medallas de honor, mejor promedio, logro deportivo"
+        "text":"Insignias que certifican distinciones y reconocimientos otorgados por la institución a sus maestros o estudiantes.Medallas de honor, ,mejores promedios, logros deportivos, etcétera"
       },
       "box4":{
-        "heading":"Títulos de pregrado y posgrado",
-        "text":"Calificación otorgada por la institución solo a sus estudiantes (escolar, universidad y posgrado)"
+        "heading":"Títulos de grado, posgrado y niveles obligatorios",
+        "text":"Calificación otorgada por la Institución educativa únicamente a sus graduados escolares o de carreras de grado y posgrado"
       }
     },
     "container3":{
       "heading1":"Por qué",
       "heading2":"Bitmemoir?",
-      "text":"Transformando el ecosistema educativo emitiendo credenciales auténticas y verificadas y negando por completo la posibilidad de documentos duplicados, falsos o falsos."
+      "text":"Transformando el ecosistema educativo a partir de la emisión de diplomas y credenciales auténticas y verificadas, impidiendo por completo la posibilidad duplicar o falsear documentos de la institución educativa."
     },
-    "generate_degree_btn":"Generar grados",
-    "generate_certificate_btn":"Generar certificados",
+    "generate_degree_btn":"GENERAR GRADOS",
+    "generate_certificate_btn":"GENERAR CERTIFICADOS",
     "container4":{
       "heading1":"Pasos para",
       "heading2":"Emisión de certificados",
       "text":"La forma para que una institución genere títulos universitarios o escolares en blockchain",
       "step1":{
         "heading":"Paso 01",
-        "text":"La institución compra un plan de acuerdo con sus necesidades"
+        "text":"La institución elige el plan que mejor se adecuada a sus necesidades"
       },
       "step2":{
         "heading":"Paso 02",
-        "text":"Solicitamos la información legal y una nota con la firma legal de la más alta autoridad"
+        "text":"La institución completa los pasos de validación para corroborar su autenticidad"
       },
       "step3":{
         "heading":"Paso 03",
-        "text":"Nuestra empresa valida la institución como una cuenta segura"
+        "text":"Bitmemoir verifica la documentación y valida a la institución como una cuenta segura en blockchain"
       },
       "step4":{
         "heading":"Paso 04",
-        "text":"La institución envía sus modelos de títulos universitarios o escolares"
+        "text":"La institución selecciona el modelo de certificación o carga su propia plantilla de diploma en la plataforma"
       },
       "step5":{
         "heading":"Paso 05",
-        "text":"Integramos los modelos en la plataforma habilitados solo para esa institución."
+        "text":"Se habilitan los formularios para que puedan ser completados por la organización educativa, con los datos de quienes recibirán la certificación o diploma"
       },
       "step6":{
         "heading":"Paso 06",
-        "text":"Hacemos una nueva consulta de validación final a la persona a cargo designada por la institución"
+        "text":"Se activa la segunda llave de validación, para que la persona responsable, designada por la institución, autorice esa emisión"
       },
       "step7":{
         "heading":"Paso 07",
-        "text":"Habilitamos el formulario para que la institución pueda completarlo individualmente y emitir los certificados"
+        "text":" Se emiten los certificados en blockchain. Cada destinatario recibe en su correo el documento con el qr ya integrado y recepciona en su billetera virtual la insignia digital"
       }
     },
     "container5":{

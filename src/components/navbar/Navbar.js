@@ -72,7 +72,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          Home
+         {t("Navbar.Home")}
         </div>
         <div
           className="menuitem"
@@ -81,7 +81,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          View
+          {t("Navbar.View")}
         </div>
         <div
           className="menuitem"
@@ -90,9 +90,17 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          Institutions
+           {t("Navbar.Institutions")}
         </div>
-
+        <div
+          className="menuitem"
+          onClick={() => {
+            navigate("/verify");
+            setIsMenu(false);
+          }}
+        >
+          {t("Navbar.Verify")}
+        </div>
         <div
           className="menuitem"
           onClick={() => {
@@ -100,7 +108,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          BitWallet
+          {t("BitWallet")}
         </div>
 
         <div
@@ -110,7 +118,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          Contact Us
+          {t("Navbar.Contact_Us")}
         </div>
       </div>
     );
@@ -182,7 +190,7 @@ const Navbar = () => {
               defaultValue={i18next.language}
             >
               <MenuItem value={'en'}>English</MenuItem>
-              <MenuItem value={'sp'}>Española</MenuItem>
+              <MenuItem value={'sp'}>Español</MenuItem>
               <MenuItem value={'pt'}>Português</MenuItem>
             </Select>
           </FormControl>}
