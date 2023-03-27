@@ -22,8 +22,10 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  overflow-wrap: break-word;
+  /* overflow-wrap: break-word; */
   word-wrap: break-word;
+  word-break: break-all;
+  
 }
 
 .certDetails img {

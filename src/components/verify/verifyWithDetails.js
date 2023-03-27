@@ -128,7 +128,8 @@ const VerifiedDetails = (props) => {
           <img src={nftData["image"]} alt="" style={{ maxWidth: "80vw" }} />
           <button
             onClick={() => {
-              fileDownload(nftData["image"], "Certificate");
+              // fileDownload(nftData["image"], "Certificate");
+              window.open(nftData["image"]);
             }}
           >
             {t("VerifyDetails.Download")}
