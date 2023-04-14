@@ -12,6 +12,7 @@ import Privacypolicy from "./components/privacyPolicy/privacypolicy";
 import Dashboard from "./components/dashboard/dashboard";
 import InstitutesLandingPage from "./components/institution/instititeAdvanced/landingPage/landing";
 import Body from "./components/BitWallet/Components/body/body";
+import DNFTLandingPage from "./components/dNFT/landingPage/landing";
 // import BitWallet from "./components/BitWallet/Pages/BitWallet"
 import Verify from "./components/verify/verify";
 import VerifyWithDetails from "./components/verify/verifyWithDetails";
@@ -46,6 +47,7 @@ function App() {
               path="/verify/:contractAddress/:tokenId"
               element={<VerifyWithDetails />}
             />
+            <Route path="/dnft" element={<DNFTLandingPage />} />
           </Routes>
           <Footer />
         </UserState>

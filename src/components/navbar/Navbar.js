@@ -127,13 +127,16 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbuttoncontainer">
         <div className="navbutton" onClick={() => navigate("/home")}>
-          {t("Navbar.Home")}
+          Home
         </div>
         <div className="navbutton" onClick={() => navigate("/view")}>
           {t("Navbar.View")}
         </div>
         <div className="navbutton" onClick={() => navigate("/institution")}>
           {t("Navbar.Institutions")}
+        </div>
+        <div className="navbutton" onClick={() => navigate("/dnft")}>
+          dNFT
         </div>
         <div className="navbutton" onClick={() => navigate("/verify")}>
           {t("Navbar.Verify")}
