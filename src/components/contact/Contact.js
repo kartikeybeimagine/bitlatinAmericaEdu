@@ -21,7 +21,7 @@ const Contact = () => {
       <div>
         <p>Address : Beyond imagination tech LLC </p>
         <p style={{marginLeft:"70px"}}>M03 Laffa restaurant building, </p>
-        <p style={{marginLeft:"200px"}}> Sheikh Khalifa Bin Zayed St - opp. Burjuman Mall, </p>
+        <p className="paraAdd"> Sheikh Khalifa Bin Zayed St - opp. Burjuman Mall, </p>
         <p style={{marginLeft:"50px"}}> Dubai,United Arab Emirates</p>
       </div>
       </div>

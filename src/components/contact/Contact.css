@@ -21,3 +21,12 @@
   animation: scaleup 0.5s;
   transform: scale(1.1);
 }
+.paraAdd{
+  margin-left: 200px;
+}
+@media only screen and (max-width: 600px) {
+  .paraAdd{
+    margin-left: 80px;
+  }
+}
+
