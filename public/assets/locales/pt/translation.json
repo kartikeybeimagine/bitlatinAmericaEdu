@@ -82,6 +82,44 @@
       "buy-btn":"COMPRAR AGORA"
     }
 
+  },  "FAQ":{
+    "questions":[
+      {
+        "question":"What is BitMemoir Latam and what services does it offer?",
+        "answer":"BitMemoir Latam is a subsidiary of the BitMemoir firm, based in Dubai, that facilitates the issuance of blockchain certifications and diplomas for educational institutions, ensuring authenticity, transparency, and security. We offer customized solutions tailored to the specific needs of each organization, including the issuance of micro-credentials, certifications for courses or programs, registration of non-curricular activities, recognitions and awards, proof of participation in events, and systems to provide transparency in scholarship and funding programs."
+      },
+      {
+        "question":"How does blockchain ensure the authenticity of issued certifications?",
+        "answer":"BitMemoir Latam verifies and validates the authenticity of educational institutions before allowing them to issue certifications on the blockchain. Additionally, in the case of university degrees or school diplomas, the issuance process includes a second validation key, where a person designated by the institution authorizes the issuance of the certificates."
+      },
+      {
+        "question":"What are the advantages of using blockchain for issuing certifications and diplomas?",
+        "answer":"Blockchain-issued certifications and diplomas are easily verifiable and contrasting, ensuring their authenticity and preventing forgery. Additionally, it provides transparency and security to the issuance process and enables an immutable and accessible historical record over time."
+      },
+      {
+        "question":"How can educational institutions start issuing blockchain certifications with BitMemoir Latam?",
+        "answer":"To start issuing blockchain certifications with BitMemoir Latam, institutions must follow these steps: 1) Contact us to request a quote. 2) Provide us with the legal information of the institution and a note with the legal signature of the highest authority. 3) We will validate the institution as a secure account. 4) The institution will send us its models of university or school degrees. 5) We will integrate the models in the platform enabled only for that institution. 6) We will make a new final validation query to the person in charge designated by the institution. 7) We will enable the form so that the institution can complete it individually and issue the certificates."
+      },{
+        "question":"How can recipients of blockchain certifications access and manage their documents?",
+        "answer":"Recipients of blockchain certifications can access and manage their documents through the BitMemoir web application or BIT-Wallet. They will receive the document with the integrated QR code and the digital badge in their virtual wallet."
+      },{
+        "question":"What types of certifications can be issued on the blockchain?",
+        "answer":"BitMemoir Latam allows the issuance of various types of certifications on the blockchain, including university or school degrees, micro-credentials, certifications for courses or programs, recognitions and awards, proof of participation in events, and transparency in scholarship and funding programs."
+      },{
+        "question":"Is it safe to use BitMemoir Latam to issue blockchain certifications?",
+        "answer":"Yes, BitMemoir Latam ensures security in the process of issuing blockchain certifications. We verify and validate the authenticity of educational institutions and use blockchain technology to guarantee the authenticity, transparency, and security of the issued documents."
+      },{
+        "question":"What payment options are available for purchasing certificate packages in BitMemoir Latam?",
+        "answer":"BitMemoir Latam offers various payment options for purchasing certificate packages, including Mercado Pago, PayPal, and bank transfer. Institutions can buy packages with a specific number of certificates and start issuing until the purchased quantity is exhausted."
+      },{
+        "question":"What is the cost of certificates in BitMemoir Latam?                    ",
+        "answer":"The base cost per certificate in BitMemoir Latam is 1 dollar. For university degrees, which require a second security and validation key, the cost is 2 dollars per certificate."
+      },{
+        "question":"Can institutions use their own certificate templates, or do they have to use those provided by BitMemoir Latam?", 
+        "answer":"Institutions can choose between using the certificate templates provided by BitMemoir Latam on their platform or uploading and designing their own templates. The platform allows for customization and adaptation of templates according to the needs and preferences of each educational institution."
+      }
+    ],
+    "videoLink":"https://www.youtube.com/embed/YvG1yNJhu0E"
   }
 
 

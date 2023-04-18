@@ -1,0 +1,59 @@
+.roadmappage {
+    background-color: var(--primary);
+    min-height: 90vh;
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    color: var(--secondary);
+  }
+.heading{
+    color: var(--secondary);
+    font-size: 30px;
+    text-align: center;
+}
+.qbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(26, 26, 26, 0.69);
+    background-image: url(./bb2.png);
+    transition: 0.5s;
+    border-radius: 5px;
+    background-color: var(--secondary);
+    color: rgb(7, 7, 7);
+    width: 350px;
+    height: 400px;
+    margin-top: 100px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+  .headingq{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: inherit;
+  }
+
+.listq{
+    font-size: 15px;
+    margin-top: 20px;
+    font-family: inherit;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+}
+li{
+    margin-top: 8px;
+}

@@ -18,6 +18,7 @@ import cookies from 'js-cookie'
 import { Typography } from "@mui/material";
 
 
+
 const GlobeIcon = ({ width = 24, height = 24 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +41,7 @@ const Navbar = () => {
   const [isLang, setIsLang] = useState(false);
   const [lang, setLang] = useState(i18next.language);
   const [open, setOpen] = React.useState(false);
+  const [aboutustext , setaboutustext] = useState("About Us")
 
   const handleChange = (event) => {
     i18next.changeLanguage(event.target.value)
@@ -72,7 +74,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-         {t("Navbar.Home")}
+         Home
         </div>
         <div
           className="menuitem"
@@ -110,7 +112,6 @@ const Navbar = () => {
         >
           {t("BitWallet")}
         </div>
-
         <div
           className="menuitem"
           onClick={() => {
@@ -118,8 +119,29 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          {t("Navbar.Contact_Us")}
+          Contact Us
         </div>
+        <div
+          className="menuitem"
+          onClick={() => {
+            navigate("/team");
+            setIsMenu(false);
+          }}
+        >
+          Team
+        </div>
+        <div
+          className="menuitem"
+          onClick={() => {
+            navigate("/roadmap");
+            setIsMenu(false);
+          }}
+        >
+          RoadMap
+        </div>
+
+
+
       </div>
     );
   };
@@ -144,6 +166,26 @@ const Navbar = () => {
         <div className="navbutton" onClick={() => navigate("/bitwalletpage")}>
           {t("BitWallet")}
         </div>
+        <div className="navbutton" >
+          <div class="dropdown">
+            <Button class="dropbtn">{aboutustext}</Button>
+            <div class="dropdown-content">
+              <a  onClick={() => { 
+                navigate("/team")
+                setaboutustext("Team")
+              } }>Team</a>
+              <a onClick={() => {navigate("/roadmap") 
+              setaboutustext("RoadMap")}}>RoadMap</a>
+              <a onClick={() => {navigate("/whitepapper") 
+              setaboutustext("WhitePaper")
+            }}>WhitePaper </a>
+              <a onClick={() => {navigate("/tokenomics")
+              setaboutustext("Tokenomics")
+            }}>Tokenomics</a>
+          </div>
+        </div>
+        </div>
+
       </div>
       <div className="menucontainer">
         <img

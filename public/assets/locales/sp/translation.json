@@ -82,6 +82,45 @@
         "buy-btn":"COMPRAR AHORA"
       }
 
+    },  "FAQ":{
+      "questions":[
+        {
+          "question":"¿Qué es BitMemoir Latam y qué servicios ofrece? ",
+          "answer":"BitMemoir Latam es una filial de la firma BitMemoir, con base en Dubai, que facilita a instituciones educativas la emisión de certificaciones y diplomas en blockchain, garantizando autenticidad, transparencia y seguridad. Ofrecemos soluciones adaptadas a las necesidades específicas de cada organización, incluyendo la emisión de microcredenciales, certificaciones de cursos o programas, registro de actividades no curriculares, reconocimientos y premios, pruebas de participación en eventos, y sistemas para aportar transparencia en programas de becas y financiamiento."
+        },
+        {
+          "question":"¿Cómo se garantiza la autenticidad de las certificaciones emitidas en blockchain?",
+          "answer":"BitMemoir Latam verifica y valida la autenticidad de las instituciones educativas antes de permitirles emitir certificaciones en blockchain. Además, en el caso de títulos universitarios o diplomas escolares, el proceso de emisión incluye una segunda llave de validación, donde una persona designada por la institución autoriza la emisión de los certificados."
+        },
+        {
+          "question":"¿Qué ventajas tiene utilizar blockchain para la emisión de certificaciones y diplomas?",
+          "answer":"Las certificaciones y diplomas emitidos en blockchain son fácilmente verificables y contrastables, lo que garantiza su autenticidad y evita falsificaciones. Además, proporciona transparencia y seguridad al proceso de emisión y permite un registro histórico inmutable y accesible en el tiempo."
+        },
+        {
+          "question":"¿Cómo pueden las instituciones educativas comenzar a emitir certificaciones en blockchain con BitMemoir Latam?",
+          "answer":"Para comenzar a emitir certificaciones en blockchain con BitMemoir Latam, las instituciones deben seguir los siguientes pasos:"
+          
+        },{
+          "question":"¿Cómo pueden los destinatarios de certificaciones en blockchain acceder y gestionar sus documentos?",
+          "answer":"Los destinatarios de certificaciones en blockchain pueden acceder y gestionar sus documentos a través de la aplicación web BitMemoir o BIT-Wallet. Recibirán en su correo el documento con el código QR integrado y la insignia digital en su billetera virtual."
+        },{
+          "question":"¿Qué tipos de certificaciones se pueden emitir en blockchain?",
+          "answer":"BitMemoir Latam permite la emisión de diversos tipos de certificaciones en blockchain, incluyendo títulos universitarios o escolares, microcredenciales, certificaciones de cursos o programas, reconocimientos y premios, pruebas de participación en eventos y transparencia en programas de becas y financiamiento."
+        },{
+          "question":"¿Es seguro utilizar BitMemoir Latam para emitir certificaciones en blockchain?",
+          "answer":"Sí, BitMemoir Latam garantiza la seguridad en el proceso de emisión de certificaciones en blockchain. Verificamos y validamos la autenticidad de las instituciones educativas y utilizamos la tecnología blockchain para garantizar la autenticidad, transparencia y seguridad de los documentos emitidos."
+        },{
+          "question":"¿Cuáles son las opciones de pago para adquirir paquetes de certificados en BitMemoir Latam?",
+          "answer":"BitMemoir Latam ofrece diversas opciones de pago para adquirir paquetes de certificados, incluyendo Mercado Pago, PayPal y transferencia bancaria. Las instituciones pueden comprar paquetes con una cantidad específica de certificados y comenzar a emitir hasta agotar la cantidad adquirida."
+        },{
+          "question":"¿Cuál es el costo de los certificados en BitMemoir Latam?",
+          "answer":"El costo base por certificado en BitMemoir Latam es de 1 dólar. Para títulos universitarios o diplomas escolares, que requieren una segunda llave de seguridad y validación, el costo es de 2 dólares por certificado."
+        },{
+          "question":"¿Pueden las instituciones utilizar sus propias plantillas de certificados o deben usar las proporcionadas por BitMemoir Latam?", 
+          "answer":"Las instituciones pueden elegir entre utilizar las plantillas de certificados proporcionadas por BitMemoir Latam en su plataforma o cargar y diseñar sus propias plantillas. La plataforma permite personalizar y adaptar las plantillas de acuerdo a las necesidades y preferencias de cada institución educativa."
+        }
+      ],
+      "videoLink":"https://www.youtube.com/embed/z3los2utk7E"
     }
   },
   "kycPage":{

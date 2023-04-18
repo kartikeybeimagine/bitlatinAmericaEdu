@@ -3,6 +3,9 @@ import "./Footer.css";
 import logo from "../assets/logo.png";
 import linkedinlogo from "./assets/linkedinlogo.svg";
 import instagramlogo from "./assets/instagramlogo.svg";
+import telegramlogo from "./assets/telegram-icon.svg";
+import twitterlogo from "./assets/twitter-square-color-icon.svg";
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -35,6 +38,20 @@ const Footer = () => {
             />
             <img
               src={instagramlogo}
+              alt=""
+              onClick={() => {
+                window.open("https://instagram.com/bitmemoir_latam?igshid=YmMyMTA2M2Y=");
+              }}
+            />
+            <img
+              src={twitterlogo}
+              alt=""
+              onClick={() => {
+                window.open("https://instagram.com/bitmemoir_latam?igshid=YmMyMTA2M2Y=");
+              }}
+            />
+            <img
+              src={telegramlogo}
               alt=""
               onClick={() => {
                 window.open("https://instagram.com/bitmemoir_latam?igshid=YmMyMTA2M2Y=");

@@ -12,10 +12,35 @@ import React from "react";
 import { useTranslation } from 'react-i18next'
 import i18next from 'i18next'
 import cookies from 'js-cookie'
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Box from "@mui/material/Box";
+import QuestionBox from "./QuestionBox";
+
+
+function TabPanel(props) {
+  const { value } = props;
+
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      { value === 0 ? <QuestionBox  /> :
+      <>
+      <iframe width="560" height="315" src={t("Home.FAQ.videoLink")} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </>}
+    </div>
+  );
+}
 
 const Home = () => {
 
-  const { t } = useTranslation()
+  const { t } = useTranslation();
+  const [value, setValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <>
       {/* About Section ------------------- */}
@@ -281,6 +306,41 @@ const Home = () => {
               </div>
           </div>
         </div>
+      </div>
+
+      <div className="joinContainer">
+        <div className="joinContainerHeading">
+          FAQs
+        </div>
+        {/* <QuestionBox /> */}
+      <Box
+      sx={{
+        width: "85%",
+        maxWidth: "750px",
+        border: "1px solid lightgrey",
+        borderRadius: "20px",
+        padding: "20px",
+        margin: "20px",
+        // backgroundColor: "#D8E4F7",
+      }}
+    >
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
+          <Tab label="FAQs" sx={{ color: "black" }} />
+          <Tab label="Video FAQs" sx={{ color: "black" }} />
+        </Tabs>
+      </Box>
+      <TabPanel
+        value={value}
+        // index={0}
+        // users={props.users}
+        // update={props.update}
+      ></TabPanel>
+    </Box>
       </div>
     </>
   );
