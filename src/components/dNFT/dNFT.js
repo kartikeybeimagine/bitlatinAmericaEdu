@@ -1,77 +1,43 @@
 import "./education.css";
-import SchoolIcon from "@mui/icons-material/School";
 import WebIcon from "@mui/icons-material/Web";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
-import SportsHandballIcon from "@mui/icons-material/SportsHandball";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import DeleteIcon from "@mui/icons-material/Delete";
 import { useState, useContext } from "react";
 import Tooltip from "@mui/material/Tooltip";
 import { useEffect } from "react";
-import { templateApi,dNFtForStudent } from "../Scripts/apiCalls";
+import { templateApi, dNFtForStudent } from "../Scripts/apiCalls";
 import UserContext from "../../context/userContext/UserContext";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 import CertIssue from "./certIssue/certIssue";
 import uploadIcon from "./uploadIcon.jpg";
-import PanToolIcon from "@mui/icons-material/PanTool";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import TextIncreaseIcon from "@mui/icons-material/TextIncrease";
-import TextDecreaseIcon from "@mui/icons-material/TextDecrease";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import FormatColorFillIcon from "@mui/icons-material/FormatColorFill";
-import { SketchPicker } from "react-color";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import ReplayIcon from "@mui/icons-material/Replay";
 import QRCode from "react-qr-code";
-import Draggable from "react-draggable";
+import Slider from "@mui/material/Slider";
+import CircularProgress from "@mui/material/CircularProgress";
+import Backdrop from "@mui/material/Backdrop";
 
-
-
-
-const DNFTMainPage = ({ setView, certData, setCertData, }) => {
+const DNFTMainPage = () => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(true);
   const [isBatchCreator, setIsBatchCreator] = useState(false);
-  const [selectedTemplate, setSelectedTemplate] = useState(certData);
-  const [isMinting, setIsMinting] = useState(false);
   const [category, setCategory] = useState("Create New Batch");
   const [batchList, setBatchList] = useState([]);
-  const [selectedBatch,setSelectedBatch] = useState({
-    name:"",
-    description:"",
-    id:"",
-    batch_nft_image:"",
+  const [selectedBatch, setSelectedBatch] = useState({
+    name: "",
+    description: "",
+    id: "",
+    batch_nft_image: "",
   });
-  const [nft_image,setNft_image] = useState("");
-  const [studentList,setStudentList] = useState([]);
-  const [status,setStatus] = useState("");
+  const [nft_image, setNft_image] = useState("");
+  const [studentList, setStudentList] = useState([]);
+  const [status, setStatus] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [imageWidth, setImageWidth] = useState(100);
   const [imageHeight, setimageHeight] = useState(100);
   const [selectedImage, setSelectedImage] = useState(uploadIcon);
   const [uploadedImage, setUploadedImage] = useState(null);
-  const [selectedVariables, setSelectedVariables] = useState([
-    {
-      name: "qrcode",
-      height: "5",
-      width: "30",
-      x_pos: "0",
-      y_pos: "0",
-      color: "#000000",
-      type: "qr",
-    },
-  ]);
-  const [selectedVariablesData, setSelectedVariablesData] = useState([
-    {
-      name: "qrcode",
-      height: "5",
-      width: "30",
-      x_pos: "50",
-      y_pos: "50",
-      color: "#000000",
-      type: "qr",
-    },
-  ]);
+  const [qrXPos, setQrXPos] = useState(10);
+  const [qrYPos, setQrYPos] = useState(10);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -87,22 +53,22 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
   });
 
   useEffect(() => {
-    
-        dNFtForStudent({
-        request_type: "read",
-        account: user.userAccount,
+    setIsLoading(true);
+    dNFtForStudent({
+      request_type: "read",
+      account: user.userAccount,
+    })
+      .then((res) => {
+        console.log("---------------------------------------");
+        console.log(res);
+        setBatchList(res);
+        setIsLoading(false);
       })
-        .then((res) => {
-          console.log("---------------------------------------");
-          console.log(res);
-          setBatchList(res);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-  }, [category,status]);
-  
-  
+      .catch((err) => {
+        console.log(err);
+        window.location.reload();
+      });
+  }, []);
 
   const navbuttons = [
     {
@@ -131,8 +97,7 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
         </div>
       ),
       category: "Batch List",
-    }
-
+    },
   ];
   const selectImage = (file) => {
     setNft_image(file);
@@ -161,9 +126,6 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
               key={"education-sector-nav-button-" + nav["text"]}
               onClick={() => setCategory(nav["category"])}
             >
-              {/* <Tooltip title={nav["text"]} placement="right-start">
-                {nav["logo"]}
-              </Tooltip> */}
               {nav["text"]}
             </div>
           ))}
@@ -173,7 +135,12 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
           style={{
             backgroundColor: "var(--darkshade1)",
             height: window.innerHeight - 50 + "px",
-            width: category !=="Create New Batch" ? (isSidebar ? sidebarWidth : "0px") : "0px", 
+            width:
+              category !== "Create New Batch"
+                ? isSidebar
+                  ? sidebarWidth
+                  : "0px"
+                : "0px",
             overflowY: "scroll",
           }}
         >
@@ -189,24 +156,26 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
             <h4>Batch List</h4>
           </div>
 
-          {category !== "Create New Batch"  &&<div
-            className="educationnavbutton"
-            style={{
-              width: "50px",
-              height: "50px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              position: "absolute",
-              top: "0px",
-              right: "-50px",
-              backgroundColor: "var(--darkshade1)",
-              zIndex: 1,
-            }}
-            onClick={() => setIsSidebar(!isSidebar)}
-          >
-            {category !== "Create New Batch"  && (isSidebar ? "<" : ">")}
-          </div>}
+          {category !== "Create New Batch" && (
+            <div
+              className="educationnavbutton"
+              style={{
+                width: "50px",
+                height: "50px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "absolute",
+                top: "0px",
+                right: "-50px",
+                backgroundColor: "var(--darkshade1)",
+                zIndex: 1,
+              }}
+              onClick={() => setIsSidebar(!isSidebar)}
+            >
+              {category !== "Create New Batch" && (isSidebar ? "<" : ">")}
+            </div>
+          )}
 
           <TemplateContainer />
           {/* <TemplateContainer subscription="free" />
@@ -217,9 +186,6 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
   };
 
   const TemplateContainer = () => {
-
-    
-
     return (
       <>
         <div
@@ -239,45 +205,42 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
             gap: "10px",
           }}
         >
-          {
-            batchList.map((batch) => (
-              <div style={{
+          {batchList.map((batch) => (
+            <div
+              style={{
                 width: "100%",
                 borderBottom: "1px solid white",
                 fontSize: "20px",
                 cursor: "pointer",
-                paddingLeft:"30px",
-                
+                paddingLeft: "30px",
               }}
               onClick={() => {
                 setSelectedBatch(batch);
-                dNFtForStudent({
-                  request_type: "students",
-                  account: user.userAccount,
-                  batch_id: batch.id,
-                })
-                  .then((res) => {
-                    console.log("---------------------------------------");
-                    console.log(res);
-                    setStudentList(res);
-                  })
-                  .catch((err) => {
-                    console.log(err);
-                  }
-                  );
+                // dNFtForStudent({
+                //   request_type: "students",
+                //   account: user.userAccount,
+                //   batch_id: batch.id,
+                // })
+                //   .then((res) => {
+                //     console.log("---------------------------------------");
+                //     console.log(res);
+                //     setStudentList(res);
+                //   })
+                //   .catch((err) => {
+                //     console.log(err);
+                //   });
               }}
-              >{batch.name}</div>
-            ))
-
-          }
-
+            >
+              {batch.name}
+            </div>
+          ))}
         </div>
       </>
     );
   };
 
   const MainPage = () => {
-    const BASE_URL = "http://127.0.0.1:8000"
+    const BASE_URL = "http://bitmemoirlatam";
     return (
       <div
         style={{
@@ -291,154 +254,193 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
         }}
         className="educationmainpage"
       >
-            {
-            category === "Create New Batch" && (isBatchCreator ? (
-              <CertIssue  />
-            ) : (
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <button
+        {category === "Create New Batch" &&
+          (isBatchCreator ? (
+            <CertIssue />
+          ) : (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <button
                 style={{
                   marginTop: "200px",
                 }}
-                  onClick={() => {
-                    setIsBatchCreator(true);
-                  }}
-                  >
-                  Create New Batch
-                  </button>
-
-              </div>))
-            }
-            {
-              category ==="Update Batch" && 
+                onClick={() => {
+                  setIsBatchCreator(true);
+                }}
+              >
+                Create New Batch
+              </button>
+            </div>
+          ))}
+        {category === "Update Batch" && (
+          <div>
+            <h2>Update Batch</h2>
+            {selectedBatch.name === "" ? (
+              <h3>Please Select Batch.......</h3>
+            ) : (
               <div>
-                <h2>Update Batch</h2>
-                {
-                  selectedBatch.name ==="" ? <h3>Please Select Batch.......</h3> :
-                  <div>
-                    <h4>Batch Name : {selectedBatch.name}</h4>
-                    <h4>Batch Description : {selectedBatch.description}</h4>
-                    <h4> Current Batch Image : </h4>
-                    <div><img src={BASE_URL+selectedBatch.batch_nft_image} alt="Batch Image" width={imageWidth} /></div>
-
-                    <label htmlFor="cert-number-input-for-issue"
+                <h4>Batch Name : {selectedBatch.name}</h4>
+                <h4>Batch Description : {selectedBatch.description}</h4>
+                <h4> Current Batch Image : </h4>
+                <div
+                  style={{
+                    width: imageWidth.toString() + "px",
+                    position: "relative",
+                    marginBottom: "50px",
+                  }}
+                >
+                  <img
+                    src={selectedBatch.batch_nft_image}
+                    alt="Batch Image"
+                    width={imageWidth}
+                  />
+                  <QRCode
+                    size={256}
+                    bgColor={"rgba(0, 0, 0, 0)"}
+                    fgColor={"rgba(0, 0, 0, 1)"}
                     style={{
-                      marginTop: "50px",
+                      width: (parseFloat(imageWidth) * 0.1).toString() + "px",
+                      height: (parseFloat(imageWidth) * 0.1).toString() + "px",
+                      position: "absolute",
+                      left: 10 + "%",
+                      top: 10 + "%",
                     }}
-                     >
-                      Upload NFT Image
-                    </label>
-                      <input
-                          type="file"
-                          id="image-selector"
-                          style={{ display: "none" }}
-                          onChange={(e) => selectImage(e.target.files[0])}
-                      />
-                      <div
-                          style={{
-                            width: imageWidth.toString() + "px",
-                            position: "relative",
-                          }}
-                        >
-                          <img
-                            src={selectedImage}
-                            alt="Custom Template"
-                            width={imageWidth}
-                            style={{ top: "0px", left: "0px" }}
-                            id="cert-creator-preview"
-                            onClick={() => document.getElementById("image-selector").click()}
-                          />
+                    value={"https://bitmemoirlatam.com/#/verify/"}
+                  />
+                </div>
 
-                          {selectedVariables.length > 0 &&
-                            selectedVariables.map((variable) => (
-                              <DragVariable
-                                variable={variable}
-                                selectedVariables={selectedVariables}
-                                selectedVariablesData={selectedVariablesData}
-                                setSelectedVariables={setSelectedVariables}
-                                setSelectedVariablesData={setSelectedVariablesData}
-                                imageWidth={imageWidth}
-                                imageHeight={imageHeight}
-                                key={"variable-added-by-dragging-" + variable.name}
-                              />
-                            ))}
-                      </div>
-                    <button 
+                <label
+                  htmlFor="cert-number-input-for-issue"
+                  style={{
+                    marginTop: "50px",
+                  }}
+                >
+                  Upload New NFT Image
+                </label>
+                <input
+                  type="file"
+                  id="image-selector"
+                  style={{ display: "none" }}
+                  onChange={(e) => selectImage(e.target.files[0])}
+                />
+                <div
+                  style={{
+                    width: imageWidth.toString() + "px",
+                    position: "relative",
+                    marginBottom: "50px",
+                  }}
+                >
+                  <img
+                    src={selectedImage}
+                    alt="Custom Template"
+                    width={imageWidth}
+                    style={{ top: "0px", left: "0px" }}
+                    id="cert-creator-preview"
+                    onClick={() =>
+                      document.getElementById("image-selector").click()
+                    }
+                  />
+                  <QRCode
+                    size={256}
+                    bgColor={"rgba(0, 0, 0, 0)"}
+                    fgColor={"rgba(0, 0, 0, 1)"}
                     style={{
-                      marginTop: "50px",
+                      width: (parseFloat(imageWidth) * 0.1).toString() + "px",
+                      height: (parseFloat(imageWidth) * 0.1).toString() + "px",
+                      position: "absolute",
+                      left: qrXPos + "%",
+                      top: qrYPos + "%",
                     }}
-                    onClick={() => {
-                      setStatus("Updating Batch....");  
-                      dNFtForStudent({
-                        request_type: "update",
-                        account: user.userAccount,
-                        batch_id: selectedBatch.id,
-                        nft_image: nft_image,
-                        variables : JSON.stringify(selectedVariablesData),
-                      }).then((res) => {
+                    value={"https://bitmemoirlatam.com/#/verify/"}
+                  />
+                  <Slider
+                    defaultValue={10}
+                    aria-label="Default"
+                    valueLabelDisplay="auto"
+                    onChange={(e) => setQrXPos(e.target.value)}
+                    color="secondary"
+                    sx={{
+                      position: "absolute",
+                      bottom: "-30px",
+                      left: "0px",
+                    }}
+                  />
+                  <Slider
+                    defaultValue={90}
+                    aria-label="Default"
+                    valueLabelDisplay="auto"
+                    orientation="vertical"
+                    color="secondary"
+                    onChange={(e) => setQrYPos(100 - e.target.value)}
+                    sx={{
+                      position: "absolute",
+                      top: "0px",
+                      right: "-30px",
+                      height: imageHeight,
+                    }}
+                  />
+                </div>
+                <button
+                  style={{
+                    marginTop: "50px",
+                  }}
+                  onClick={() => {
+                    setStatus("Updating Batch....");
+                    dNFtForStudent({
+                      request_type: "update",
+                      account: user.userAccount,
+                      batch_id: selectedBatch.id,
+                      nft_image: nft_image,
+                    })
+                      .then((res) => {
                         console.log("---------------------------------------");
                         console.log(res);
                         setStatus("Batch Updated Successfully");
-                      }
-                      ).catch((err) => {
+                      })
+                      .catch((err) => {
                         console.log(err);
-                      }
-                      );
-
-
-                    }}
-                    >Update</button>
-                    <p>{status}</p>
-                  </div>
-                }
-
+                      });
+                  }}
+                >
+                  Update
+                </button>
+                <p>{status}</p>
               </div>
-            }
-            {
-              category ==="Batch List" &&
+            )}
+          </div>
+        )}
+        {category === "Batch List" && (
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
+            <h2>Student List</h2>
+            {selectedBatch.name === "" ? (
+              <h3>Please Select Batch.......</h3>
+            ) : (
               <div>
-                <h2>Student List</h2>
-                {
-                  selectedBatch.name ==="" ? <h3>Please Select Batch.......</h3> :
-                  <div>
-                    <h4>Batch Name : {selectedBatch.name}</h4>
-                    <div style={{
-                          width: "100%",
-                          borderBottom: "1px solid white",
-                          fontSize: "20px",
-                          cursor: "pointer",
-                          paddingLeft:"30px",
-                        }}
-                        ><span>S.No </span> <span style={{marginLeft:"20px"}}>Wallet Address</span></div>
-                    {
-                      studentList.map((student,i) => (
-                        <div style={{
-                          width: "100%",
-                          borderBottom: "1px solid white",
-                          fontSize: "20px",
-                          cursor: "pointer",
-                          paddingLeft:"30px",
-                        }}
-                        ><span>{i+1}</span> <span pan style={{marginLeft:"50px"}}>{student.wallet_address}</span></div>
-                      ))
-                    }
-                  </div>
-                  
-
-                      
-                }
+                <h4>Batch Name : {selectedBatch.name}</h4>
+                <StudentsView students={selectedBatch.students} />
               </div>
-            }
+            )}
+          </div>
+        )}
       </div>
     );
   };
+
+  if (isLoading) return <LoadingPage status={status} />;
 
   return (
     <div className="educationSector">
@@ -449,7 +451,213 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
         }}
       >
         <Sidebar />
-        <MainPage />
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            height: window.innerHeight - 50 + "px",
+            overflowY: "scroll",
+          }}
+          className="educationmainpage"
+        >
+          {category === "Create New Batch" &&
+            (isBatchCreator ? (
+              <CertIssue />
+            ) : (
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <button
+                  style={{
+                    marginTop: "200px",
+                  }}
+                  onClick={() => {
+                    setIsBatchCreator(true);
+                  }}
+                >
+                  Create New Batch
+                </button>
+              </div>
+            ))}
+          {category === "Update Batch" && (
+            <div>
+              <h2>Update Batch</h2>
+              {selectedBatch.name === "" ? (
+                <h3>Please Select Batch.......</h3>
+              ) : (
+                <div>
+                  <h4>Batch Name : {selectedBatch.name}</h4>
+                  <h4>Batch Description : {selectedBatch.description}</h4>
+                  <h4> Current Batch Image : </h4>
+                  <div
+                    style={{
+                      width: imageWidth.toString() + "px",
+                      position: "relative",
+                      marginBottom: "50px",
+                    }}
+                  >
+                    <img
+                      src={selectedBatch.batch_nft_image}
+                      alt="Batch Image"
+                      width={imageWidth}
+                    />
+                    {/* <QRCode
+                      size={256}
+                      bgColor={"rgba(0, 0, 0, 0)"}
+                      fgColor={"rgba(0, 0, 0, 1)"}
+                      style={{
+                        width: (parseFloat(imageWidth) * 0.1).toString() + "px",
+                        height:
+                          (parseFloat(imageWidth) * 0.1).toString() + "px",
+                        position: "absolute",
+                        left: 10 + "%",
+                        top: 10 + "%",
+                      }}
+                      value={"https://bitmemoirlatam.com/#/verify/"}
+                    /> */}
+                  </div>
+
+                  <label
+                    htmlFor="cert-number-input-for-issue"
+                    style={{
+                      marginTop: "50px",
+                    }}
+                  >
+                    Upload New NFT Image
+                  </label>
+                  <input
+                    type="file"
+                    id="image-selector"
+                    style={{ display: "none" }}
+                    onChange={(e) => selectImage(e.target.files[0])}
+                  />
+                  <div
+                    style={{
+                      width: imageWidth.toString() + "px",
+                      position: "relative",
+                      marginBottom: "50px",
+                    }}
+                  >
+                    <img
+                      src={selectedImage}
+                      alt="Custom Template"
+                      width={imageWidth}
+                      style={{ top: "0px", left: "0px" }}
+                      id="cert-creator-preview"
+                      onClick={() =>
+                        document.getElementById("image-selector").click()
+                      }
+                    />
+                    <QRCode
+                      size={256}
+                      bgColor={"rgba(0, 0, 0, 0)"}
+                      fgColor={"rgba(0, 0, 0, 1)"}
+                      style={{
+                        width: (parseFloat(imageWidth) * 0.1).toString() + "px",
+                        height:
+                          (parseFloat(imageWidth) * 0.1).toString() + "px",
+                        position: "absolute",
+                        left: qrXPos + "%",
+                        top: qrYPos + "%",
+                      }}
+                      value={"https://bitmemoirlatam.com/#/verify/"}
+                    />
+                    <Slider
+                      defaultValue={10}
+                      aria-label="Default"
+                      valueLabelDisplay="auto"
+                      onChange={(e) => setQrXPos(e.target.value)}
+                      color="secondary"
+                      sx={{
+                        position: "absolute",
+                        bottom: "-30px",
+                        left: "0px",
+                      }}
+                    />
+                    <Slider
+                      defaultValue={90}
+                      aria-label="Default"
+                      valueLabelDisplay="auto"
+                      orientation="vertical"
+                      color="secondary"
+                      onChange={(e) => setQrYPos(100 - e.target.value)}
+                      sx={{
+                        position: "absolute",
+                        top: "0px",
+                        right: "-30px",
+                        height: imageHeight,
+                      }}
+                    />
+                  </div>
+                  <button
+                    style={{
+                      marginTop: "50px",
+                    }}
+                    onClick={() => {
+                      setStatus("Updating Batch....");
+                      setIsLoading(true);
+                      dNFtForStudent({
+                        request_type: "update",
+                        account: user.userAccount,
+                        batch_id: selectedBatch.id,
+                        nft_image: nft_image,
+                        x_pos: qrXPos,
+                        y_pos: qrYPos,
+                      })
+                        .then((res) => {
+                          console.log(
+                            "---------------------------------------"
+                          );
+                          console.log(res);
+                          setStatus("Batch Updated Successfully");
+                          setIsLoading(false);
+                          alert("Batch Updated Successfully");
+                        })
+                        .catch((err) => {
+                          console.log(err);
+                          setIsLoading(false);
+                          setStatus("Errored. please try again.");
+                          alert("Something went wrong. Please try again.");
+                        });
+                    }}
+                  >
+                    Update
+                  </button>
+                  <p>{status}</p>
+                </div>
+              )}
+            </div>
+          )}
+          {category === "Batch List" && (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <h2>Student List</h2>
+              {selectedBatch.name === "" ? (
+                <h3>Please Select Batch.......</h3>
+              ) : (
+                <div>
+                  <h4>Batch Name : {selectedBatch.name}</h4>
+                  <StudentsView students={selectedBatch.students} />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -457,249 +665,115 @@ const DNFTMainPage = ({ setView, certData, setCertData, }) => {
 
 export default DNFTMainPage;
 
-
-
-const DragVariable = ({
-  variable,
-  selectedVariables,
-  selectedVariablesData,
-  setSelectedVariables,
-  setSelectedVariablesData,
-  imageWidth,
-}) => {
-  const [isColorPicker, setIsColorPicker] = useState(false);
-  const [imageHeight, setimageHeight] = useState(100);
-
-  const startingPositionX = 50 - parseFloat(variable.width) / 2 + "%";
-  const startingPositionY = 50 - parseFloat(variable.height) + "%";
-
-  useEffect(() => {
-    console.log(imageHeight);
-    console.log(
-      -imageHeight / 2 + (parseFloat(variable.height) * imageHeight) / 200
-    );
-    console.log(
-      imageHeight / 2 - (parseFloat(variable.height) * imageHeight) / 200
-    );
-    try {
-      setimageHeight(
-        document.getElementById("cert-creator-preview").offsetHeight
-      );
-      console.log(
-        "Image height---",
-        document.getElementById("cert-creator-preview").offsetHeight
-      );
-    } catch (err) {
-      console.log("could not set height");
-    }
-  });
-
-  const getTextHeight = (variableHeight) => {
-    let fullheight = 200;
-    try {
-      fullheight = document.getElementById("cert-creator-preview").offsetHeight;
-    } catch {
-      fullheight = 200;
-    }
-    let textHeight = parseInt((fullheight * variableHeight) / 100) + "px";
-    return textHeight;
-  };
-
-  const changeVariablePosition = (data) => {
-    let x_pos =
-      Math.round(
-        (50 + (parseFloat(data.x) / parseFloat(imageWidth)) * 100) * 100
-      ) / 100;
-    let y_pos =
-      Math.round(
-        (50 + (parseFloat(data.y) / parseFloat(imageHeight)) * 100) * 100
-      ) / 100;
-
-    let newVariablesData = [];
-    selectedVariablesData.map((myvariable) => {
-      if (myvariable.name === variable.name) {
-        myvariable["x_pos"] = x_pos;
-        myvariable["y_pos"] = y_pos;
-      }
-      newVariablesData.push(myvariable);
-    });
-    setSelectedVariablesData(newVariablesData);
-  };
-
-  const changeVariableAttribute = (attributename, valueChange) => {
-    let newVariables = [];
-    selectedVariables.map((myvariable) => {
-      if (myvariable.name === variable.name) {
-        if (attributename === "color") {
-          myvariable[attributename] = valueChange;
-        } else {
-          myvariable[attributename] =
-            parseInt(myvariable[attributename]) + valueChange;
-        }
-      }
-      newVariables.push(myvariable);
-    });
-    setSelectedVariables(newVariables);
-
-    let newVariablesData = [];
-    selectedVariablesData.map((myvariable) => {
-      if (myvariable.name === variable.name) {
-        if (attributename === "color") {
-          myvariable[attributename] = valueChange;
-        } else {
-          myvariable[attributename] =
-            parseInt(myvariable[attributename]) + valueChange;
-        }
-      }
-      newVariablesData.push(myvariable);
-    });
-    setSelectedVariablesData(newVariablesData);
-  };
+const StudentsView = (students) => {
+  const user = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
   return (
-    <Draggable
-      handle="#handle"
-      bounds={{
-        left: -imageWidth / 2 + (parseFloat(variable.width) * imageWidth) / 200,
-        top:
-          -imageHeight / 2 + (parseFloat(variable.height) * imageHeight) / 200,
-        right: imageWidth / 2 - (parseFloat(variable.width) * imageWidth) / 200,
-        bottom:
-          imageHeight / 2 - (parseFloat(variable.height) * imageHeight) / 200,
-      }}
-      onDrag={(e, data) => {
-        changeVariablePosition(data);
-      }}
-    >
+    <div>
       <div
         style={{
-          position: "absolute",
-          top: startingPositionY,
-          left: startingPositionX,
-          width: variable.width + "%",
-          height: variable.height + "%",
+          display: "grid",
+          gridTemplateColumns: "repeat(6, 1fr)",
+          gap: "10px",
+          width: "100%",
+          borderBottom: "1px solid white",
         }}
       >
-        <Box
-          sx={{
-            backgroundColor: "transparent",
-            color: "transparent",
-            padding: "20px",
-            position: "relative",
+        <div>S.No.</div>
+        <div>Address</div>
+        <div>Status</div>
+        <div>Token Id</div>
+        <div>NFT</div>
+      </div>
 
-            "&:hover": {
-              backgroundColor: "rgba(255, 255, 255, 0.5)",
-              border: "1px solid black",
-              borderRadius: "10px",
-              color: "black",
-            },
+      {students?.students?.map((student, index) => (
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(6, 1fr)",
+            gap: "10px",
+            width: "100%",
           }}
+          key={"student-list-" + index}
         >
-          <div
-            style={{
-              color: variable.color,
-              width: "100%",
-              textAlign: "center",
-              fontSize: getTextHeight(variable.height),
-              display: "flex",
-              padding: "0px",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            {variable.type === "text" && variable.name}
-            {variable.type === "qr" && (
-              <QRCode
-                size={256}
-                bgColor={"rgba(0, 0, 0, 0)"}
-                fgColor={variable.color}
-                style={{
-                  width:
-                    (parseFloat(variable.height) * imageHeight) / 100 + "px",
-                  height:
-                    (parseFloat(variable.height) * imageHeight) / 100 + "px",
-                }}
-                value={"https://bitmemoir.com/verify"}
-              />
+          <div>{index + 1}</div>
+          <div>{shorterAddress(student.wallet_address)}</div>
+          <div>{student.is_minted ? "Issued" : "Pending"}</div>
+          <div>{student.is_minted ? student.token_id : "-"}</div>
+          <div>
+            {student.is_minted ? (
+              <OpenInNewIcon onClick={() => window.open(student.nft_image)} />
+            ) : (
+              "-"
             )}
           </div>
-          <div id="handle">
-            <PanToolIcon
-              sx={{ position: "absolute", bottom: "-5px", right: "-5px" }}
-            />
+          <div>
+            {!student.is_minted && (
+              <>
+                {isLoading ? (
+                  <CircularProgress fontSize="small" />
+                ) : (
+                  <ReplayIcon
+                    onClick={() => {
+                      setIsLoading(true);
+                      dNFtForStudent({
+                        request_type: "retry",
+                        account: user.userAccount,
+                        student_id: student.id,
+                      })
+                        .then((res) => {
+                          console.log(
+                            "---------------------------------------"
+                          );
+                          console.log(res);
+                          setIsLoading(false);
+                          alert("Student NFT issued Successfully");
+                          window.location.reload();
+                        })
+                        .catch((err) => {
+                          console.log(err);
+                          setIsLoading(false);
+                          alert("Something went wrong. Please try again.");
+                        });
+                    }}
+                  />
+                )}
+              </>
+            )}
           </div>
-          <div style={{ position: "absolute", top: "-20px", left: "0px" }}>
-            <TextIncreaseIcon
-              fontSize="small"
-              onClick={() => changeVariableAttribute("height", 1)}
-            />
-            <TextDecreaseIcon
-              fontSize="small"
-              onClick={() => changeVariableAttribute("height", -1)}
-            />
-            <FormatColorFillIcon
-              fontSize="small"
-              onClick={() => setIsColorPicker(!isColorPicker)}
-            />
-          </div>
-          <div
-            style={{
-              position: "absolute",
-              top: "20px",
-              left: "-20px",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <AddCircleOutlineIcon
-              fontSize="small"
-              onClick={() => changeVariableAttribute("width", 1)}
-            />
-            <RemoveCircleOutlineIcon
-              fontSize="small"
-              onClick={() => changeVariableAttribute("width", -1)}
-            />
-          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
-          <div
-            style={{
-              position: "absolute",
-              top: "0px",
-              right: "0px",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <HighlightOffIcon
-              onClick={() => {
-                const thisIndex = selectedVariables.indexOf(variable);
-                console.log(thisIndex);
-                let newVariables = [];
-                let newVariablesData = [];
-                selectedVariables.map((myVariable, index) => {
-                  if (index !== thisIndex) {
-                    newVariables.push(myVariable);
-                  }
-                  setSelectedVariables(newVariables);
-                });
-                selectedVariablesData.map((myVariable, index) => {
-                  if (index !== thisIndex) {
-                    newVariablesData.push(myVariable);
-                  }
-                  setSelectedVariablesData(newVariables);
-                });
-              }}
-            />
-          </div>
-        </Box>
-        {isColorPicker && (
-          <SketchPicker
-            color={variable.color}
-            onChangeComplete={(color) => {
-              changeVariableAttribute("color", color["hex"]);
-            }}
-          />
-        )}
-      </div>
-    </Draggable>
+const shorterAddress = (address) => {
+  const firstPart = address.slice(0, 5);
+  const secondPart = address.slice(address.length - 4, address.length - 1);
+  return firstPart + "..." + secondPart;
+};
+
+const LoadingPage = ({ status, setView }) => {
+  const { t } = useTranslation();
+  return (
+    <div
+      style={{
+        maxWidth: "500px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "20px",
+        margin: "auto",
+      }}
+    >
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={true}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+
+      <h3>{status}</h3>
+    </div>
   );
 };

@@ -17,130 +17,41 @@ import { useTranslation } from "react-i18next";
 import DNFTMainPage from "../dNFT";
 
 const DNFTLandingPage = () => {
-
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(false);
-  const [view, setView] = useState("education");
-  const [certData, setCertData] = useState(null);
-  const [category, setCategory] = useState("educational certificates");
+
   const { t } = useTranslation();
-
-  const [sector, setSector] = useState({
-    text: "Education",
-    logo: <SchoolIcon fontSize="large" />,
-  });
-  const sectors = [
-    {
-      text: "Education",
-      logo: <SchoolIcon fontSize="large" />,
-    },
-    {
-      text: "Event Management",
-      logo: <EmojiEventsIcon fontSize="large" />,
-    },
-    {
-      text: "Healthcare",
-      logo: <HealthAndSafetyIcon fontSize="large" />,
-    },
-    {
-      text: "Legal",
-      logo: <GavelIcon fontSize="large" />,
-    },
-    {
-      text: "Real Estate",
-      logo: <HomeIcon fontSize="large" />,
-    },
-    {
-      text: "Sports",
-      logo: <SportsHandballIcon fontSize="large" />,
-    },
-    {
-      text: "Entertainment",
-      logo: <CelebrationIcon fontSize="large" />,
-    },
-  ];
-
-  const Sidebar = () => {
-    const animation = isSidebar ? "sidebaropen" : "sidebarclose";
-    const width = isSidebar ? "300px" : "0%";
-
-    return (
-      <div
-        style={{
-          width: isSidebar ? "100%" : "0px",
-          backgroundColor: "var(--darkshade1)",
-          position: "absolute",
-          zIndex: 2,
-        }}
-        onClick={() => setIsSidebar(false)}
-      >
-        <div
-          className="institiutesidebar"
-          style={{
-            width: width,
-            height: "100vh",
-            transform: isSidebar ? "scaleX(100%)" : "scaleX(0%)",
-            overflowY: "scroll",
-            scrollbarWidth: "none",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "1rem",
-              fontWeight: "800",
-              borderBottom: "1px solid var(--secondary)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              textAlign: "center",
-              height: "50px",
-              padding: "0px 100px 0px 10px",
-            }}
-          >
-            <button
-              style={{ padding: "10px" }}
-              onClick={() => setIsSidebar(!isSidebar)}
-            >
-              X
-            </button>
-            Sectors
-          </div>
-          {sectors.map((sector, index) => (
-            <div
-              className="sector"
-              key={sector["text"] + "sector-for-Institution-Sidebar"}
-              onClick={() => {
-                setSector(sector);
-                setIsSidebar(false);
-              }}
-            >
-              {sector["logo"]}
-              {sector["text"]}
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
 
   const Navbar = () => {
     return (
-      <div className="institutenavbar" style={{ left: "0px", height: "50px" }}>
-        {/* <MenuIcon
-          fontSize="large"
-          sx={{ margin: "0px 30px", "&:hover": { color: "var(--primary)" } }}
-          onClick={() => setIsSidebar(!isSidebar)}
-        /> */}
-        {sector["logo"]}
-        dNFT
+      <div
+        className="institutenavbar"
+        style={{
+          left: "0px",
+          height: "50px",
+        }}
+      >
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
+          Dynamic NFT Certificates
+        </div>
       </div>
     );
   };
 
   return (
     <div className="institutepageadvanced">
-      <div style={{ display: "flex", width: "100%", height: "100%" }}>
-        <Sidebar />
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          height: "100%",
+        }}
+      >
         <div
           style={{ display: "flex", flexDirection: "column", width: "100%" }}
         >
@@ -161,7 +72,7 @@ const DNFTLandingPage = () => {
                 width: "100%",
               }}
             >
-            <DNFTMainPage />
+              <DNFTMainPage />
             </div>
           )}
         </div>
