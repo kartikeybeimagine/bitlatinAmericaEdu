@@ -196,7 +196,6 @@ export const nonEssenCertissueApi = async (data) => {
   return response.response;
 };
 
-
 export const SubsForDev = async (data) => {
   const endpoint = "subForDev";
   const url = BASE_URL + endpoint;
@@ -215,7 +214,7 @@ export const SubsForDev = async (data) => {
   if (response.status !== "Success")
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
-}
+};
 
 export const dNFtForStudent = async (data) => {
   const endpoint = "dnft";
@@ -236,4 +235,4 @@ export const dNFtForStudent = async (data) => {
   if (response.status !== "Success")
     throw Object.assign(new Error("Server error"), { code: 402 });
   return response.response;
-}
+};

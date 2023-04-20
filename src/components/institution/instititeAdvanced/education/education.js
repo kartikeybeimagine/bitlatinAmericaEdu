@@ -12,9 +12,15 @@ import Tooltip from "@mui/material/Tooltip";
 import { useEffect } from "react";
 import { templateApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from "react-i18next";
 
-const Education = ({ setView, certData, setCertData,category, setCategory }) => {
+const Education = ({
+  setView,
+  certData,
+  setCertData,
+  category,
+  setCategory,
+}) => {
   const user = useContext(UserContext);
   const [isSidebar, setIsSidebar] = useState(true);
   const [isTemplateCreator, setIsTemplateCreator] = useState(false);
@@ -114,7 +120,7 @@ const Education = ({ setView, certData, setCertData,category, setCategory }) => 
                 setIsSidebar(false);
               }}
             >
-              {t('Institutions.education.createCustomTemplate')}
+              {t("Institutions.education.createCustomTemplate")}
             </button>
           </div>
 
@@ -169,10 +175,10 @@ const Education = ({ setView, certData, setCertData,category, setCategory }) => 
 
     const heading =
       subscription === "user"
-        ? t('Institutions.education.headingRecentlyUsed')
+        ? t("Institutions.education.headingRecentlyUsed")
         : subscription === "free"
-        ? t('Institutions.education.headingFreeTemplates')
-        : t('Institutions.education.headingPremiumTemplates');
+        ? t("Institutions.education.headingFreeTemplates")
+        : t("Institutions.education.headingPremiumTemplates");
 
     useEffect(() => {
       templateApi({
@@ -258,7 +264,7 @@ const Education = ({ setView, certData, setCertData,category, setCategory }) => 
             style={{ padding: "5px" }}
             onClick={() => setStartIndex((prev) => prev + 6)}
           >
-            {t('Institutions.education.more')}...
+            {t("Institutions.education.more")}...
           </button>
         </div>
       </>
@@ -298,19 +304,20 @@ const Education = ({ setView, certData, setCertData,category, setCategory }) => 
                   textAlign: "center",
                 }}
               >
-                <h2>{t('Institutions.education.selectTemplate')}</h2>
+                <h2>{t("Institutions.education.selectTemplate")}</h2>
                 <h3>
                   {" "}
-                  {"<< "}{t('Institutions.education.selectTemplatePlaceholder')}{" "}
+                  {"<< "}
+                  {t("Institutions.education.selectTemplatePlaceholder")}{" "}
                 </h3>
-                <h3>{t('Institutions.education.or')}</h3>
+                <h3>{t("Institutions.education.or")}</h3>
                 <button
                   onClick={() => {
                     setIsTemplateCreator(true);
                     setIsSidebar(false);
                   }}
                 >
-                  {t('Institutions.education.createCustomTemplate')}
+                  {t("Institutions.education.createCustomTemplate")}
                 </button>
               </div>
             ) : (

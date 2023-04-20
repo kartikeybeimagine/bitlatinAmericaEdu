@@ -102,18 +102,21 @@ const CertIssue = ({ setView, certData, category }) => {
   };
 
   const limitExceeded = certNumber > parseInt(user.userData.nft_quota);
-  const today=new Date();
-  const date=today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  const today = new Date();
+  const date =
+    today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   console.log(date);
   const d = new Date(user.userData.subscription.end_Date);
-  const end_date=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+  // const d = new Date();
+  const end_date =
+    d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
   console.log(end_date);
-  console.log(date>end_date);
+  console.log(date > end_date);
 
   if (parseInt(user.userData.nft_quota) === 0)
     return <Subscription back={() => setView("education")} />;
 
-  if (date >end_date)
+  if (date > end_date)
     return <Subscription back={() => setView("education")} />;
 
   if (isSubscription)
