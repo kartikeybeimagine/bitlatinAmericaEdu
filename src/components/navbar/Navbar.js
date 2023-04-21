@@ -122,9 +122,6 @@ const Navbar = () => {
         >
           {t("Navbar.Contact_Us")}
         </div>
-        <div className="navbutton" onClick={() => navigate("/partners")}>
-          {t("Navbar.OurPartners")}
-        </div>
         <div
           className="menuitem"
           onClick={() => {
@@ -142,6 +139,14 @@ const Navbar = () => {
           }}
         >
           {t("Navbar.Roadmap")}
+        </div>
+        <div className="menuitem" 
+                  onClick={() => {
+                    navigate("/partners");
+                    setIsMenu(false);
+                  }}
+        >
+          {t("Navbar.OurPartners")}
         </div>
 
 
