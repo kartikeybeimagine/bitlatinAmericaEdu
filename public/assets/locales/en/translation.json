@@ -4,7 +4,14 @@
       "Institutions":"Institutions",
       "Verify":"Verify",
       "Contact_Us":"Contact Us",
-      "Dashboard":"Dashboard"
+      "Dashboard":"Dashboard",
+      "AboutUs":"About Us",
+      "FAQ":"FAQ",
+      "Team":"Team",
+      "Roadmap":"Roadmap",
+      "Whitepaper":"Whitepaper",
+      "Tokenomics":"Tokenomics",
+      "OurPartners":"Our Partners"
     },
     "Home":{
       "heading":"BitMemoir",
@@ -363,7 +370,52 @@
       "SupportAssets":"Support Assets"
     }
 
-  }
+  },
+  "RoadMap":{
+    "heading":"BITMEMOIR ROADMAP 2023",
+    "subheading":"We are working hard to make BitWallet the best crypto wallet in the world. Here is a sneak peek of what we are working on.",
+    "roadmap":{
+      "Q2":{
+        "heading":"2023 Quarter 2",
+        "point1":"Community Building",
+        "point2":"White Paper Release",
+        "point3":"BitMemoir Mainnet on Polygon",
+        "point4":"BitWallet Mainnet on Polygon",
+        "point5":"Partnerships Line Up"
+      },
+      "Q3":{
+        "heading":"2023 Quarter 3",
+        "point1":"BitMemoir Token IDO Launch on Arbitrum",
+        "point2":"BitMemoir Token Dex Listing",
+        "point3":"BitMemoir Token Cex Listing",
+        "point4":"BitWallet Token IDO Launch on Arbitrum",
+        "point5":"BitWallet Multichain support",
+        "point6":"Partnerships Announcements - 10 plus"
+      },
+      "Q4":{
+        "heading":"2023 Quarter 4",
+        "point1":"Marketing",
+        "point2":"More Adoption of Bitmemoir and Bitwallet",
+        "point3":"BitWallet integration with other Dapps",
+        "point4":"BitWallet will support more chains",
+        "point5":"New NFT Utility Features on Bitmemoir",
+        "point6":"Listing in Major CEX"
+      }
+    }
+  },
+  "Team":{
+    "heading":"Founding Team",
+    "subheading":"Our Team",
+    "hr":"Human Resource",
+    "bd":"BD Executive",
+    "marketing":"Marketing Executive",
+    "ceo":"Founder and CEO",
+    "socialMedia":"Social Media Manager",
+    "hrConsultant":"HR Consultant",
+    "BlockchainDeveloper":"Blockchain Developer"
+
+
+  },"ComingSoon":"Coming Soon..."
+}
   
 
-}

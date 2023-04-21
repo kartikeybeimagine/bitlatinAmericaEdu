@@ -36,12 +36,13 @@ const GlobeIcon = ({ width = 24, height = 24 }) => (
 
 const Navbar = () => {
   const user = useContext(UserContext);
+  const { t } = useTranslation(i18next.language)
   const navigate = useNavigate();
   const [isMenu, setIsMenu] = useState(false);
   const [isLang, setIsLang] = useState(false);
   const [lang, setLang] = useState(i18next.language);
   const [open, setOpen] = React.useState(false);
-  const [aboutustext , setaboutustext] = useState("About Us")
+  const [aboutustext , setaboutustext] = useState(t("Navbar.AboutUs"))
 
   const handleChange = (event) => {
     i18next.changeLanguage(event.target.value)
@@ -55,7 +56,7 @@ const Navbar = () => {
   const handleOpen = () => {
     setOpen(true);
   };
-  const { t } = useTranslation(i18next.language)
+  
 
 
   const Menubar = () => {
@@ -119,7 +120,10 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          Contact Us
+          {t("Navbar.Contact_Us")}
+        </div>
+        <div className="navbutton" onClick={() => navigate("/partners")}>
+          {t("Navbar.OurPartners")}
         </div>
         <div
           className="menuitem"
@@ -128,7 +132,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          Team
+          {t("Navbar.Team")}
         </div>
         <div
           className="menuitem"
@@ -137,8 +141,10 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-          RoadMap
+          {t("Navbar.Roadmap")}
         </div>
+
+
 
 
 
@@ -166,22 +172,26 @@ const Navbar = () => {
         <div className="navbutton" onClick={() => navigate("/bitwalletpage")}>
           {t("BitWallet")}
         </div>
+        <div className="navbutton" onClick={() => navigate("/partners")}>
+        {t("Navbar.OurPartners")}
+        </div>
         <div className="navbutton" >
           <div class="dropdown">
             <Button class="dropbtn">{aboutustext}</Button>
             <div class="dropdown-content">
               <a  onClick={() => { 
                 navigate("/team")
-                setaboutustext("Team")
-              } }>Team</a>
+                setaboutustext(t("Navbar.Team"))
+              } }>{t("Navbar.Team")}</a>
               <a onClick={() => {navigate("/roadmap") 
-              setaboutustext("RoadMap")}}>RoadMap</a>
+              setaboutustext(t("Navbar.Roadmap"))
+              }}>{t("Navbar.Roadmap")}</a>
               <a onClick={() => {navigate("/whitepapper") 
-              setaboutustext("WhitePaper")
-            }}>WhitePaper </a>
+              setaboutustext(t("Navbar.Whitepaper"))
+            }}>{t("Navbar.Whitepaper")} </a>
               <a onClick={() => {navigate("/tokenomics")
-              setaboutustext("Tokenomics")
-            }}>Tokenomics</a>
+              setaboutustext(t("Navbar.Tokenomics"))
+            }}>{t("Navbar.Tokenomics")}</a>
           </div>
         </div>
         </div>

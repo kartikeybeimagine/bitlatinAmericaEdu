@@ -17,6 +17,7 @@ import { Whitepaper } from "./components/about/whitepaper";
 import { Tokenomics } from "./components/about/Tokenomics";
 import { Roadmap } from "./components/about/Roadmap";
 import { Team } from "./components/about/Team";
+import { Partners } from "./components/about/Partner";
 // import BitWallet from "./components/BitWallet/Pages/BitWallet"
 import Verify from "./components/verify/verify";
 import VerifyWithDetails from "./components/verify/verifyWithDetails";
@@ -56,6 +57,7 @@ function App() {
             <Route path="/tokenomics" element={<Tokenomics />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/team" element={<Team/>} />
+            <Route path="/partners" element={<Partners/>} />
           </Routes>
           <Footer />
         </UserState>

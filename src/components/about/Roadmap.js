@@ -1,45 +1,47 @@
 import React from 'react'
 import "./Roadmap.css"
+import { useTranslation } from 'react-i18next'
 export const Roadmap = () => {
+    const { t } = useTranslation()
   return (
     <div className='roadmappage'>
-        <div className='heading'>BITMEMOIR ROADMAP 2023</div>
+        <div className='heading'>{t("RoadMap.heading")}</div>
         <div className='qbox'> 
             <div className='card'>
                 <div className='container'>
-                    <div className='headingq'>2023 Quarter 2</div>
+                    <div className='headingq'>{t("RoadMap.roadmap.Q2.heading")}</div>
                     <ul className='listq'>
-                        <li>Community Building</li>
-                        <li>White Paper Release</li>
-                        <li>BitMemoir Mainnet on Polygon</li>
-                        <li>BitWallet Mainnet on Polygon</li>
-                        <li>Partnerships Line Up</li>
+                        <li>{t("RoadMap.roadmap.Q2.point1")}</li>
+                        <li>{t("RoadMap.roadmap.Q2.point2")}</li>
+                        <li>{t("RoadMap.roadmap.Q2.point3")}</li>
+                        <li>{t("RoadMap.roadmap.Q2.point4")}</li>
+                        <li>{t("RoadMap.roadmap.Q2.point5")}</li>
                     </ul>
                 </div>
             </div>
             <div className='card'>
                 <div className='container'>
-                <div className='headingq'>2023 Quarter 3</div>
+                <div className='headingq'>{t("RoadMap.roadmap.Q3.heading")}</div>
                 <ul className='listq'>
-                    <li>BitMemoir Token IDO Launch on Arbitrum</li>
-                    <li>BitMemoir Token Dex Listing</li>
-                    <li>BitMemoir Token Cex Listing</li>
-                    <li>BitMemoir Mainnet on Arbitrum</li>
-                    <li>BitWallet Multichain support</li>
-                    <li>Partnerships Announcements - 10 plus</li>
+                        <li>{t("RoadMap.roadmap.Q3.point1")}</li>
+                        <li>{t("RoadMap.roadmap.Q3.point2")}</li>
+                        <li>{t("RoadMap.roadmap.Q3.point3")}</li>
+                        <li>{t("RoadMap.roadmap.Q3.point4")}</li>
+                        <li>{t("RoadMap.roadmap.Q3.point5")}</li>
+                        <li>{t("RoadMap.roadmap.Q3.point6")}</li>
                 </ul>
                 </div>
             </div>
             <div className='card'>
                 <div className='container'>
-                <div className='headingq'>2023 Quarter 4</div>
+                <div className='headingq'>{t("RoadMap.roadmap.Q4.heading")}</div>
                 <ul className='listq' >
-                    <li>Marketing</li>
-                    <li>More Adoption of Bitmemoir and Bitwallet</li>
-                    <li>BitWallet integration with other Dapps</li>
-                    <li>BitWallet will support more chains</li>
-                    <li>New NFT Utility Features on Bitmemoir</li>
-                    <li>Listing in Major CEX</li>
+                <li>{t("RoadMap.roadmap.Q3.point1")}</li>
+                        <li>{t("RoadMap.roadmap.Q4.point2")}</li>
+                        <li>{t("RoadMap.roadmap.Q4.point3")}</li>
+                        <li>{t("RoadMap.roadmap.Q4.point4")}</li>
+                        <li>{t("RoadMap.roadmap.Q4.point5")}</li>
+                        <li>{t("RoadMap.roadmap.Q4.point6")}</li>
                 </ul>
                 </div>
             </div>

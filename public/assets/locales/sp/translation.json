@@ -5,7 +5,14 @@
     "Institutions":"Instituciones",
     "Verify":"Verificar",
     "Contact_Us":"Contáctenos",
-    "Dashboard":"Panel"
+    "Dashboard":"Panel",
+    "AboutUs":"Sobre nosotros",
+    "FAQ":"Preguntas más frecuentes",
+    "Team":"Equipo",
+    "Roadmap":"Mapa vial",
+    "Whitepaper":"Papel blanco",
+    "Tokenomics":"Tokenómica",
+    "OurPartners":"Clientela"
   },
   "Home":{
     "heading":"BitMemoir",
@@ -363,5 +370,50 @@
       "SupportAssets":"Asistencia de apoyo"
     }
 
-  }
+  },
+  "RoadMap":{
+    "heading":"Hoja de ruta de Bitmemoir 2023",
+    "subheading":"We are working hard to make BitWallet the best crypto wallet in the world. Here is a sneak peek of what we are working on.",
+    "roadmap":{
+      "Q2":{
+        "heading":"2023 Cuarto 2",
+        "point1":"Construcción comunitaria",
+        "point2":"Liberación de papel blanco",
+        "point3":"Bitmemoir mainnet en polígono",
+        "point4":"Bitwallet mainnet en polígono",
+        "point5":"Alineaciones de asociaciones"
+      },
+      "Q3":{
+        "heading":"2023 Cuarto 3",
+        "point1":"BitMemoir Token IDO Launch on Arbitrum",
+        "point2":"BitMemoir Token Dex Listing",
+        "point3":"BitMemoir Token Cex Listing",
+        "point4":"BitWallet Token IDO Launch on Arbitrum",
+        "point5":"BitWallet Multichain support",
+        "point6":"Partnerships Announcements - 10 plus"
+      },
+      "Q4":{
+        "heading":"2023 Cuarto 4",
+        "point1":"marketing",
+        "point2":"Más adopción de BitMemoir y Bitwallet",
+        "point3":"Integración de Bitwallet con otros DAPPS",
+        "point4":"Bitwallet admitirá más cadenas",
+        "point5":"Nuevas funciones de utilidad NFT en BitMemoir",
+        "point6":"Listado en Major CEX"
+      }
+    }
+  },
+  "Team":{
+    "heading":"Equipo fundador",
+    "subheading":"Nuestro equipo",
+    "hr":"Recursos humanos",
+    "bd":"BD Ejecutivo",
+    "marketing":"Ejecutivo de marketing",
+    "ceo":"Fundador y CEO",
+    "socialMedia":"Gerente de redes sociales",
+    "hrConsultant":"Consultor de recursos humanos",
+    "BlockchainDeveloper":"Desarrollador de blockchain"
+
+
+  },"ComingSoon":"Muy pronto.."
 }

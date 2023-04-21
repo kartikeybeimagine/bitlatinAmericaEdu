@@ -5,7 +5,14 @@
   "Institutions":"Instituições",
   "Verify":"Verificar",
   "Contact_Us":"Contate-nos",
-  "Dashboard":"Painel"
+  "Dashboard":"Painel",
+  "AboutUs":"Sobre nós",
+  "FAQ":"Perguntas frequentes",
+  "Team":"Equipe",
+  "Roadmap":"Roteiro",
+  "Whitepaper":"Papel branco",
+  "Tokenomics":"Tokenomics",
+  "OurPartners":"Nossos parceiros"
 },
 "Home":{
   "heading":"BitMemoir",
@@ -85,41 +92,41 @@
   },  "FAQ":{
     "questions":[
       {
-        "question":"What is BitMemoir Latam and what services does it offer?",
-        "answer":"BitMemoir Latam is a subsidiary of the BitMemoir firm, based in Dubai, that facilitates the issuance of blockchain certifications and diplomas for educational institutions, ensuring authenticity, transparency, and security. We offer customized solutions tailored to the specific needs of each organization, including the issuance of micro-credentials, certifications for courses or programs, registration of non-curricular activities, recognitions and awards, proof of participation in events, and systems to provide transparency in scholarship and funding programs."
+        "question":"O que é BitMemoir Latam e que serviços ele oferece?",
+        "answer":"O BitMemoir Latam é uma subsidiária da empresa BitMemoir, com sede em Dubai, que facilita a emissão de certificações e diplomas blockchain para instituições educacionais, garantindo autenticidade, transparência e segurança.Oferecemos soluções personalizadas adaptadas às necessidades específicas de cada organização, incluindo a emissão de micro-credenciais, certificações para cursos ou programas, registro de atividades não curriculares, reconhecimento e prêmios, prova de participação em eventos e sistemas para fornecer transparência emprogramas de bolsa de estudos e financiamento."
       },
       {
-        "question":"How does blockchain ensure the authenticity of issued certifications?",
-        "answer":"BitMemoir Latam verifies and validates the authenticity of educational institutions before allowing them to issue certifications on the blockchain. Additionally, in the case of university degrees or school diplomas, the issuance process includes a second validation key, where a person designated by the institution authorizes the issuance of the certificates."
+        "question":"Como o Blockchain garante a autenticidade das certificações emitidas?",
+        "answer":"O BitMemoir Latam verifica e valida a autenticidade das instituições educacionais antes de permitir que eles emitam certificações no blockchain.Além disso, no caso de diplomas universitários ou diplomas escolares, o processo de emissão inclui uma segunda chave de validação, onde uma pessoa designada pela instituição autoriza a emissão dos certificados."
       },
       {
-        "question":"What are the advantages of using blockchain for issuing certifications and diplomas?",
-        "answer":"Blockchain-issued certifications and diplomas are easily verifiable and contrasting, ensuring their authenticity and preventing forgery. Additionally, it provides transparency and security to the issuance process and enables an immutable and accessible historical record over time."
+        "question":"Quais são as vantagens do uso de blockchain para emitir certificações e diplomas?",
+        "answer":"As certificações e diplomas emitidos em blockchain são facilmente verificáveis e contrastantes, garantindo sua autenticidade e impedindo a falsificação.Além disso, fornece transparência e segurança ao processo de emissão e permite um registro histórico imutável e acessível ao longo do tempo."
       },
       {
-        "question":"How can educational institutions start issuing blockchain certifications with BitMemoir Latam?",
-        "answer":"To start issuing blockchain certifications with BitMemoir Latam, institutions must follow these steps: 1) Contact us to request a quote. 2) Provide us with the legal information of the institution and a note with the legal signature of the highest authority. 3) We will validate the institution as a secure account. 4) The institution will send us its models of university or school degrees. 5) We will integrate the models in the platform enabled only for that institution. 6) We will make a new final validation query to the person in charge designated by the institution. 7) We will enable the form so that the institution can complete it individually and issue the certificates."
+        "question":"Como as instituições educacionais podem começar a emitir certificações blockchain com o BitMemoir Latam?",
+        "answer":"Para começar a emitir certificações blockchain com o BitMemoir Latam, as instituições devem seguir estas etapas: 1) Entre em contato conosco para solicitar uma cotação.2) Forneça -nos as informações legais da instituição e uma nota com a assinatura legal da mais alta autoridade.3) Validaremos a instituição como uma conta segura.4) A instituição nos enviará seus modelos de graduação universitária ou escolar.5) Vamos integrar os modelos na plataforma ativados apenas para essa instituição.6) Faremos uma nova consulta final de validação para a pessoa responsável designada pela instituição.7) Ativaremos o formulário para que a instituição possa concluí -lo individualmente e emitir os certificados."
       },{
-        "question":"How can recipients of blockchain certifications access and manage their documents?",
-        "answer":"Recipients of blockchain certifications can access and manage their documents through the BitMemoir web application or BIT-Wallet. They will receive the document with the integrated QR code and the digital badge in their virtual wallet."
+        "question":"Como os destinatários das certificações blockchain podem acessar e gerenciar seus documentos?",
+        "answer":"Os destinatários das certificações Blockchain podem acessar e gerenciar seus documentos através do aplicativo da Web BitMemoir ou do Bit-Wallet.Eles receberão o documento com o código QR integrado e o crachá digital em sua carteira virtual."
       },{
-        "question":"What types of certifications can be issued on the blockchain?",
-        "answer":"BitMemoir Latam allows the issuance of various types of certifications on the blockchain, including university or school degrees, micro-credentials, certifications for courses or programs, recognitions and awards, proof of participation in events, and transparency in scholarship and funding programs."
+        "question":"Que tipos de certificações podem ser emitidos na blockchain?",
+        "answer":"O BitMemoir Latam permite a emissão de vários tipos de certificações na blockchain, incluindo diplomas de universidades ou escolas, microcredenciais, certificações para cursos ou programas, reconhecimentos e prêmios, prova de participação em eventos e transparência em programas de bolsas de estudos e financiamento."
       },{
-        "question":"Is it safe to use BitMemoir Latam to issue blockchain certifications?",
-        "answer":"Yes, BitMemoir Latam ensures security in the process of issuing blockchain certifications. We verify and validate the authenticity of educational institutions and use blockchain technology to guarantee the authenticity, transparency, and security of the issued documents."
+        "question":"É seguro usar o BitMemoir Latam para emitir certificações blockchain?",
+        "answer":"Sim, o BitMemoir Latam garante a segurança no processo de emissão de certificações blockchain.Verificamos e validamos a autenticidade das instituições educacionais e usamos a tecnologia blockchain para garantir a autenticidade, a transparência e a segurança dos documentos emitidos."
       },{
-        "question":"What payment options are available for purchasing certificate packages in BitMemoir Latam?",
-        "answer":"BitMemoir Latam offers various payment options for purchasing certificate packages, including Mercado Pago, PayPal, and bank transfer. Institutions can buy packages with a specific number of certificates and start issuing until the purchased quantity is exhausted."
+        "question":"Quais opções de pagamento estão disponíveis para compra de pacotes de certificados no BitMemoir Latam?",
+        "answer":"O BitMemoir Latam oferece várias opções de pagamento para compra de pacotes de certificados, incluindo Mercado Pago, PayPal e transferência bancária.As instituições podem comprar pacotes com um número específico de certificados e começar a emitir até que a quantidade comprada seja esgotada."
       },{
-        "question":"What is the cost of certificates in BitMemoir Latam?                    ",
-        "answer":"The base cost per certificate in BitMemoir Latam is 1 dollar. For university degrees, which require a second security and validation key, the cost is 2 dollars per certificate."
+        "question":"Qual é o custo dos certificados no BitMemoir Latam?                    ",
+        "answer":"O custo base por certificado no BitMemoir Latam é de 1 dólar.Para diplomas universitários, que exigem uma segunda chave de segurança e validação, o custo é de 2 dólares por certificado."
       },{
-        "question":"Can institutions use their own certificate templates, or do they have to use those provided by BitMemoir Latam?", 
-        "answer":"Institutions can choose between using the certificate templates provided by BitMemoir Latam on their platform or uploading and designing their own templates. The platform allows for customization and adaptation of templates according to the needs and preferences of each educational institution."
+        "question":"As instituições podem usar seus próprios modelos de certificado ou precisam usar os fornecidos pelo BitMemoir Latam?", 
+        "answer":"As instituições podem escolher entre usar os modelos de certificado fornecidos pela BitMemoir Latam em sua plataforma ou carregando e projetando seus próprios modelos.A plataforma permite a personalização e adaptação de modelos de acordo com as necessidades e preferências de cada instituição educacional."
       }
     ],
-    "videoLink":"https://www.youtube.com/embed/YvG1yNJhu0E"
+    "videoLink":"https://www.youtube.com/embed/z3los2utk7E"
   }
 
 
@@ -362,5 +369,51 @@
       "SupportAssets":"Ativos de suporte"
     }
 
-  }
+  },
+  "RoadMap":{
+    "heading":"BITMEMOIR Roteiro 2023",
+    "subheading":"We are working hard to make BitWallet the best crypto wallet in the world. Here is a sneak peek of what we are working on.",
+    "roadmap":{
+      "Q2":{
+        "heading":"2023 Quarter2",
+        "point1":"Edifício comunitário",
+        "point2":"Liberação de Livro Branco",
+        "point3":"BitMemoir Mainnet no Polygon",
+        "point4":"BitWallet Mainnet no Polygon",
+        "point5":"Parcerias alinhadas"
+      },
+      "Q3":{
+        "heading":"2023 Quarter 3",
+        "point1":"BitMemoir Token IDO Launch on Arbitrum",
+        "point2":"Listagem de token dex de bitmemoir",
+        "point3":"BitMemoir Token Cex Listing",
+        "point4":"BitWallet Token IDO Lançar no árbitro",
+        "point5":"BitWallet Multicain Support",
+        "point6":"Anúncios de parcerias - 10 Plus"
+      },
+      "Q4":{
+        "heading":"2023 Quarter4",
+        "point1":"marketing",
+        "point2":"Mais adoção de bitmemoir e bitwallet",
+        "point3":"Integração BitWallet com outros Dapps",
+        "point4":"BitWallet apoiará mais correntes",
+        "point5":"Novos recursos de utilitário NFT no BitMemoir",
+        "point6":"Listagem no Major Cex"
+      }
+    }
+  },
+  "Team":{
+    "heading":"Equipe fundadora",
+    "subheading":"Nosso time",
+    "hr":"Recursos humanos",
+    "bd":"Executivo do BD",
+    "marketing":"Executivo de Marketing",
+    "ceo":"Fundador e Chefe Executivo",
+    "socialMedia":"Gerente de mídia social",
+    "hrConsultant":"Consultor de RH",
+    "BlockchainDeveloper":"Desenvolvedor de blockchain"
+
+
+  },
+  "ComingSoon":"Em breve..."
 }
