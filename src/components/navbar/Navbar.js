@@ -148,6 +148,11 @@ const Navbar = () => {
         >
           {t("Navbar.OurPartners")}
         </div>
+        <div className="menuitem">
+          <a href="https://www.bitindiaofficial.tech/services-9" target="_blank" rel="noreferrer">
+            Press Romm
+          </a>
+        </div>
 
 
 

@@ -16,7 +16,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import QuestionBox from "./QuestionBox";
-
+import {Segment} from 'semantic-ui-react';
+import FAQLogo from "./assets/icons8-faq-64.png"
+import News from "./assets/icons8-news-64.png"
 
 function TabPanel(props) {
   const { value } = props;
@@ -45,6 +47,23 @@ const Home = () => {
     <>
       {/* About Section ------------------- */}
       <div className="aboutSectionContainer">
+      <Segment floated="right" style={{ position: "fixed", right: "0px", bottom: "50%", zIndex: "1000"}}>
+        <div className="faqNews" >
+          <img 
+          onClick={() => {
+          let toScrollElement =
+          document.getElementById("faqpart");
+          toScrollElement.scrollIntoView();
+          }}
+          src={FAQLogo} alt="FAQLogo" style={{width:"40px",height:"40px"}} />
+          <hr/>
+          <a href="https://www.bitindiaofficial.tech/services-9" target="_blank" rel="noreferrer">
+            <img src={News} alt="FAQLogo" style={{width:"40px",height:"40px"}} />
+          </a>
+        </div>
+      </Segment>
+
+      
         <div className="aboutsection">
           <div className="writing">
             <div className="mainheading">{t('Home.heading')}</div>
@@ -91,6 +110,8 @@ const Home = () => {
           <div className="nextpagearrow"></div>
         </div>
       </div>
+      {/* <div className="newsFaqFix" >
+      </div> */}
       {/* BitMemoir Description Section ------------------------ */}
       <div className="descriptionsectioncontainer" id="whatisbitmemoir">
         <div className="descriptionsection">
@@ -308,7 +329,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="joinContainer">
+      <div className="joinContainer" id="faqpart">
         <div className="joinContainerHeading">
           FAQs
         </div>

@@ -1044,6 +1044,15 @@ text-transform: uppercase;
   align-items:left ;
  
 }
+.faqNews{
+  width: 50px;
+  height: 100px;
+  background-color: white;
+  padding: 5px;
+}
+.faqNews img{
+  cursor: pointer;
+}
 @media only screen and (max-width: 700px) {
   .certificatesissued2 {
     width: 280px;
@@ -1241,5 +1250,8 @@ text-transform: uppercase;
     box-shadow: 0px 0px 10px 0px var(--primary);
     border-radius: 10px;
     margin: 10px;
+  }
+  .faqNews{
+    display: none;
   }
 }
