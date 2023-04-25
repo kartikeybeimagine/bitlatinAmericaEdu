@@ -44,15 +44,23 @@ const DNFTMainPage = () => {
     setImageWidth(Math.min(window.innerWidth - 100, 700));
 
     try {
-      setimageHeight(
-        document.getElementById("cert-creator-preview").offsetHeight
-      );
+      const element = document.getElementById("cert-creator-preview");
+      if (element) {
+        const height = element.offsetHeight;
+        setimageHeight(height);
+      } else {
+        console.log('Element not found');
+      }
+      // setimageHeight(
+      //   document.getElementById("cert-creator-preview").offsetHeight
+      // );
     } catch (err) {
       console.log(err);
     }
   });
 
   useEffect(() => {
+    console.log("useEffect");
     setIsLoading(true);
     dNFtForStudent({
       request_type: "read",
@@ -256,7 +264,9 @@ const DNFTMainPage = () => {
       >
         {category === "Create New Batch" &&
           (isBatchCreator ? (
-            <CertIssue />
+            <CertIssue 
+            setCategory={setCategory}
+            />
           ) : (
             <div
               style={{
@@ -402,6 +412,8 @@ const DNFTMainPage = () => {
                         console.log("---------------------------------------");
                         console.log(res);
                         setStatus("Batch Updated Successfully");
+                        alert("Batch Updated Successfully");
+                        
                       })
                       .catch((err) => {
                         console.log(err);
@@ -465,7 +477,11 @@ const DNFTMainPage = () => {
         >
           {category === "Create New Batch" &&
             (isBatchCreator ? (
-              <CertIssue />
+              <CertIssue 
+              setCategory={setCategory}
+              category={category}
+              
+              />
             ) : (
               <div
                 style={{
@@ -620,6 +636,7 @@ const DNFTMainPage = () => {
                           setStatus("Batch Updated Successfully");
                           setIsLoading(false);
                           alert("Batch Updated Successfully");
+                          // window.location.reload();
                         })
                         .catch((err) => {
                           console.log(err);

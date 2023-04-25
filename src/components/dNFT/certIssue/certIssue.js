@@ -12,7 +12,7 @@ import uploadIcon from "./uploadIcon.jpg";
 import QRCode from "react-qr-code";
 import Slider from "@mui/material/Slider";
 
-const CertIssue = ({ setView }) => {
+const CertIssue = ({ category, setCategory, }) => {
   const user = useContext(UserContext);
   const [certNumber, setCertNumber] = useState(0);
   const [uploadedFile, setUploadedFile] = useState(null);
@@ -36,9 +36,16 @@ const CertIssue = ({ setView }) => {
     setImageWidth(Math.min(window.innerWidth - 100, 700));
 
     try {
-      setimageHeight(
-        document.getElementById("cert-creator-preview").offsetHeight
-      );
+      // setimageHeight(
+      //   document.getElementById("cert-creator-preview").offsetHeight
+      // );
+      const element = document.getElementById("cert-creator-preview");
+      if (element) {
+        const height = element.offsetHeight;
+        setimageHeight(height);
+      } else {
+        console.log('Element not found');
+      }
     } catch (err) {
       console.log(err);
     }
@@ -90,19 +97,22 @@ const CertIssue = ({ setView }) => {
     })
       .then((res) => {
         if (res === "issued") {
-          setStatus("Certificates issued successfully.");
+          setStatus("Dynamic certificates issued successfully.");
           alert("Dynamic certificates issued successfully.");
+          // alert("Order has been submitted Please check in Few Minute.");
+          // window.location.reload();
         } else if (res === "pending approval") {
           setStatus("Certificate order sent for approval.");
           alert("Certificate order sent for approval.");
-          window.location.reload();
+          // window.location.reload();
         }
         user.poppulateUserData();
       })
       .catch((err) => {
         console.log(err);
         setIsLoading(false);
-        alert("Something went wrong. Please try again.");
+        // alert("Something went wrong. Please try again.");
+        console.log(err);
       });
   };
 
@@ -116,7 +126,7 @@ const CertIssue = ({ setView }) => {
     filereader.readAsDataURL(file);
   };
 
-  if (isLoading) return <LoadingPage status={status} setView={setView} />;
+  if (isLoading) return <LoadingPage status={status} category={category} setCategory={setCategory} setIsLoading={setIsLoading}/>;
 
   return (
     <div
@@ -260,8 +270,9 @@ const CertIssue = ({ setView }) => {
 
 export default CertIssue;
 
-const LoadingPage = ({ status, setView }) => {
+const LoadingPage = ({ status, category,setCategory,setIsLoading }) => {
   const { t } = useTranslation();
+  console.log("category", category)
   return (
     <div
       style={{
@@ -273,20 +284,41 @@ const LoadingPage = ({ status, setView }) => {
         margin: "auto",
       }}
     >
-      {status === "Issuing certificates..." && (
+      {/* {status === "Issuing certificates..." && (
         <Backdrop
           sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
           open={true}
         >
           <CircularProgress color="inherit" />
         </Backdrop>
-      )}
+      )} */}
       <h3>{status}</h3>
       {status === "Issuing certificates..." && (
+        <div>
+          <h4>Order has been submitted Please check in Few Minute.</h4>
         <h4>{t("Institutions.certIssue.headingCloseWindow")}</h4>
+        <button onClick={() => {
+          { 
+            // window.location.reload();
+            setCategory("Create New Batch");
+            console.log(status)
+            setIsLoading(false)
+            
+
+          }
+        }}>OK</button>
+        </div>
+        
       )}
       {status !== "Issuing certificates..." && (
-        <button onClick={() => setView("education")}>OK</button>
+        <button onClick={() => {
+          { 
+            window.location.reload();
+            setCategory("Create New Batch");
+            setIsLoading(false)
+            console.log("setCategory", setCategory)
+          }
+        }}>OK</button>
       )}
     </div>
   );
