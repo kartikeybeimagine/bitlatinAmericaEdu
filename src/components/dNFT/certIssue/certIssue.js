@@ -126,7 +126,7 @@ const CertIssue = ({ category, setCategory, }) => {
     filereader.readAsDataURL(file);
   };
 
-  if (isLoading) return <LoadingPage status={status} category={category} setCategory={setCategory} setIsLoading={setIsLoading}/>;
+  if (isLoading) return <LoadingPage status={status} category={category} setCategory={setCategory} setIsLoading={setIsLoading} setBatchName={setBatchName} setBatchDescription={setBatchDescription} selectImage={selectImage} setUploadedFileName={setUploadedFileName}/>;
 
   return (
     <div
@@ -270,7 +270,7 @@ const CertIssue = ({ category, setCategory, }) => {
 
 export default CertIssue;
 
-const LoadingPage = ({ status, category,setCategory,setIsLoading }) => {
+const LoadingPage = ({ status, category,setCategory,setIsLoading,setBatchName,setBatchDescription,selectImage,setUploadedFileName}) => {
   const { t } = useTranslation();
   console.log("category", category)
   return (
@@ -303,6 +303,10 @@ const LoadingPage = ({ status, category,setCategory,setIsLoading }) => {
             setCategory("Create New Batch");
             console.log(status)
             setIsLoading(false)
+            setBatchName("")
+            setBatchDescription("")
+            selectImage("")
+            setUploadedFileName("");
             
 
           }

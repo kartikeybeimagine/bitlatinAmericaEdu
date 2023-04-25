@@ -637,6 +637,8 @@ const DNFTMainPage = () => {
                           setIsLoading(false);
                           alert("Batch Updated Successfully");
                           // window.location.reload();
+                          selectImage("");
+
                         })
                         .catch((err) => {
                           console.log(err);
