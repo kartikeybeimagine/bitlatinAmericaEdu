@@ -7,6 +7,7 @@ import { paymentApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
+import Contact from "../../../contact/Contact";
 
 const Subscription = ({ setView, back }) => {
   const [isBuying, setIsBuying] = useState(false);
@@ -307,7 +308,8 @@ const Subscription = ({ setView, back }) => {
     );
   };
   const d = new Date(user.userData.subscription.end_Date);
-  const end_date=d.getDate()+'-'+(d.getMonth()+1)+'-'+d.getFullYear();
+  const end_date =
+    d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
   console.log(end_date);
 
   return (
@@ -320,14 +322,14 @@ const Subscription = ({ setView, back }) => {
         justifyContent: "center",
       }}
     >
-      <h1>Select a Subscription Plan</h1>
+      {/* <h1>Select a Subscription Plan</h1> */}
       <h3>
         Current Plan: {parseInt(user.userData.nft_quota)} Certificates available
       </h3>
-      <h3>
-        Expiry Date: {end_date}
-      </h3>
-      <div
+      <h3>Expiry Date: {end_date}</h3>
+      <h2>Please contact us to get further access.</h2>
+      <h2>Email us at support@beimagine.tech</h2>
+      {/* <div
         style={{
           display: "flex",
           gap: "50px",
@@ -358,7 +360,7 @@ const Subscription = ({ setView, back }) => {
           duration="6 Months"
           isRecommended={false}
         />
-      </div>
+      </div> */}
       <div style={{ marginTop: "50px" }}>
         <button onClick={back}>{"<"} Back</button>
       </div>
