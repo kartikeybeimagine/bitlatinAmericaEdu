@@ -644,7 +644,7 @@ const DNFTMainPage = () => {
                           console.log(err);
                           setIsLoading(false);
                           setStatus("Errored. please try again.");
-                          alert("Something went wrong. Please try again.");
+//                           alert("Something went wrong. Please try again.");
                         });
                     }}
                   >
