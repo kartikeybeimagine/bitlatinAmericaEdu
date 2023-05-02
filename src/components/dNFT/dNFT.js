@@ -632,12 +632,13 @@ const DNFTMainPage = () => {
                           console.log(
                             "---------------------------------------"
                           );
-                          console.log(res);
+                            console.log(res);
                           setStatus("Batch Updated Successfully");
                           setIsLoading(false);
                           alert("Batch Updated Successfully");
-                          // window.location.reload();
-//                           selectImage("");
+                          console.log(selectedBatch.batch_nft_image);
+                          
+                          setSelectedImage(uploadIcon);
 
                         })
                         .catch((err) => {
