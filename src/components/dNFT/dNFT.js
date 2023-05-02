@@ -637,14 +637,14 @@ const DNFTMainPage = () => {
                           setIsLoading(false);
                           alert("Batch Updated Successfully");
                           // window.location.reload();
-                          selectImage("");
+//                           selectImage("");
 
                         })
                         .catch((err) => {
                           console.log(err);
                           setIsLoading(false);
                           setStatus("Errored. please try again.");
-//                           alert("Something went wrong. Please try again.");
+                          alert("Something went wrong. Please try again.");
                         });
                     }}
                   >
