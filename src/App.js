@@ -17,7 +17,9 @@ import { Whitepaper } from "./components/about/whitepaper";
 import { Tokenomics } from "./components/about/Tokenomics";
 import { Roadmap } from "./components/about/Roadmap";
 import { Team } from "./components/about/Team";
-import { Partners } from "./components/about/Partner";
+import { Partners } from "./components/about/Partner"; 
+import Blogpage from "./components/Blog/Blogpage";
+import Aboutus from "./components/about/Aboutus";
 // import BitWallet from "./components/BitWallet/Pages/BitWallet"
 import Verify from "./components/verify/verify";
 import VerifyWithDetails from "./components/verify/verifyWithDetails";
@@ -53,11 +55,13 @@ function App() {
               element={<VerifyWithDetails />}
             />
             <Route path="/dnft" element={<DNFTLandingPage />} />
+            <Route path="/about" element={<Aboutus/>} />
             <Route path="/whitepapper" element={<Whitepaper/>} />
             <Route path="/tokenomics" element={<Tokenomics />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/team" element={<Team/>} />
             <Route path="/partners" element={<Partners/>} />
+            <Route path="/blog" element={<Blogpage/>} />
           </Routes>
           <Footer />
         </UserState>

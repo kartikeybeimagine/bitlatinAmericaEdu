@@ -19,6 +19,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .aboutsectionmobile {
   display: none;
   width: 100%;
@@ -36,6 +37,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .aboutsectionmobile .illustration {
   width: 80vw;
   display: flex;
@@ -47,6 +49,7 @@
   height: 100%;
   width: 650px;
 }
+
 .aboutsectionmobile .illustration img {
   height: 100%;
   width: 80vw;
@@ -58,6 +61,7 @@
   align-items: flex-start;
   justify-content: left;
 }
+
 .aboutsectionmobile .writing {
   display: flex;
   flex-direction: column;
@@ -73,14 +77,17 @@
   font-family: coolvetica;
   font-size: 7.5rem;
 }
+
 .aboutsectionmobile .mainheading {
   font-family: coolvetica;
   font-size: 3.5rem;
 }
+
 .aboutsection .secondheading {
   font-size: 2.5rem;
   font-weight: 10;
 }
+
 .aboutsectionmobile .secondheading {
   text-align: center;
   font-size: 1.4rem;
@@ -93,6 +100,7 @@
   justify-content: center;
   animation: downemphasis 2s infinite;
 }
+
 .aboutSectionContainer .nextpagearrow {
   width: 21px;
   height: 21px;
@@ -105,6 +113,7 @@
   from {
     transform: translateY(-50%);
   }
+
   to {
     transform: translateY(50%);
   }
@@ -114,6 +123,7 @@
   .aboutsection {
     display: none;
   }
+
   .aboutsectionmobile {
     display: flex;
   }
@@ -149,10 +159,12 @@
   line-height: 25px;
   padding: 100px;
 }
+
 @media only screen and (max-width: 600px) {
   .descriptionsection {
     text-align: center;
   }
+
   /* .descriptionsection .writing .heading{
     font-size: 0.2rem;
   } */
@@ -216,6 +228,7 @@
   font-size: large;
   font-weight: 800;
 }
+
 .certificatesissued .heading3 {
   font-size: 100px;
   font-weight: 600;
@@ -248,14 +261,14 @@
   /* text-align: center; */
   /* font-family: coolvetica; */
   font-family: 'Coolvetica';
-font-style: normal;
-font-weight: 400;
-font-size: 54.4065px;
-line-height: 53px;
-/* or 97% */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54.4065px;
+  line-height: 53px;
+  /* or 97% */
 
-letter-spacing: 0.03em;
-text-transform: capitalize;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
 }
 
 .howtousesection {
@@ -274,6 +287,7 @@ text-transform: capitalize;
   width: 20vw;
   border-radius: 20px;
 }
+
 .howtousesection button {
   margin: 20px 0px;
 }
@@ -290,6 +304,7 @@ text-transform: capitalize;
   justify-content: center;
   align-items: flex-start;
 }
+
 .howtouseillustrationright {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -299,6 +314,7 @@ text-transform: capitalize;
   border-bottom: 3px solid var(--secondary);
   position: relative;
 }
+
 .howtouseillustrationright .illustrationtop .dot {
   position: absolute;
   bottom: -7px;
@@ -320,6 +336,7 @@ text-transform: capitalize;
   align-items: flex-end;
   text-align: right;
 }
+
 .howtouseillustrationleft {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -329,6 +346,7 @@ text-transform: capitalize;
   border-bottom: 3px solid var(--secondary);
   position: relative;
 }
+
 .howtouseillustrationleft .illustrationtop .dot {
   position: absolute;
   bottom: -7px;
@@ -344,42 +362,51 @@ text-transform: capitalize;
   .howtouseillustrationleft {
     display: none;
   }
+
   .howtouseillustrationright {
     display: none;
   }
+
   .howtousesectionmobile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .howtousesection {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+
   .howtousesection img {
     height: 80vw;
     width: 80vw;
     border-radius: 20px;
   }
+
   .howtousetextleft {
     padding: 20px;
     align-items: center;
     text-align: center;
   }
+
   .howtousetextright {
     display: none;
   }
+
   .howtouseimageleft {
     display: none;
   }
+
   .howtouseimageright {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
   .descriptionsection .heading {
     width: 100%;
     height: 30px;
@@ -443,6 +470,7 @@ text-transform: capitalize;
   .solutionscard {
     width: 250px;
   }
+
   .solutionscard img {
     width: 250px;
   }
@@ -479,20 +507,24 @@ text-transform: capitalize;
   text-align: right;
   line-height: 25px;
 }
+
 .digitalcerttext .heading {
   font-size: 1.5rem;
   color: var(--primary);
   font-family: coolvetica;
   padding: 20px;
 }
+
 @media only screen and (max-width: 600px) {
   .digitalcertcontainer {
     flex-direction: column;
     justify-content: center;
   }
+
   .digitalcertcontainer img {
     width: 80vw;
   }
+
   .digitalcerttext {
     width: 80vw;
     text-align: center;
@@ -552,12 +584,13 @@ text-transform: capitalize;
   font-size: 26.5462px;
   line-height: 26px;
   margin-right: 50px;
-/* identical to box height, or 97% */
+  /* identical to box height, or 97% */
 
-text-align: center;
-letter-spacing: 0.03em;
-text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
+
 .benefit2 {
   background-color: var(--secondary);
   width: 350px;
@@ -610,10 +643,12 @@ text-transform: uppercase;
     width: 300px;
     /* margin-left: 50px; */
   }
+
   .benefitdivider {
     width: 300px;
   }
-  .whybitcontainer{
+
+  .whybitcontainer {
     margin-top: 150px;
     background-image: none;
   }
@@ -622,10 +657,12 @@ text-transform: uppercase;
 .benefitdivider .dividerright {
   border-left: 2px dashed var(--primary);
 }
+
 .benefitdivider .dividerrightwithdot {
   border-left: 2px dashed var(--primary);
   position: relative;
 }
+
 .benefitdivider .dividerrightwithdot .dot {
   position: absolute;
   bottom: -7px;
@@ -643,6 +680,7 @@ text-transform: uppercase;
   from {
     box-shadow: 0px 0px 1px 1px var(--tertiary);
   }
+
   to {
     box-shadow: 0px 0px 5px 1px var(--tertiary);
   }
@@ -651,35 +689,38 @@ text-transform: uppercase;
 .whybitcontainer button {
   margin: 20px 0px;
 }
-.aboutsection .submainheading{
+
+.aboutsection .submainheading {
   /* font-size: 7.5rem; */
   /* color: var(--secondary); */
   /* font-family: coolvetica; */
   /* font-family: for thin font; */
   /* font-family: 'Montserrat', sans-serif;
   font-weight: -100; */
-  /* padding: 20px; */ 
+  /* padding: 20px; */
 
   font-family: 'Inter';
-font-style: normal;
-font-weight: 200;
-font-size: 7.5rem;
-line-height: 99px;
-/* identical to box height */
+  font-style: normal;
+  font-weight: 200;
+  font-size: 7.5rem;
+  line-height: 99px;
+  /* identical to box height */
 
-letter-spacing: -0.05em;
+  letter-spacing: -0.05em;
 
 }
-.aboutsectionmobile .submainheading{
+
+.aboutsectionmobile .submainheading {
   font-size: 2rem;
   color: var(--secondary);
   /* font-family: coolvetica; */
   /* font-family: for thin font; */
   font-family: 'Montserrat', sans-serif;
   font-weight: -100;
-  /* padding: 20px; */ 
+  /* padding: 20px; */
 
 }
+
 .certificatesissued2 {
   width: 348px;
   height: 201px;
@@ -695,35 +736,37 @@ letter-spacing: -0.05em;
   /* border-radius: 20px; */
   background: #FFFFFF;
   box-shadow: 0px 0px 20.0364px rgba(88, 1, 155, 0.5);
-  border-radius: 22.1455px; 
+  border-radius: 22.1455px;
   /* box-shadow: 0px 0px 20px 1px var(--primary); */
 }
+
 .certificatesissued2 .heading1 {
   /* font-size: 50px;
   font-weight: 600;
   font-family: 'Coolvetica'; */
-font-style: normal;
-font-weight: 400;
-font-size: 58.4124px;
-line-height: 57px;
-/* identical to box height, or 97% */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 58.4124px;
+  line-height: 57px;
+  /* identical to box height, or 97% */
 
-letter-spacing: 0.03em;
-text-transform: capitalize;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
 
-/* gredient */
+  /* gredient */
 
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #540196 25.02%, #DA1453 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #540196 25.02%, #DA1453 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
   /* color: rgb(131,58,180); */
   /* background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 92%, rgba(252,176,69,1) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
-  
+
 }
+
 .certificatesissued2 .heading2 {
   font-family: 'Coolvetica';
   font-style: normal;
@@ -731,21 +774,23 @@ text-fill-color: transparent;
   font-size: 25px;
   line-height: 25px;
   /* identical to box height, or 98% */
-  
+
   letter-spacing: 0.03em;
   text-transform: capitalize;
 }
+
 .certificatesissued2 .heading3 {
   font-family: sans-serif;
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-line-height: 19px;
-/* or 146% */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 19px;
+  /* or 146% */
 
-letter-spacing: 0.03em;
+  letter-spacing: 0.03em;
   color: black;
 }
+
 .certificatesectioncontainer2 {
   /* background-color: var(--secondary); */
   /* background-image: url(./assets/certificatesectionbackground.png); */
@@ -759,12 +804,13 @@ letter-spacing: 0.03em;
   /* display: none; */
 }
 
-.whybitmemoheading{
+.whybitmemoheading {
   font-size: 1.3rem;
   color: var(--secondary);
   padding: 20px;
   width: 25%;
 }
+
 .howtouseimageleft {
   width: 600px;
   height: 400px;
@@ -774,12 +820,14 @@ letter-spacing: 0.03em;
   align-items: center;
   border-radius: 10px;
 }
-.stepsheadingbtndiv{
+
+.stepsheadingbtndiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.step{
+
+.step {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -789,18 +837,21 @@ letter-spacing: 0.03em;
   background-color: var(--secondary);
   /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75); */
 }
-.step img{
+
+.step img {
   width: 200px;
   height: 120px;
 }
-.step .stepheading{
+
+.step .stepheading {
   font-size: 1.5rem;
   color: var(--primary);
   font-weight: 600;
   text-align: left;
   margin-left: 16px;
 }
-.step .steptext{
+
+.step .steptext {
   font-family: sans-serif;
   font-size: 1.1rem;
   color: var(--primary);
@@ -812,14 +863,16 @@ letter-spacing: 0.03em;
   line-height: 19px;
   text-align: left;
 }
-.stepscontainer{
+
+.stepscontainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   padding: 100px 0px;
 }
-.stepscontainer2{
+
+.stepscontainer2 {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -827,6 +880,7 @@ letter-spacing: 0.03em;
   margin-left: 15vw;
   padding: 100px 0px;
 }
+
 .joinContainer {
   background-color: var(--secondary);
   color: var(--primary);
@@ -837,6 +891,7 @@ letter-spacing: 0.03em;
   padding: 100px 0px;
   max-width: 1950px;
 }
+
 .joinContainer2 {
   background-color: var(--secondary);
   color: var(--primary);
@@ -847,12 +902,14 @@ letter-spacing: 0.03em;
   padding: 100px 0px;
   max-width: 1950px;
 }
+
 .joinContainerHeading {
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
 }
-.join{
+
+.join {
   width: 300px;
   height: 300px;
   background-color: var(--secondary);
@@ -861,7 +918,8 @@ letter-spacing: 0.03em;
   margin: 40px;
 
 }
-.joinheading{
+
+.joinheading {
   width: 100%;
   height: 50%;
   font-size: 50px;
@@ -871,20 +929,23 @@ letter-spacing: 0.03em;
   border-radius: 10px 10px 0px 0px;
   text-align: center;
 }
-.joinMainDiv{
+
+.joinMainDiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  
+
 }
-.joiningfee{
+
+.joiningfee {
   position: absolute;
   margin-top: 50px;
   text-align: center;
   margin-left: 80px;
-  
+
 }
-.joinbtn{
+
+.joinbtn {
   width: 200px;
   height: 20px;
   margin-top: 20px;
@@ -898,7 +959,8 @@ letter-spacing: 0.03em;
   justify-content: center;
   align-items: center;
 }
-.certificatesectioncontainer2part1{
+
+.certificatesectioncontainer2part1 {
   display: flex;
   /* justify-content: space-around;
   align-items: center;
@@ -906,7 +968,8 @@ letter-spacing: 0.03em;
   /* padding: 100px 0px; */
   margin-left: 5vw;
 }
-.certificatesectioncontainer2part2{
+
+.certificatesectioncontainer2part2 {
   display: flex;
   /* justify-content: space-around;
   align-items: center;
@@ -914,14 +977,16 @@ letter-spacing: 0.03em;
   /* padding: 100px 0px; */
   margin-left: 15vw;
 }
-.whybitmemomaindiv{
+
+.whybitmemomaindiv {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding-left: 5vw;
-  padding-right:5vw ;
+  padding-right: 5vw;
 }
-.whybitmemotext{
+
+.whybitmemotext {
   /* font-size: 1.1rem;
   color: var(--secondary);
   font-weight: 100; */
@@ -929,100 +994,107 @@ letter-spacing: 0.03em;
   padding-top: 20px;
   width: 80%;
   font-family: 'Arial';
-font-style: normal;
-font-weight: 400;
-font-size: 19.0762px;
-line-height: 22px;
-/* text-align: justify; */
-letter-spacing: 0.03em;
-color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19.0762px;
+  line-height: 22px;
+  /* text-align: justify; */
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
 
 }
-.whybitcontainer .heading{
 
-color: var(--primary);
-font-family: 'Coolvetica';
-font-style: normal;
-font-weight: 400;
-font-size: 54.4065px;
-line-height: 53px;
-/* or 97% */
+.whybitcontainer .heading {
 
-letter-spacing: 0.03em;
-text-transform: capitalize;
-/* margin-right: 58vw; */
+  color: var(--primary);
+  font-family: 'Coolvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54.4065px;
+  line-height: 53px;
+  /* or 97% */
+
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  /* margin-right: 58vw; */
 
 }
-.whybitcontainer .heading-1{
-color: var(--primary);
-font-family: 'Coolvetica';
-font-style: normal;
-font-weight: 400;
-font-size: 54.4065px;
-line-height: 53px;
-/* or 97% */
 
-letter-spacing: 0.03em;
-text-transform: capitalize;
-/* margin-right: 75vw; */
+.whybitcontainer .heading-1 {
+  color: var(--primary);
+  font-family: 'Coolvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54.4065px;
+  line-height: 53px;
+  /* or 97% */
+
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  /* margin-right: 75vw; */
 }
-.subjoinheading2{
+
+.subjoinheading2 {
   /* font-size: 1.5rem;
   font-weight: 600;
   color: var(--primary);*/
   margin-top: 20px;
-  padding: 0px 50px; 
+  padding: 0px 50px;
   font-family: 'Coolvetica';
-font-style: normal;
-font-weight: 400;
-font-size: 1.5rem;
-line-height: 24px;
-/* or 111% */
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 24px;
+  /* or 111% */
 
-letter-spacing: 0.03em;
-text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 
-/* gredient */
+  /* gredient */
 
-background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #540196 25.02%, #DA1453 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, #540196 25.02%, #DA1453 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
-.whybitmemoArrow{
+
+.whybitmemoArrow {
   margin-top: 80px;
 }
-.stepText{
-margin-top: 20px;
-color: var(--primary);
+
+.stepText {
+  margin-top: 20px;
+  color: var(--primary);
   /* font-family: 'Be Vietnam'; */
-font-style: normal;
-font-weight: 400;
-font-size: 23.9525px;
-line-height: 32px;
-/* padding-right: 180px; */
-/* or 135% */
-letter-spacing: 0.03em;
-text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23.9525px;
+  line-height: 32px;
+  /* padding-right: 180px; */
+  /* or 135% */
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
-.dollar{
+.dollar {
   font-size: 1rem;
   color: var(--secondary);
 
 
 }
-.permonth{
+
+.permonth {
   font-size: 1rem;
   color: var(--secondary);
   margin: 10px;
 }
-.descriptionsection .writing{
+
+.descriptionsection .writing {
   width: 100%;
 }
 
-.descriptionsection .heading{
+.descriptionsection .heading {
   width: 100%;
   height: 70px;
   margin-right: 200px;
@@ -1032,57 +1104,83 @@ text-transform: uppercase;
   font-weight: 400;
   font-size: 54.4065px;
   line-height: 53px;
-  
+
 }
-.descriptionsection #idheading{
+
+.descriptionsection #idheading {
   width: 100%;
   height: 70px;
 }
 
-.stepsHeading{
+.stepsHeading {
   text-align: left;
-  align-items:left ;
- 
+  align-items: left;
+
 }
-.faqNews{
+
+.faqNews {
   width: 50px;
   height: 100px;
   background-color: white;
-  padding: 5px;
+  padding: 5px; 
+  position: relative;
 }
-.faqNews img{
+
+.faqNews img {
+  cursor: pointer;
+} 
+
+.socialmedia {
+  width: 50px;
+  padding: 5px;  
+  height: 230px;  
+  border: 1px;
+  border-radius: 10px;  
+  background-color: rgb(119, 6, 218);
+  position: relative;
+  top:10vw;
+}
+
+.socialmedia img {
   cursor: pointer;
 }
+
 @media only screen and (max-width: 700px) {
   .certificatesissued2 {
     width: 280px;
     height: 180px;
     margin: 20px;
-    padding: 20px; 
+    padding: 20px;
     min-width: 250px;
   }
+
   .certificatesissued2 .heading1 {
     font-size: 40px;
   }
+
   .certificatesissued2 .heading2 {
     font-size: medium;
   }
+
   .certificatesissued2 .heading3 {
     font-size: 15px;
   }
-  .whybitmemomaindiv{
+
+  .whybitmemomaindiv {
     display: flex;
     flex-direction: column;
     /* justify-content: center;
     align-items: center; */
   }
-  .whybitmemoheading{
+
+  .whybitmemoheading {
     font-size: 1.3rem;
     color: var(--secondary);
     padding: 20px;
     width: 70%;
     margin-left: 50px;
   }
+
   .howtouseimageleft {
     width: 350px;
     height: 200px;
@@ -1093,16 +1191,19 @@ text-transform: uppercase;
     border-radius: 10px;
     margin-left: 5px;
   }
-  .howtouseheading{
+
+  .howtouseheading {
     font-size: 3rem;
   }
-  .stepsheadingbtndiv{
+
+  .stepsheadingbtndiv {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
-  .step{
+
+  .step {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -1113,22 +1214,26 @@ text-transform: uppercase;
     background-color: var(--secondary);
 
   }
-  .step img{
+
+  .step img {
     width: 150px;
     height: 90px;
   }
-  .step .stepheading{
+
+  .step .stepheading {
     font-size: 0.8rem;
     color: var(--primary);
     font-weight: 600;
   }
-  .step .steptext{
+
+  .step .steptext {
     font-size: 0.8rem;
     color: var(--primary);
     font-weight: 400;
   }
-  .stepscontainer{
-    margin-top:0px;
+
+  .stepscontainer {
+    margin-top: 0px;
     padding: 0px;
     display: flex;
     justify-content: space-around;
@@ -1136,76 +1241,91 @@ text-transform: uppercase;
     flex-wrap: wrap;
     /* padding: 100px 0px; */
   }
-  .joinMainDiv{
+
+  .joinMainDiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .descriptionsectioncontainer{
+
+  .descriptionsectioncontainer {
     padding: 0px;
     padding-top: 50px;
-  
+
   }
-  .descriptionsection{
+
+  .descriptionsection {
     margin: 0px;
     padding: 0px;
   }
-  .descriptionsection .writing .heading{
+
+  .descriptionsection .writing .heading {
     font-size: 2rem;
     margin-left: 30px;
     text-align: center;
 
 
   }
-  .certificatesectioncontainer2{
+
+  .certificatesectioncontainer2 {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
   }
-  .certificatesectioncontainer2part2{
+
+  .certificatesectioncontainer2part2 {
     display: flex;
     flex-direction: column;
     margin: 0px;
   }
-  .certificatesectioncontainer2part1{
+
+  .certificatesectioncontainer2part1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0px;
   }
-  .whybitcontainer .heading{
+
+  .whybitcontainer .heading {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
     padding: 0px;
   }
-  .whybitmemomaindiv{
+
+  .whybitmemomaindiv {
     padding: 0px;
   }
-  .whybitcontainer .heading{
+
+  .whybitcontainer .heading {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
     border: none;
   }
-  .benefit2{
-    width:300px ;
-    margin-top:150px;
+
+  .benefit2 {
+    width: 300px;
+    margin-top: 150px;
     margin-right: 10px;
   }
-  .whybitcontainer .heading-1{
+
+  .whybitcontainer .heading-1 {
     font-size: 2rem;
     text-align: center;
   }
-  .whybitcontainer .stepText{
+
+  .whybitcontainer .stepText {
     font-size: 1rem;
     text-align: center;
   }
-  .stepsHeading{
+
+  .stepsHeading {
     margin-top: 50px;
   }
-  .whybitmemotext{
+
+  .whybitmemotext {
     /* font-size: 1.1rem;
     color: var(--secondary);
     font-weight: 100; */
@@ -1213,16 +1333,17 @@ text-transform: uppercase;
     padding-top: 20px;
     width: 100%;
     font-family: 'Arial';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 19.0762px;
-  line-height: 22px;
-  /* text-align: justify; */
-  letter-spacing: 0.03em;
-  color: #FFFFFF;
-  
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19.0762px;
+    line-height: 22px;
+    /* text-align: justify; */
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+
   }
-  .stepscontainer2{
+
+  .stepscontainer2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1230,20 +1351,24 @@ text-transform: uppercase;
     margin: 0px;
     padding: 0px;
   }
+
   .aboutsection .mainheading {
     font-family: coolvetica;
     font-size: 6.5rem;
   }
-  .joinContainer{
+
+  .joinContainer {
     margin-top: 200px;
 
   }
-  .joinContainer2{
+
+  .joinContainer2 {
     margin-top: 30px;
     /* padding-left: 10px; */
     padding: 100px 10px;
   }
-  .join{
+
+  .join {
     width: 300px;
     height: 300px;
     background-color: var(--secondary);
@@ -1251,7 +1376,12 @@ text-transform: uppercase;
     border-radius: 10px;
     margin: 10px;
   }
-  .faqNews{
+
+  .faqNews {
+    display: none;
+  } 
+
+  .socialmedia{
     display: none;
   }
 }

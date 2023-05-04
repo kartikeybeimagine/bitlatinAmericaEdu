@@ -412,5 +412,12 @@
     "hrConsultant": "Consultor de recursos humanos",
     "BlockchainDeveloper": "Desarrollador de blockchain"
   },
-  "ComingSoon": "Muy pronto.."
+  "ComingSoon": "Muy pronto.." ,
+
+  "Aboutus": {
+    "main":"Sobre nosotros",
+    "head":"Nuestra visión es resolver la creciente crisis de confianza actual y aumentar la credibilidad de la web.",
+    "content":"Beyond Imagination Technologies (BIT) se fundó como la primera empresa emergente de India con la idea de nutrir la tecnología Blockchain/Web3 y crear soluciones rentables, seguras y protegidas que se ajusten a las necesidades del mercado. BIT busca abordar los principales problemas del mercado en todos los aspectos posibles y en múltiples sectores, extendiendo sus alcances a todos los rincones del mundo.",
+    "button":"Ver más"
+ }
 }

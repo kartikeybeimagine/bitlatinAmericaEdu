@@ -19,6 +19,11 @@ import QuestionBox from "./QuestionBox";
 import { Segment } from "semantic-ui-react";
 import FAQLogo from "./assets/icons8-faq-64.png";
 import News from "./assets/icons8-news-64.png";
+import Insta from "./assets/instagramlogo.svg";
+import twitter from "./assets/twitter-square-color-icon.svg";
+import Linkidein from "./assets/linkedinlogo.svg";
+import telegram from "./assets/telegram-icon.svg";
+
 
 function TabPanel(props) {
   const { value } = props;
@@ -90,7 +95,65 @@ const Home = () => {
             </a>
           </div>
         </Segment>
-
+        <Segment
+          floated="left"
+          style={{
+            position: "fixed",
+            left: "0px",
+            bottom: "50%",
+            zIndex: "1000",
+          }}
+        >
+          <div className="socialmedia">
+            <a
+              href="https://instagram.com/bitmemoir_latam?igshid=YmMyMTA2M2Y="
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={Insta}
+                alt="FAQLogo"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+            <hr />
+            <a
+              href="https://twitter.com/bitmemoir_latam?s=21&t=caq4RpG9bzxouodNg7bJBw"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={twitter}
+                alt="FAQLogo"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+            <hr />
+            <a
+              href="https://www.linkedin.com/company/bitmemoir-latam/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={Linkidein}
+                alt="FAQLogo"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+            <hr />
+            <a
+              href="https://t.me/bitmemoirofficial"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={telegram}
+                alt="FAQLogo"
+                style={{ width: "40px", height: "40px" }}
+              />
+            </a>
+          </div>
+        </Segment>
         <div className="aboutsection">
           <div className="writing">
             <div className="mainheading">{t("Home.heading")}</div>
@@ -398,9 +461,9 @@ const Home = () => {
           </Box>
           <TabPanel
             value={value}
-            // index={0}
-            // users={props.users}
-            // update={props.update}
+          // index={0}
+          // users={props.users}
+          // update={props.update}
           ></TabPanel>
         </Box>
       </div>

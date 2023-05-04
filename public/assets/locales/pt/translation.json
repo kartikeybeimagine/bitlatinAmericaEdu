@@ -412,5 +412,11 @@
     "hrConsultant": "Consultor de RH",
     "BlockchainDeveloper": "Desenvolvedor de blockchain"
   },
-  "ComingSoon": "Em breve..."
+  "ComingSoon": "Em breve...",
+  "Aboutus": {
+    "main": "Sobre nós",
+    "head": "Nossa visão é resolver a atual e crescente crise de confiança e aumentar a credibilidade da web.",
+    "content": "A Beyond Imagination Technologies (BIT) foi fundada como a primeira startup da Índia com a ideia de nutrir a tecnologia Blockchain/Web3 e criar soluções econômicas, seguras e protegidas que atendem às necessidades do mercado. A BIT procura resolver os principais problemas do mercado em todas as vertentes possíveis e em múltiplos setores, estendendo o seu alcance a todos os cantos do mundo.", 
+    "button":"Veja mais"
+  }
 }

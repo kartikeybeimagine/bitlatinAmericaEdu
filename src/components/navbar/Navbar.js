@@ -18,7 +18,6 @@ import cookies from 'js-cookie'
 import { Typography } from "@mui/material";
 
 
-
 const GlobeIcon = ({ width = 24, height = 24 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +41,7 @@ const Navbar = () => {
   const [isLang, setIsLang] = useState(false);
   const [lang, setLang] = useState(i18next.language);
   const [open, setOpen] = React.useState(false);
-  const [aboutustext , setaboutustext] = useState(t("Navbar.AboutUs"))
+  const [aboutustext, setaboutustext] = useState(t("Navbar.AboutUs"))
 
   const handleChange = (event) => {
     i18next.changeLanguage(event.target.value)
@@ -56,7 +55,7 @@ const Navbar = () => {
   const handleOpen = () => {
     setOpen(true);
   };
-  
+
 
 
   const Menubar = () => {
@@ -75,7 +74,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-         Home
+          Home
         </div>
         <div
           className="menuitem"
@@ -93,7 +92,7 @@ const Navbar = () => {
             setIsMenu(false);
           }}
         >
-           {t("Navbar.Institutions")}
+          {t("Navbar.Institutions")}
         </div>
         <div
           className="menuitem"
@@ -140,72 +139,56 @@ const Navbar = () => {
         >
           {t("Navbar.Roadmap")}
         </div>
-        <div className="menuitem" 
-                  onClick={() => {
-                    navigate("/partners");
-                    setIsMenu(false);
-                  }}
+        <div className="menuitem"
+          onClick={() => {
+            navigate("/partners");
+            setIsMenu(false);
+          }}
         >
           {t("Navbar.OurPartners")}
         </div>
         <div className="menuitem">
           <a href="https://www.bitindiaofficial.tech/services-9" target="_blank" rel="noreferrer">
-            Press Romm
+            Press Room
           </a>
         </div>
-
-
-
-
-
       </div>
     );
   };
   return (
     <div className="navbar">
       <div className="navbuttoncontainer">
-        <div className="navbutton" onClick={() => navigate("/home")}>
-          Home
+        <div className="logocontainer">
+          <img
+            src={logo}
+            alt="BEYOND IMAGINATION TECHNOLOGIES"
+            onClick={() => navigate("/home")}
+          />
         </div>
-        <div className="navbutton" onClick={() => navigate("/view")}>
+        <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/view")}>
           {t("Navbar.View")}
         </div>
-        <div className="navbutton" onClick={() => navigate("/institution")}>
+        <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/institution")}>
           {t("Navbar.Institutions")}
         </div>
-        <div className="navbutton" onClick={() => navigate("/dnft")}>
+        <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/dnft")}>
           dNFT
         </div>
-        <div className="navbutton" onClick={() => navigate("/verify")}>
+        <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/verify")}>
           {t("Navbar.Verify")}
         </div>
-        <div className="navbutton" onClick={() => navigate("/bitwalletpage")}>
+        {/* <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/blog")}>
+          {t("Blog")}
+        </div> */}
+        <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/bitwalletpage")}>
           {t("BitWallet")}
         </div>
-        <div className="navbutton" onClick={() => navigate("/partners")}>
-        {t("Navbar.OurPartners")}
+        <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/partners")}>
+          {t("Navbar.OurPartners")}
         </div>
-        <div className="navbutton" >
-          <div class="dropdown">
-            <Button class="dropbtn">{aboutustext}</Button>
-            <div class="dropdown-content">
-              <a  onClick={() => { 
-                navigate("/team")
-                setaboutustext(t("Navbar.Team"))
-              } }>{t("Navbar.Team")}</a>
-              <a onClick={() => {navigate("/roadmap") 
-              setaboutustext(t("Navbar.Roadmap"))
-              }}>{t("Navbar.Roadmap")}</a>
-              <a onClick={() => {navigate("/whitepapper") 
-              setaboutustext(t("Navbar.Whitepaper"))
-            }}>{t("Navbar.Whitepaper")} </a>
-              <a onClick={() => {navigate("/tokenomics")
-              setaboutustext(t("Navbar.Tokenomics"))
-            }}>{t("Navbar.Tokenomics")}</a>
-          </div>
+        <div style={{ marginTop: "auto", marginBottom: "auto" }} className="navbutton" onClick={() => navigate("/about")}>
+          {aboutustext}
         </div>
-        </div>
-
       </div>
       <div className="menucontainer">
         <img
@@ -217,23 +200,8 @@ const Navbar = () => {
         />
       </div>
       {isMenu && <Menubar />}
-      <div className="logocontainer">
-        <img
-          src={logo}
-          alt="BEYOND IMAGINATION TECHNOLOGIES"
-          onClick={() => navigate("/home")}
-        />
-      </div>
       <div className="navrightbuttoncontainer">
-        {/* <div 
-          onClick={() => {
-            i18next.changeLanguage('fr')
-            console.log(i18next.language)
-          }}
-        >
-          <GlobeIcon />
-        </div> */}
-        <div>
+        <div style={{ marginTop: "auto", marginBottom: "auto" }}> 
           {!open && <Typography sx={{ display: 'block', mb: 2 }} onClick={handleOpen}>
             {lang === "en" && "EN"}
             {lang === "sp" && "SP"}
@@ -260,43 +228,6 @@ const Navbar = () => {
             </Select>
           </FormControl>}
         </div>
-
-        {/* {
-          ((i18next.language === 'en') &&(!isLang)) && (
-            <div className="langbutton" >EN </div> )
-
-        }
-        {
-          ((i18next.language === 'fr') &&(!isLang)) && (
-            <div className="langbutton" >ES </div> )
-
-        }
-        {
-          ((i18next.language === 'pt') &&(!isLang)) && (
-            <div className="langbutton" >PT </div> )
-
-        }
-        {!isLang && <img src={downicon} height={"20"} width={'20'} onClick={
-          () => {
-            setIsLang(!isLang)
-          }
-        }></img>}
-
-
-        {isLang && <select name="cars" id="cars" onClick={(e) => {
-            i18next.changeLanguage(e.target.value)
-            setLang(e.target.value)
-            
-          }}
-          defaultValue={i18next.language}
-        >
-            <option value="en" >English</option>
-            <option value="fr" >Española</option>
-            <option value="pt">Português</option>
-          </select>} */}
-
-
-
         <div className="contactusbutton">
           <button onClick={() => navigate("/contact")}>{t("Navbar.Contact_Us")}</button>
         </div>

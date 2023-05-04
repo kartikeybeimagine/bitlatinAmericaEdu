@@ -5,7 +5,7 @@ export const Whitepaper = () => {
     const { t } = useTranslation()
   return (
     <div className='verifypage'>
-        <h3>{t("ComingSoon")}</h3>
+       Comming soon ......
     </div>
   )
 }
