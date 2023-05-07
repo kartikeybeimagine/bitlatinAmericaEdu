@@ -1,4 +1,5 @@
 import "./Home.css";
+import "./Home2.css";
 import img1 from "./assets/img1.png";
 import arraow from "./assets/Line 2.png";
 import step1 from "./assets/step1.png";
@@ -8,7 +9,7 @@ import step4 from "./assets/step4.png";
 import step5 from "./assets/step5.png";
 import step6 from "./assets/step6.png";
 import step7 from "./assets/step7.png";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import cookies from "js-cookie";
@@ -27,7 +28,6 @@ import telegram from "./assets/telegram-icon.svg";
 
 function TabPanel(props) {
   const { value } = props;
-
   const { t } = useTranslation();
 
   return (
@@ -52,6 +52,7 @@ function TabPanel(props) {
 }
 
 const Home = () => {
+  const [selecttab, setselecttab] = useState(1);
   const { t } = useTranslation();
   const [value, setValue] = React.useState(0);
   const handleChange = (event, newValue) => {
@@ -308,8 +309,12 @@ const Home = () => {
       {/* Why Bit Section ---------------------------------------- */}
       <div className="joinContainer2">
         <div className="stepsheadingbtndiv">
-          <div className="benefit">{t("Home.generate_degree_btn")}</div>
-          <div className="benefit2">{t("Home.generate_certificate_btn")}</div>
+          <div onClick={() => {
+            setselecttab(0);
+          }} className={`benefit ${selecttab === 0 ? "fillbackground" : "transparentbackground"}`}>{t("Home.generate_degree_btn")}</div>
+          <div onClick={() => {
+            setselecttab(1);
+          }} className={`benefit2 ${selecttab === 1 ? "fillbackground" : "transparentbackground"}`}>{t("Home.generate_certificate_btn")}</div>
         </div>
       </div>
       <div className="whybitcontainer">
@@ -319,71 +324,125 @@ const Home = () => {
           <div className="stepText">{t("Home.container4.text")}</div>
         </div>
 
-        <div className="stepscontainer">
-          <div className="step">
-            <div className="stepimg">
-              <img src={step1} alt="step1" />
+        <div className={`${selecttab === 0 ? "" : "hidden"}`}>
+          <div className="stepscontainer">
+            <div className="step">
+              <div className="stepimg">
+                <img src={step1} alt="step1" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step1.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step1.text")}</div>
             </div>
-            <div className="stepheading">
-              {t("Home.container4.step1.heading")}
+            <div className="step">
+              <div className="stepimg">
+                <img src={step2} alt="step2" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step2.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step2.text")}</div>
             </div>
-            <div className="steptext">{t("Home.container4.step1.text")}</div>
+            <div className="step">
+              <div className="stepimg">
+                <img src={step3} alt="step3" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step3.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step3.text")}</div>
+            </div>
+            <div className="step">
+              <div className="stepimg">
+                <img src={step4} alt="step4" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step4.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step4.text")}</div>
+            </div>
           </div>
-          <div className="step">
-            <div className="stepimg">
-              <img src={step2} alt="step2" />
+          <div className="stepscontainer2">
+            <div className="step">
+              <div className="stepimg">
+                <img src={step5} alt="step5" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step5.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step5.text")}</div>
             </div>
-            <div className="stepheading">
-              {t("Home.container4.step2.heading")}
+            <div className="step">
+              <div className="stepimg">
+                <img src={step6} alt="step6" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step6.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step6.text")}</div>
             </div>
-            <div className="steptext">{t("Home.container4.step2.text")}</div>
-          </div>
-          <div className="step">
-            <div className="stepimg">
-              <img src={step3} alt="step3" />
+            <div className="step">
+              <div className="stepimg">
+                <img src={step7} alt="step7" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step7.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step7.text")}</div>
             </div>
-            <div className="stepheading">
-              {t("Home.container4.step3.heading")}
-            </div>
-            <div className="steptext">{t("Home.container4.step3.text")}</div>
-          </div>
-          <div className="step">
-            <div className="stepimg">
-              <img src={step4} alt="step4" />
-            </div>
-            <div className="stepheading">
-              {t("Home.container4.step4.heading")}
-            </div>
-            <div className="steptext">{t("Home.container4.step4.text")}</div>
           </div>
         </div>
-        <div className="stepscontainer2">
-          <div className="step">
-            <div className="stepimg">
-              <img src={step5} alt="step5" />
+
+        <div className={`${selecttab === 1 ? "" : "hidden"}`}>
+          <div className="stepscontainer">
+            <div className="step">
+              <div className="stepimg">
+                <img src={step1} alt="step1" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step1.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step1.text")}</div>
             </div>
-            <div className="stepheading">
-              {t("Home.container4.step5.heading")}
+            <div className="step">
+              <div className="stepimg">
+                <img src={step2} alt="step2" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step2.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step3.text")}</div>
             </div>
-            <div className="steptext">{t("Home.container4.step5.text")}</div>
+            <div className="step">
+              <div className="stepimg">
+                <img src={step3} alt="step3" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step3.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step4.text")}</div>
+            </div>
+            <div className="step">
+              <div className="stepimg">
+                <img src={step4} alt="step4" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step4.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step5.text")}</div>
+            </div>
           </div>
-          <div className="step">
-            <div className="stepimg">
-              <img src={step6} alt="step6" />
+          <div className="stepscontainer2">
+            <div className="step">
+              <div className="stepimg">
+                <img src={step5} alt="step5" />
+              </div>
+              <div className="stepheading">
+                {t("Home.container4.step5.heading")}
+              </div>
+              <div className="steptext">{t("Home.container4.step6.text")}</div>
             </div>
-            <div className="stepheading">
-              {t("Home.container4.step6.heading")}
-            </div>
-            <div className="steptext">{t("Home.container4.step6.text")}</div>
-          </div>
-          <div className="step">
-            <div className="stepimg">
-              <img src={step7} alt="step7" />
-            </div>
-            <div className="stepheading">
-              {t("Home.container4.step7.heading")}
-            </div>
-            <div className="steptext">{t("Home.container4.step7.text")}</div>
           </div>
         </div>
       </div>

@@ -559,11 +559,6 @@
 }
 
 .benefit {
-  /* background-color: var(--primary);
-  width: 350px;
-  height: 40px;
-  padding: 30px 0px;*/
-  color: var(--secondary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -573,9 +568,9 @@
   height: 109px;
   left: 96px;
   top: 2052px;
-
-  background: #58019B;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* background: #58019B; */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  border: var(--primary) 2px solid;
   border-radius: 28px;
 
   font-family: 'Be Vietnam';
@@ -589,14 +584,23 @@
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.fillbackground {
+  background: #58019B;
+  color: var(--secondary);
+}
+
+.transparentbackground {
+  background-color: var(--secondary);
+  color: var(--primary);
 }
 
 .benefit2 {
-  background-color: var(--secondary);
   width: 350px;
   height: 40px;
   padding: 30px 0px;
-  color: var(--primary);
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -610,7 +614,7 @@
   left: 571px;
   top: 2052px;
 
-  border: 4px solid #58019B;
+  border: 2px solid #58019B;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 28px;
   font-family: 'Be Vietnam';
@@ -618,11 +622,12 @@
   font-weight: 700;
   font-size: 26.5462px;
   line-height: 26px;
-  /* identical to box height, or 97% */
+
 
   text-align: center;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 
@@ -1122,23 +1127,23 @@
   width: 50px;
   height: 100px;
   background-color: white;
-  padding: 5px; 
+  padding: 5px;
   position: relative;
 }
 
 .faqNews img {
   cursor: pointer;
-} 
+}
 
 .socialmedia {
   width: 50px;
-  padding: 5px;  
-  height: 230px;  
+  padding: 5px;
+  height: 230px;
   border: 1px;
-  border-radius: 10px;  
+  border-radius: 10px;
   background-color: rgb(119, 6, 218);
   position: relative;
-  top:10vw;
+  top: 10vw;
 }
 
 .socialmedia img {
@@ -1379,9 +1384,9 @@
 
   .faqNews {
     display: none;
-  } 
+  }
 
-  .socialmedia{
+  .socialmedia {
     display: none;
   }
 }
