@@ -1,0 +1,8 @@
+.verifypageadmin {
+    background-color: var(--primary);
+    min-height: 60vh;
+    width: 100%; 
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);  
+}

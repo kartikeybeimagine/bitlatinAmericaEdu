@@ -1,0 +1,422 @@
+{
+  "Navbar": {
+    "Home": "Lar",
+    "View": "Visualizar",
+    "Institutions": "Instituições",
+    "Verify": "Verificar",
+    "Contact_Us": "Contate-nos",
+    "Dashboard": "Painel",
+    "AboutUs": "Sobre nós",
+    "FAQ": "Perguntas frequentes",
+    "Team": "Equipe",
+    "Roadmap": "Roteiro",
+    "Whitepaper": "Papel branco",
+    "Tokenomics": "Tokenomics",
+    "OurPartners": "Our Partners"
+  },
+  "Home": {
+    "heading": "BitMemoir",
+    "for": "Para",
+    "heading2": "Educação",
+    "subheading": "Transformando o sistema educacional",
+    "button": "Saber mais",
+    "container2": {
+      "heading-1": "Blockchain para",
+      "heading-2": "Faculdades e universidades",
+      "box1": {
+        "heading": "Microcredenciais",
+        "text": "Eles pretendem certificar as carreiras e as habilidades para o local de trabalho.Eles também se aplicam a um curso curto e ciclos de atualização profissional"
+      },
+      "box2": {
+        "heading": "Prova de participação",
+        "text": "As NFTs pretendiam credenciar a participação de membros da comunidade educacional em atos e eventos da instituição."
+      },
+      "box3": {
+        "heading": "Distinções e prêmios",
+        "text": "Crachás que certificam distinções e reconhecimentos concedidos pela instituição a seus professores ou alunos.Medalhas de honra, melhor média, desempenho esportivo"
+      },
+      "box4": {
+        "heading": "Graduação e pós -graduação",
+        "text": "Qualificação concedida apenas pela instituição a seus alunos (escola, universidade e pós -graduação)"
+      }
+    },
+    "container3": {
+      "heading1": "Por que",
+      "heading2": "BitMemoir?",
+      "text": "Transformando o ecossistema educacional emitindo credenciais autênticas e verificadas e negando completamente a possibilidade de documentos duplicados, falsos ou falsificados."
+    },
+    "generate_degree_btn": "Gerar graus",
+    "generate_certificate_btn": "Gerar certificados",
+    "container4": {
+      "heading1": "Etapas para",
+      "heading2": "Emitindo certificados",
+      "text": "A maneira de uma instituição gerar diplomas universitários ou escolares em blockchain",
+      "step1": {
+        "heading": "Etapa 01",
+        "text": "A instituição compra um plano de acordo com suas necessidades"
+      },
+      "step2": {
+        "heading": "Etapa 02",
+        "text": "Solicitamos as informações legais e uma nota com a assinatura legal da mais alta autoridade"
+      },
+      "step3": {
+        "heading": "Etapa 03",
+        "text": "Nossa empresa valida a instituição como uma conta segura"
+      },
+      "step4": {
+        "heading": "Etapa 04",
+        "text": "A instituição envia seus modelos de graduação universitária ou escolar"
+      },
+      "step5": {
+        "heading": "Etapa 05",
+        "text": "Integramos os modelos na plataforma ativados apenas para essa instituição"
+      },
+      "step6": {
+        "heading": "Etapa 06",
+        "text": "Fazemos uma nova consulta de validação final para a pessoa responsável designada pela instituição"
+      },
+      "step7": {
+        "heading": "Etapa 07",
+        "text": "Ativamos o formulário para que a instituição possa concluí -lo individualmente e emitir os certificados"
+      }
+    },
+    "container5": {
+      "heading": "Entrar",
+      "box": {
+        "per_month": "Por mês",
+        "heading": "Menos de 1000",
+        "heading2": "CERTIFICADO",
+        "buy-btn": "COMPRAR AGORA"
+      }
+    },
+    "FAQ": {
+      "questions": [
+        {
+          "question": "O que é BitMemoir Latam e que serviços ele oferece?",
+          "answer": "O BitMemoir Latam é uma subsidiária da empresa BitMemoir, com sede em Dubai, que facilita a emissão de certificações e diplomas blockchain para instituições educacionais, garantindo autenticidade, transparência e segurança.Oferecemos soluções personalizadas adaptadas às necessidades específicas de cada organização, incluindo a emissão de micro-credenciais, certificações para cursos ou programas, registro de atividades não curriculares, reconhecimento e prêmios, prova de participação em eventos e sistemas para fornecer transparência emprogramas de bolsa de estudos e financiamento."
+        },
+        {
+          "question": "Como o Blockchain garante a autenticidade das certificações emitidas?",
+          "answer": "O BitMemoir Latam verifica e valida a autenticidade das instituições educacionais antes de permitir que eles emitam certificações no blockchain.Além disso, no caso de diplomas universitários ou diplomas escolares, o processo de emissão inclui uma segunda chave de validação, onde uma pessoa designada pela instituição autoriza a emissão dos certificados."
+        },
+        {
+          "question": "Quais são as vantagens do uso de blockchain para emitir certificações e diplomas?",
+          "answer": "As certificações e diplomas emitidos em blockchain são facilmente verificáveis e contrastantes, garantindo sua autenticidade e impedindo a falsificação.Além disso, fornece transparência e segurança ao processo de emissão e permite um registro histórico imutável e acessível ao longo do tempo."
+        },
+        {
+          "question": "Como as instituições educacionais podem começar a emitir certificações blockchain com o BitMemoir Latam?",
+          "answer": "Para começar a emitir certificações blockchain com o BitMemoir Latam, as instituições devem seguir estas etapas: 1) Entre em contato conosco para solicitar uma cotação.2) Forneça -nos as informações legais da instituição e uma nota com a assinatura legal da mais alta autoridade.3) Validaremos a instituição como uma conta segura.4) A instituição nos enviará seus modelos de graduação universitária ou escolar.5) Vamos integrar os modelos na plataforma ativados apenas para essa instituição.6) Faremos uma nova consulta final de validação para a pessoa responsável designada pela instituição.7) Ativaremos o formulário para que a instituição possa concluí -lo individualmente e emitir os certificados."
+        },
+        {
+          "question": "Como os destinatários das certificações blockchain podem acessar e gerenciar seus documentos?",
+          "answer": "Os destinatários das certificações Blockchain podem acessar e gerenciar seus documentos através do aplicativo da Web BitMemoir ou do Bit-Wallet.Eles receberão o documento com o código QR integrado e o crachá digital em sua carteira virtual."
+        },
+        {
+          "question": "Que tipos de certificações podem ser emitidos na blockchain?",
+          "answer": "O BitMemoir Latam permite a emissão de vários tipos de certificações na blockchain, incluindo diplomas de universidades ou escolas, microcredenciais, certificações para cursos ou programas, reconhecimentos e prêmios, prova de participação em eventos e transparência em programas de bolsas de estudos e financiamento."
+        },
+        {
+          "question": "É seguro usar o BitMemoir Latam para emitir certificações blockchain?",
+          "answer": "Sim, o BitMemoir Latam garante a segurança no processo de emissão de certificações blockchain.Verificamos e validamos a autenticidade das instituições educacionais e usamos a tecnologia blockchain para garantir a autenticidade, a transparência e a segurança dos documentos emitidos."
+        },
+        {
+          "question": "Quais opções de pagamento estão disponíveis para compra de pacotes de certificados no BitMemoir Latam?",
+          "answer": "O BitMemoir Latam oferece várias opções de pagamento para compra de pacotes de certificados, incluindo Mercado Pago, PayPal e transferência bancária.As instituições podem comprar pacotes com um número específico de certificados e começar a emitir até que a quantidade comprada seja esgotada."
+        },
+        {
+          "question": "Qual é o custo dos certificados no BitMemoir Latam?                    ",
+          "answer": "O custo base por certificado no BitMemoir Latam é de 1 dólar.Para diplomas universitários, que exigem uma segunda chave de segurança e validação, o custo é de 2 dólares por certificado."
+        },
+        {
+          "question": "As instituições podem usar seus próprios modelos de certificado ou precisam usar os fornecidos pelo BitMemoir Latam?",
+          "answer": "As instituições podem escolher entre usar os modelos de certificado fornecidos pela BitMemoir Latam em sua plataforma ou carregando e projetando seus próprios modelos.A plataforma permite a personalização e adaptação de modelos de acordo com as necessidades e preferências de cada instituição educacional."
+        }
+      ],
+      "videoLink": "https://www.youtube.com/embed/z3los2utk7E"
+    }
+  },
+  "kycPage": {
+    "kycStatus": {
+      "notCompleted": "Você não completou seu kyc",
+      "startkyc": "Comece Kyc",
+      "in_progress": {
+        "heading": "Sua aprovação do KYC está pendente",
+        "heading1": "Para mais apoio: ",
+        "heading2": "Envie um email para hello@beimagine.tech"
+      },
+      "approved": {
+        "heading": "KYC aprovado"
+      },
+      "rejected": {
+        "heading": "Seu KYC foi rejeitado.",
+        "heading1": "Razão:",
+        "heading2": "Para mais apoio:",
+        "heading3": "Envie um email em hello@beimagine.tech",
+        "restartkyc": "Reinicie Kyc"
+      },
+      "revoked": {
+        "heading": "Sua aprovação do KYC foi revogada.",
+        "heading1": "Razão:",
+        "heading2": "Para mais apoio:",
+        "heading3": "Envie um email em hello@beimagine.tech",
+        "restartkyc": "Reinicie Kyc"
+      }
+    },
+    "kycForm": {
+      "heading": "Digite seus detalhes KYC",
+      "nameLabel": "Nome da empresa*",
+      "namePlaceholder": "Nome da organização",
+      "desciptionLabel": "Descrição*",
+      "desciptionPlaceholder": "Descrição da organização",
+      "countryLabel": "País*",
+      "countryPlaceholder": "País",
+      "officialWebsiteLabel": "Local na rede Internet oficial*",
+      "officialWebsitePlaceholder": "Local na rede Internet oficial",
+      "subheading": "Informações sobre o representante",
+      "nameOfissuerLabel": "Nome *",
+      "nameOfissuerPlaceholder": "Nome",
+      "lastnameOfissuerLabel": "Surname*",
+      "lastnameOfissuerPlaceholder": "Surname",
+      "designationOfissuerLabel": "Designação *",
+      "designationOfissuerPlaceholder": "Designação ",
+      "officialEmailLabel": "ID de e -mail oficial*",
+      "officialEmailPlaceholder": "ID de e -mail oficial",
+      "officialPhoneLabel": "Número de telefone oficial*",
+      "officialPhonePlaceholder": "Número de telefone oficial",
+      "idProofOfRepresentativeLabel": "Id prova do representante*",
+      "subheadingnote": "Informações sobre a autoridade aprovada",
+      "Upload_the_Note": "Carregue a nota (assinada pelas mais altas autoridades)*",
+      "Sample_Form": "Formulário de amostra",
+      "download": "Baixar amostra de formulário",
+      "add_approving_authority": "Adicione a autoridade de aprovação",
+      "add_approving_authority_heading": "As autoridades aprovadas precisam aprovar qualquer emissão de documentos por e -mail.",
+      "approve_authority_name": "Nome",
+      "approve_authority_lastname": "Sobrenome",
+      "approve_authority_email": "E-mail",
+      "approve_authority_Designation": "Designação",
+      "remove": "Remover",
+      "uploading": "Enviando...",
+      "add_approver": "Adicionar aprovador",
+      "add": "Adicionar",
+      "submit": "Envie Kyc",
+      "id_proof_of_authority": "Id Prova da autoridade aprovada*"
+    }
+  },
+  "Institutions": {
+    "LandingPage": {
+      "Navbar": {
+        "Heading": "Institutions"
+      }
+    },
+    "certCreator": {
+      "variableOptions": [
+        "Nome do aluno",
+        "Nome da mãe",
+        "Inscrição não",
+        "Marcas obtidas",
+        "Notas obtidas",
+        "Total de marcas",
+        "CGPA",
+        "Percentagem",
+        "Avaliado por",
+        "Aprovado por",
+        "Nome do programa",
+        "Duração do programa",
+        "Nome do curso",
+        "Nome do lote",
+        "Código de lote",
+        "Data de início do lote",
+        "Data final do lote",
+        "Duração do lote",
+        "Módulo",
+        "Número de admissão de Hall",
+        "Divisão",
+        "Nome do departamento",
+        "Nome da escola",
+        "Nome da organização",
+        "Data emitida",
+        "Nome signatário",
+        "Designação signatária"
+      ],
+      "CustomVariable": "Outro especificar)",
+      "heading": "Criador de modelos",
+      "selectVariable": "Selecione variável",
+      "addVariable": "Adicione variável",
+      "templateName": "Nome do modelo",
+      "next": "Próxima"
+    },
+    "education": {
+      "headingRecentlyUsed": "Usado recentemente",
+      "headingFreeTemplates": "Modelos gratuitos",
+      "headingPremiumTemplates": "Modelos premium",
+      "createCustomTemplate": "Crie modelo personalizado",
+      "more": "Mais",
+      "selectTemplate": "Selecione modelo",
+      "selectTemplatePlaceholder": "Selecione um modelo pronto para fazer na seção de modelos",
+      "or": "OU"
+    },
+    "templateCert": {
+      "enterPreviewValue": "Insira valores de visualização",
+      "next": "Próxima"
+    },
+    "certIssue": {
+      "heading": "Certificados de emissão",
+      "NoOfCert": "Número de certificados",
+      "file": "Arquivo",
+      "certlmitexceed": " Limite de certificado excedido.Limite atual",
+      "increaselmtBtn": "Aumentar o limite",
+      "uploadCSV": "Faça o upload do arquivo de dados do aluno (formato CSV)",
+      "downloadsCSV": "Baixe o modelo CSV",
+      "nextbtn": "Próxima",
+      "headingCloseWindow": "Você pode fechar a janela."
+    },
+    "approval": {
+      "heading": "O certificado está pendente de aprovação dos seguintes aprovadores:"
+    }
+  },
+  "view": {
+    "view": {
+      "heading": "Nenhum NFTS encontrado.",
+      "mydigitalCollection": "Minha coleção digital"
+    }
+  },
+  "Dashboard": {
+    "contentDashboard": {
+      "name": "Nome",
+      "email": "E-mail",
+      "Website": "Local na rede Internet",
+      "Issuer_Name": "Nome do emissor",
+      "Issuer_Designation": "Designação do emissor",
+      "Status": "status",
+      "IdProof": "Prova de identidade",
+      "contractAddress": "Endereço do contrato",
+      "accountAddress": "Endereço da conta",
+      "CurrentPlan": "Plano atual"
+    },
+    "sidebar": {
+      "dashboard": "Painel",
+      "PrimaryDetails": "Detalhes primários",
+      "Analytics": "Análise"
+    }
+  },
+  "connection": {
+    "connection": {
+      "heading": "Por favor, conecte sua carteira",
+      "subheading": "Isso não vai custar a você nenhum gás.",
+      "connect-btn": "Conecte a carteira"
+    },
+    "noWallet": {
+      "heading": "Parece que você não tem uma carteira de blockchain instalada.",
+      "download-btn": " Baixe Metamask",
+      "subheading": "Uma carteira de blockchain é sua entrada no mundo Web3.0.",
+      "learnmore-btn": "Saiba mais sobre Metamask:"
+    }
+  },
+  "Verify": {
+    "heading": "Verifique os certificados",
+    "subheading": "Digite os detalhes do certificado abaixo.",
+    "subheadingtext": "(Os detalhes do certificado podem ser encontrados no arquivo de certificado ao lado do código QR.)",
+    "Contract_Address": "Endereço do contrato:",
+    "Verify": "Verificar",
+    "tokenId": "Id token"
+  },
+  "VerifyDetails": {
+    "Verified": "Verificada",
+    "Contract_Address": "Endereço do contrato :",
+    "Token_Id": "Id token :",
+    "Download": "download",
+    "IssuedBy": "Emitida pela:",
+    "Recipient": "Recebedora :",
+    "Verifying": "Verificando...",
+    "Could_not_Verify": "Não foi possível verificar."
+  },
+  "VerifyDetails": {
+    "Verified": "Verified",
+    "Contract_Address": "Contract Address :",
+    "Token_Id": "Token Id :",
+    "Download": "Download",
+    "IssuedBy": "Issued by:",
+    "Recipient": "Recipient :",
+    "Verifying": "Verifying...",
+    "Could_not_Verify": "Could not Verify."
+  },
+  "Bitwallet": {
+    "heading1": "Uma carteira criptográfica e",
+    "heading2": "porta de entrada para",
+    "heading3": "mundo da blockchain",
+    "subheading": "Aprimore sua experiência do usuário com o BitWallet, a chave para o mundo do blockchain",
+    "download": "Baixe Agora",
+    "heading4": "Use como uma extensão do navegador ou aplicativo móvel",
+    "subheading4": "Disponível como uma extensão do navegador e como um aplicativo móvel, o BitWallet o equipa com um cofre -chave, login seguro, NFT simples e armazenamento e transferência de criptografia.",
+    "heading5": "Segurança para seus ativos digitais",
+    "subheading5": "O BitWallet gera senhas e chaves no seu dispositivo; portanto, você tem acesso às suas contas e dados.Assistência Navegando por vários sites descentralizados e aplicativos blockchain.",
+    "heading6": "Zero tempo de inatividade",
+    "subheading6": "Proteção de suas chaves através da criptografia",
+    "bitwalletDwnld": "Download do BitWallet",
+    "downloadChromeheading": "Baixe a extensão Chrome para desktop",
+    "downloadIoSheading": "Baixe o aplicativo iOS",
+    "downloadAndroidheading": "Baixe o aplicativo Android",
+    "downloadFor": "Baixar para",
+    "whatIsBitwallet": "O que é BitWallet?",
+    "whyChooseBitwallet": {
+      "heading": "Por que escolher BitWallet?",
+      "subheading": "Uma carteira mais segura e transparente",
+      "Dataprotection": "Proteção de dados",
+      "RobustInfrastructure": "Infraestrutura robusta",
+      "Decentralized": "Descentralizada",
+      "Verifiedandsecuretouse": "Verificado e seguro para usar",
+      "EasytoUse": "Fácil de usar",
+      "SupportAssets": "Ativos de suporte"
+    }
+  },
+  "RoadMap": {
+    "heading": "BITMEMOIR Roteiro 2023",
+    "subheading": "We are working hard to make BitWallet the best crypto wallet in the world. Here is a sneak peek of what we are working on.",
+    "roadmap": {
+      "Q2": {
+        "heading": "2023 Quarter2",
+        "point1": "Edifício comunitário",
+        "point2": "Liberação de Livro Branco",
+        "point3": "BitMemoir Mainnet no Polygon",
+        "point4": "BitWallet Mainnet no Polygon",
+        "point5": "Parcerias alinhadas"
+      },
+      "Q3": {
+        "heading": "2023 Quarter 3",
+        "point1": "BitMemoir Token IDO Launch on Arbitrum",
+        "point2": "Listagem de token dex de bitmemoir",
+        "point3": "BitMemoir Token Cex Listing",
+        "point4": "BitWallet Token IDO Lançar no árbitro",
+        "point5": "BitWallet Multicain Support",
+        "point6": "Anúncios de parcerias - 10 Plus"
+      },
+      "Q4": {
+        "heading": "2023 Quarter4",
+        "point1": "marketing",
+        "point2": "Mais adoção de bitmemoir e bitwallet",
+        "point3": "Integração BitWallet com outros Dapps",
+        "point4": "BitWallet apoiará mais correntes",
+        "point5": "Novos recursos de utilitário NFT no BitMemoir",
+        "point6": "Listagem no Major Cex"
+      }
+    }
+  },
+  "Team": {
+    "heading": "Equipe fundadora",
+    "subheading": "Nosso time",
+    "hr": "Recursos humanos",
+    "bd": "Executivo do BD",
+    "marketing": "Executivo de Marketing",
+    "ceo": "Fundador e Chefe Executivo",
+    "socialMedia": "Gerente de mídia social",
+    "hrConsultant": "Consultor de RH",
+    "BlockchainDeveloper": "Desenvolvedor de blockchain"
+  },
+  "ComingSoon": "Em breve...",
+  "Aboutus": {
+    "main": "Sobre nós",
+    "head": "Nossa visão é resolver a atual e crescente crise de confiança e aumentar a credibilidade da web.",
+    "content": "A Beyond Imagination Technologies (BIT) foi fundada como a primeira startup da Índia com a ideia de nutrir a tecnologia Blockchain/Web3 e criar soluções econômicas, seguras e protegidas que atendem às necessidades do mercado. A BIT procura resolver os principais problemas do mercado em todas as vertentes possíveis e em múltiplos setores, estendendo o seu alcance a todos os cantos do mundo.", 
+    "button":"Veja mais"
+  }
+}
