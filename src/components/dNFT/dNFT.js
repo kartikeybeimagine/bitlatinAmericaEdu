@@ -728,7 +728,7 @@ const StudentsView = (students) => {
           <div>{student.is_minted ? student.token_id : "-"}</div>
           <div>
             {student.is_minted ? (
-              <OpenInNewIcon onClick={() => window.open("http://localhost:8000"+student.nft_image)} />
+              <OpenInNewIcon onClick={() => window.open(student.nft_image)} />
             ) : (
               "-"
             )}
