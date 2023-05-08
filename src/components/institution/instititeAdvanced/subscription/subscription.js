@@ -7,7 +7,10 @@ import { paymentApi } from "../../../Scripts/apiCalls";
 import UserContext from "../../../../context/userContext/UserContext";
 import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
-import Contact from "../../../contact/Contact";
+import Card from "../../../home/Card";
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next' 
+import {useNavigate} from "react-router-dom"
 
 const Subscription = ({ setView, back }) => {
   const [isBuying, setIsBuying] = useState(false);
@@ -17,8 +20,11 @@ const Subscription = ({ setView, back }) => {
     noOfCerts: "1000",
     duration: "1 month",
     amount: 999,
-  });
+  }); 
+  const navigate = useNavigate();
   const user = useContext(UserContext);
+  const { t } = useTranslation()
+  const [buy, setbuy] = useState(false);
 
   const checkNetwork = async (network) => {
     const myProvider = new ethers.providers.Web3Provider(window.ethereum);
@@ -113,74 +119,13 @@ const Subscription = ({ setView, back }) => {
     duration,
   }) => {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "center",
-          alignItems: "center",
-          justifyContent: "center",
-          border: "1px solid black",
-          borderRadius: "20px",
-          background: "var(--secondary)",
-          color: "var(--primary)",
-          width: "300px",
-          transform: isRecommended ? "scale(1.1)" : "none",
-          boxShadow: "10px 10px 10px 5px rgba(0, 0, 0, 0.5) ",
-        }}
-      >
-        <div
-          style={{
-            background: "var(--primary)",
-            color: "var(--secondary)",
-            width: "100%",
-            borderRadius: "20px 20px 0px 0px",
-          }}
-        >
-          <h1>{planName}</h1>
-        </div>
-        <div style={{ fontSize: "50px" }}>{noOfCerts}</div>
-        <div style={{ fontSize: "25px" }}>CERTIFICATES</div>
-
-        <div
-          style={{
-            background: "var(--primary)",
-            color: "var(--secondary)",
-            width: "100%",
-          }}
-        >
-          <h1>{amount} $</h1>
-          <h3>Valid :{duration}</h3>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            margin: "20px 0px",
-          }}
-        >
-          <Button
-            sx={{
-              background: "var(--primary)",
-              color: "var(--secondary)",
-              display: "flex",
-              width: "200px",
-              borderRadius: "40px",
-              fontSize: "20px",
-            }}
-            onClick={() => {
-              setIsBuying(true);
-              setSelectedPlan({
-                planName: planName,
-                noOfCerts: noOfCerts,
-                amount: amount,
-                duration: duration,
-              });
-            }}
-          >
-            Buy now
-          </Button>
-        </div>
+      <div style={{ border: "0%", height: "400px", background: "transparent", marginTop: "-20px" }} className="join">
+        <Card
+          heading={planName}
+          Certificates={noOfCerts}
+          price={amount}
+          button={true} 
+        />
       </div>
     );
   };
@@ -308,8 +253,7 @@ const Subscription = ({ setView, back }) => {
     );
   };
   const d = new Date(user.userData.subscription.end_Date);
-  const end_date =
-    d.getDate() + "-" + (d.getMonth() + 1) + "-" + d.getFullYear();
+  const end_date = d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
   console.log(end_date);
 
   return (
@@ -322,45 +266,46 @@ const Subscription = ({ setView, back }) => {
         justifyContent: "center",
       }}
     >
-      {/* <h1>Select a Subscription Plan</h1> */}
+      <h1>Select a Subscription Plan</h1>
       <h3>
         Current Plan: {parseInt(user.userData.nft_quota)} Certificates available
       </h3>
-      <h3>Expiry Date: {end_date}</h3>
-      <h2>Please contact us to get further access.</h2>
-      <h2>Email us at support@beimagine.tech</h2>
-      {/* <div
+      <h3>
+        Expiry Date: {end_date}
+      </h3>
+      <div
         style={{
           display: "flex",
           gap: "50px",
           flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "center",
-          margin: "50px 0px",
+          margin: "30px 0px",  
+          position:""
         }}
       >
         <PlanCard
           planName="Silver Plan"
-          noOfCerts="1000"
-          amount={999}
+          noOfCerts={t("Home.price.offer1")}
+          amount={2}
           duration="1 Month"
           isRecommended={false}
         />
         <PlanCard
           planName="Gold Plan"
-          noOfCerts="10000"
-          amount={4999}
+          noOfCerts={t("Home.price.offer2")}
+          amount={1.75}
           duration="3 Months"
           isRecommended={true}
         />
         <PlanCard
           planName="Platinum Plan"
-          noOfCerts="1000000"
-          amount={9999}
+          noOfCerts={t("Home.price.offer3")}
+          amount={1.5}
           duration="6 Months"
           isRecommended={false}
         />
-      </div> */}
+      </div>
       <div style={{ marginTop: "50px" }}>
         <button onClick={back}>{"<"} Back</button>
       </div>

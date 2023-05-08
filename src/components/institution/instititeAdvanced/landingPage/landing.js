@@ -1,4 +1,7 @@
-import "./landing.css";
+import "./landing.css"; 
+import WebIcon from "@mui/icons-material/Web";
+import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium"; 
+import Tooltip from "@mui/material/Tooltip";
 import SchoolIcon from "@mui/icons-material/School";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
@@ -58,6 +61,54 @@ const InstitutesLandingPage = () => {
       text: "Entertainment",
       logo: <CelebrationIcon fontSize="large" />,
     },
+  ];
+
+
+
+  const navbuttons = [
+    {
+      text: "Degree Certificates",
+      logo: (
+        <div>
+          <WebIcon />
+        </div>
+      ),
+      category: "educational certificates",
+    },
+    {
+      text: "Diploma Certificates",
+      logo: (
+        <div>
+          <WorkspacePremiumIcon />
+        </div>
+      ),
+      category: "non educational certificates",
+    },
+    // {
+    //   text: "Certificates (Non Educational)",
+    //   logo: (
+    //     <div>
+    //       <SportsHandballIcon />
+    //       <WebIcon />
+    //     </div>
+    //   ),
+    //   category: "non educational certificates",
+    // },
+    // {
+    //   text: "Badges (Non Educational)",
+    //   logo: (
+    //     <div>
+    //       <SportsHandballIcon />
+    //       <WorkspacePremiumIcon />
+    //     </div>
+    //   ),
+    //   category: "non educational badges",
+    // },
+    // {
+    //   text: "Others",
+    //   logo: <MoreHorizIcon />,
+    //   category: "others",
+    // },
   ];
 
   const Sidebar = () => {
@@ -133,6 +184,23 @@ const InstitutesLandingPage = () => {
         /> */}
         {sector["logo"]}
         {t("Navbar.Institutions")}
+        {navbuttons.map((nav) => (
+          <div
+            className="educationnavbutton"
+            style={{
+              height: "60px",
+              width: "50px",
+              minWidth: "50px",
+              maxWidth: "50px",
+            }}
+            key={"education-sector-nav-button-" + nav["text"]}
+            onClick={() => setCategory(nav["category"])}
+          >
+            <Tooltip title={nav["text"]} placement="right-start">
+              {nav["logo"]}
+            </Tooltip>
+          </div>
+        ))}
       </div>
     );
   };
@@ -171,7 +239,7 @@ const InstitutesLandingPage = () => {
                 />
               )}
               {view === "certIssue" && (
-                <CertIssue setView={setView} certData={certData} category={category}/>
+                <CertIssue setView={setView} certData={certData} category={category} />
               )}
             </div>
           )}
