@@ -16,6 +16,15 @@ const UserState = (props) => {
   const [userData, setUserData] = useState({});
   const [isSidebar, setIsSidebar] = useState(1);
 
+
+
+
+  const [planname, setplanname] = useState("");
+  const [planprice, setplanprice] = useState("");
+  const [details, setdetails] = useState(""); 
+
+  const [selectedtab,setselectedtab] = useState("");
+
   const poppulateUserAccount = () => {
     setIsWalletAvailable(window.ethereum != null);
     setProvider(
@@ -60,7 +69,7 @@ const UserState = (props) => {
       .then((res) => {
         setIsConnected(true);
       })
-      .catch((err) => {});
+      .catch((err) => { });
     poppulateUserAccount();
   };
 
@@ -75,7 +84,12 @@ const UserState = (props) => {
         userData,
         poppulateUserData,
         isSidebar,
-        setIsSidebar,
+        setIsSidebar, 
+        planname,
+        setplanname,
+        planprice,
+        setplanprice,
+        details,setdetails
       }}
     >
       {props.children}
