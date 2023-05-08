@@ -525,7 +525,7 @@ const DNFTMainPage = () => {
                     }}
                   >
                     <img
-                      src={"http://localhost:8000"+selectedBatch.batch_nft_image}
+                      src={selectedBatch.batch_nft_image}
                       alt="Batch Image"
                       width={imageWidth}
                     />
